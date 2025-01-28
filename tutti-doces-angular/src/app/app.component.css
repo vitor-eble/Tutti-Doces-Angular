@@ -1,0 +1,11 @@
+/* .logo {
+  @apply text-4xl cursor-pointer relative font-semibold;
+}
+
+.logo::before {
+  @apply before:content-[""] before:absolute before:border-b-2 before:border-solid before:border-white before:w-0 before:top-[37px] before:transition-all before:
+}
+
+.logo:hover::before {
+  @apply before:w-[215px];
+} */
