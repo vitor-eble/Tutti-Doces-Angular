@@ -3,10 +3,11 @@
     <h1 class="pt-[1px] pb-[5px] text-4xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute before:w-[200px] before:top-[45px] rounded">
       Brigadeiros
     </h1>
-    <div class="grid grid-cols-2 gap-6 p-4 ">
+    <div class="grid grid-cols-1 gap-10 p-4 lg:grid-cols-2 ">
+
       <div class="flex w-full p-2 bg-white rounded-lg">
         <div class="flex w-full">
-          <img [src]="brigadeiro" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <img [src]="brigadeiro" alt="" class="max-w-[170px] max-h-[170px] hover:scale-110 duration-200">
           <div class="w-1 h-full rounded-lg bg-rosinha"></div>
           <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
             <div class="flex flex-col gap-2">
@@ -185,6 +186,471 @@
             <div>
               <p class="text-neutral-500">
                 Brigadeiro de amêndoas e chocolate branco
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="marshmallow" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Marshmallow
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro de chocolate branco decorado com mini marshmallows
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="avela" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Avelã
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro de chocolate clássico com cacau 54% e avelãs
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="pistache" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Pistache
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro de chocolate branco com pistache fresco
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="laranjaEChocolate" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Laranja e Chocolate
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro clássico de cacau 54% aromatizado com laranja fresca
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="cappuccino" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Cappuccino
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro de café com leite com mini pérolas de chocolate
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="carameloSalgado" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Caramelo salgado
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro de caramelo salgado e chocolate ao leite
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="ninho" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Ninho
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro Gourmet de leite ninho
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="quentePicante" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Quente e picante
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro picante com cacau 54%
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="caipirinha" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Caipirinha
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro de limão aromatizado com cachaça
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="arcoIris" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Arco-íris
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro clàssico com confeitos de açucar coloridos
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="bananaCanela" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Banana e canela
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro de banana e canela
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="lotus" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Lotus
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Lotus Biscoff Brigadeiro
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="cocoChocolate" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Coco e chocolate
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro de coco e clássico com cacau 54%
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="framboesa" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Framboesa
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro de framboesa com chocolate branco
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="ruby" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Ruby
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro de chocolate branco com perolas crocantes de ruby chocolate
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="cheesecakeFramboesa" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                cheesecake de framboesa
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro de cheesecake de framboesa com chocolate branco
+              </p>
+            </div>
+
+            <div class="flex justify-end gap-5">
+              <button class="px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
+                Adicionar ao carrinho
+              </button>
+              <button class="px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full p-2 bg-white rounded-lg ">
+        <div class="flex w-full">
+          <img [src]="maracuja" alt="" class="max-w-[170px] hover:scale-110 duration-200">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="grid w-full h-full grid-rows-3 gap-3 pl-3 rounded">
+            <div class="flex flex-col gap-2">
+              <h4 class="flex items-center h-full text-xl font-medium">
+                Maracujá
+              </h4>
+            </div>
+            <div>
+              <p class="text-neutral-500">
+                Brigadeiro de maracujá e chocolate branco
               </p>
             </div>
 
