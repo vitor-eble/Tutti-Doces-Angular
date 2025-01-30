@@ -17,3 +17,18 @@
   top: 60px;
 } */
 
+.card {
+ @apply flex w-full p-2 bg-white rounded-lg;
+}
+
+.card-img {
+  @apply max-w-[170px] max-h-[170px] hover:scale-110 duration-200
+}
+
+
+.card-container {
+  @apply flex flex-col justify-between w-full pl-3
+}
+.card-titulo {
+  @apply  flex items-center h-full p-2 text-xl font-medium;
+}
