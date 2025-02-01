@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { BrigadeirosComponent } from './brigadeiros/brigadeiros.component';
 import { TrufasComponent } from './trufas/trufas.component';
+import { BebidasComponent } from './bebidas/bebidas.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { TrufasComponent } from './trufas/trufas.component';
     InicioComponent,
     BrigadeirosComponent,
     TrufasComponent,
+    BebidasComponent,
   ],
   imports: [
     BrowserModule,
