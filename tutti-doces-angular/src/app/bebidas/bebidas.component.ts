@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { BebidasService } from './bebidas.service';
+import { Card } from '../card.modal';
 
 @Component({
   selector: 'app-bebidas',
@@ -7,6 +9,13 @@ import { Component } from '@angular/core';
   templateUrl: './bebidas.component.html',
   styleUrl: './bebidas.component.css'
 })
-export class BebidasComponent {
-  cocaCola: string = 'https://avatars.mds.yandex.net/i?id=7f0fc6d8e7e403c2334ce675eefe436551721199-8437205-images-thumbs&n=13'
+export class BebidasComponent implements OnInit {
+
+  bebidas: Card[] = []
+
+  constructor(private bebidasService: BebidasService) { }
+
+  ngOnInit(){
+    this.bebidas = this.bebidasService.getBebidas()
+  }
 }

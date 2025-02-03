@@ -4,7 +4,7 @@
       <h1 class="pt-[1px] pb-[5px] text-4xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute before:w-[200px] before:top-[45px] before:rounded">
         Brigadeiros
       </h1>
-      <a class="flex items-center w-[142px] gap-1 relative before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-rosinha-escuro before:w-0 before:top-[30px] before:transition-all before:duration-500 hover:before:w-[142px] hover:before:rounded" routerLink="/brigadeiros">
+      <a class="flex items-center w-[142px] gap-1 relative before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-rosinha-escuro before:w-0 before:top-[30px] before:transition-all before:duration-500 hover:before:w-[140px] hover:before:rounded mr-2" routerLink="/brigadeiros">
         <h2 class="text-2xl">
           Ver mais
         </h2>
@@ -32,10 +32,10 @@
                 R$ 3,00
               </h5>
               <div class="flex justify-end gap-3">
-                <button class="h-12 px-5 transition-all duration-200 border-2 border-solid rounded shadow-md text-rosinha-escuro bg-slate-50 border-rosinha-escuro hover:scale-105 active:scale-95">
+                <button class="h-12 px-5 transition-all duration-200 border-2 border-solid rounded shadow-md text-rosinha-escuro bg-slate-50 border-rosinha-escuro hover:scale-105 active:scale-95 lg:px-3" (click)="addCart()">
                   Adicionar ao carrinho
                 </button>
-                <button class="h-12 px-5 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                <button class="h-12 px-5 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95 lg:px-3" (click)="buyingProduct()">
                   Comprar
                 </button>
               </div>
@@ -46,13 +46,13 @@
     </div>
   </div>
 </div>
-<div class="w-full bg-custom-gradient">
+<div class="w-full ">
   <div class="container mx-auto py-[70px] w-full">
     <div class="flex items-center justify-between">
-      <h1 class="pt-[1px] pb-[5px] text-4xl relative ml-2 text-black before:border-b-4 before:border-solid before:bg-white before:absolute before:w-[110px] before:top-[45px]">
+      <h1 class="pt-[1px] pb-[5px] text-4xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute before:w-[110px] before:top-[45px]">
         Trufas
       </h1>
-      <a class="flex items-center w-[142px] gap-1 relative before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-white before:w-0 before:top-[30px] before:transition-all before:duration-500 hover:before:w-[142px] hover:before:rounded" routerLink="/trufas">
+      <a class="flex items-center w-[142px] gap-1 relative before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-rosinha-escuro before:w-0 before:top-[30px] before:transition-all before:duration-500 hover:before:w-[140px] hover:before:rounded mr-2" routerLink="/trufas">
         <h2 class="text-2xl">
           Ver mais
         </h2>
@@ -60,7 +60,7 @@
       </a>
     </div>
     <div class="grid grid-cols-1 gap-10 px-2 py-4 lg:grid-cols-2">
-      <div class="flex w-full p-2 bg-white rounded-lg" *ngFor="let trufa of trufasInicio">
+      <div class="flex w-full p-2 bg-white rounded-lg shadow-lg" *ngFor="let trufa of trufasInicio">
         <div class="flex w-full">
           <img [src]="trufa.image" alt="" class="max-w-[150px] max-h-[170px] hover:scale-110 duration-200 hover:rounded-l-2xl">
           <div class="w-1 h-full rounded-lg bg-rosinha"></div>
@@ -79,10 +79,58 @@
                 R$ 4,50
               </h5>
               <div class="flex justify-end gap-3">
-                <button class="h-12 px-5 transition-all duration-200 border-2 border-solid rounded shadow-md text-rosinha-escuro bg-slate-50 border-rosinha-escuro hover:scale-105 active:scale-95">
+                <button class="h-12 px-5 transition-all duration-200 border-2 border-solid rounded shadow-md text-rosinha-escuro bg-slate-50 border-rosinha-escuro hover:scale-105 active:scale-95 lg:px-3" (click)="addCart()">
                   Adicionar ao carrinho
                 </button>
-                <button class="h-12 px-5 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
+                <button class="h-12 px-5 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95 lg:px-3" (click)="buyingProduct()">
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w-full">
+  <div class="container mx-auto py-[70px] w-full">
+    <div class="flex items-center justify-between">
+      <h1 class="pt-[1px] pb-[5px] text-4xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute before:w-[150px] before:top-[45px] before:rounded ">
+        Bebidas
+      </h1>
+      <a class="flex items-center w-[142px] gap-1 relative before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-rosinha-escuro before:w-0 before:top-[30px] before:transition-all before:duration-500 hover:before:w-[140px] hover:before:rounded mr-2" routerLink="/bebidas">
+        <h2 class="text-2xl">
+          Ver mais
+        </h2>
+        <img [src]="verMais" alt="" class="w-8">
+      </a>
+    </div>
+    <div class="grid grid-cols-1 gap-10 px-2 py-4 lg:grid-cols-2 ">
+
+      <div class="flex w-full p-2 bg-white rounded-lg shadow-lg"  *ngFor="let bebida of bebidasInicio">
+        <div class="flex w-full">
+          <img [src]="bebida.image" alt="" class="max-w-[170px] max-h-[170px] hover:scale-110 duration-200 hover:rounded-2xl">
+          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
+          <div class="flex flex-col justify-between w-full pl-3">
+              <div class="flex flex-col">
+                <h4 class="flex items-center h-full p-2 text-xl font-medium">
+                  {{ bebida.title }}
+                </h4>
+                <p class="pl-2 text-neutral-500">
+                  {{ bebida.description }}
+                </p>
+              </div>
+
+            <div class="flex items-center justify-between">
+              <h5 class="pl-2 text-xl font-semibold">
+                R$ 6,00
+              </h5>
+              <div class="flex justify-end gap-3">
+                <button class="h-12 px-5 transition-all duration-200 border-2 border-solid rounded shadow-md text-rosinha-escuro bg-slate-50 border-rosinha-escuro hover:scale-105 active:scale-95 lg:px-3" (click)="addCart()">
+                  Adicionar ao carrinho
+                </button>
+                <button class="h-12 px-5 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95 lg:px-3" (click)="buyingProduct()">
                   Comprar
                 </button>
               </div>

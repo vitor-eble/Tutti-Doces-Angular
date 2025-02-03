@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TrufaInicioService } from './trufa-inicio.service';
 import { BrigadeiroInicioService } from './brigadeiro-inicio.service';
+import { BebidasInicioService } from './bebidas-inicio.service';
 import { Card } from '../card.modal';
 
 @Component({
@@ -12,19 +13,29 @@ import { Card } from '../card.modal';
 })
 export class InicioComponent implements OnInit {
 
+  verMais: string = 'https://cdn-icons-png.flaticon.com/128/11431/11431124.png'
+
   trufasInicio: Card[] = [];
-  brigadeiroInicio: Card[] = []
+  brigadeiroInicio: Card[] = [];
+  bebidasInicio: Card[] = [];
 
   constructor(
     private trufaInicioService: TrufaInicioService,
-    private brigadeiroInicioService: BrigadeiroInicioService
+    private brigadeiroInicioService: BrigadeiroInicioService,
+    private bebidasInicioService: BebidasInicioService
   ){  }
 
   ngOnInit() {
     this.trufasInicio = this.trufaInicioService.getTrufasInicio();
     this.brigadeiroInicio = this.brigadeiroInicioService.getBrigadeiroInicio()
+    this.bebidasInicio = this.bebidasInicioService.getBebidasInicio()
   }
 
-  verMais: string = 'https://cdn-icons-png.flaticon.com/128/11431/11431124.png'
+  addCart(){
+    alert("você adicionou um produto no carrinho")
+  }
 
+  buyingProduct(){
+    alert("você comprou um item");
+  }
 }
