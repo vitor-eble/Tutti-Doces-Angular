@@ -13,17 +13,17 @@
     </div>
     <div class="grid grid-cols-1 gap-10 px-2 py-4 lg:grid-cols-2">
 
-      <div class="flex w-full p-2 bg-white rounded-lg shadow-lg">
+      <div class="flex w-full p-2 bg-white rounded-lg shadow-lg " *ngFor="let brigadeiro of brigadeiroInicio">
         <div class="flex w-full">
-          <img [src]="brigadeiro" alt="" class="max-w-[170px] max-h-[170px] hover:scale-110 duration-200">
+          <img [src]="brigadeiro.image" alt="" class="max-w-[170px] max-h-[170px] hover:scale-110 duration-200">
           <div class="w-1 h-full rounded-lg bg-rosinha"></div>
           <div class="flex flex-col justify-between w-full pl-3">
               <div class="flex flex-col">
                 <h4 class="flex items-center h-full p-2 text-xl font-medium">
-                  Clássico
+                  {{ brigadeiro.title }}
                 </h4>
-                <p class="pl-2 text-neutral-500">
-                  Brigadeiro de chocolate meio-amargo com <br> cacau 54%, o tradicional brigadeiro gourmet
+                <p class="pl-2 text-neutral-500 max-w-[410px]">
+                  {{ brigadeiro.description }}
                 </p>
               </div>
 
@@ -43,104 +43,9 @@
           </div>
         </div>
       </div>
-
-      <div class="flex w-full p-2 bg-white rounded-lg shadow-lg">
-        <div class="flex w-full">
-          <img [src]="chocolateAoLeite" alt="" class="max-w-[170px] hover:scale-110 duration-200">
-          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
-          <div class="flex flex-col justify-between w-full pl-3">
-            <div class="flex flex-col">
-              <h4 class="items-center h-full p-2 text-xl font-medium fflex">
-                Chocolate ao leite
-              </h4>
-              <p class="pl-2 text-neutral-500">
-                Brigadeiro gourmet de puro chocolate ao leite <br> suiço
-              </p>
-            </div>
-
-            <div class="flex items-center justify-between">
-              <h5 class="pl-2 text-xl font-semibold">
-                R$ 3,00
-              </h5>
-              <div class="flex justify-end gap-3">
-                <button class="h-12 px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
-                  Adicionar ao carrinho
-                </button>
-                <button class="h-12 px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
-                  Comprar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex w-full p-2 bg-white rounded-lg shadow-lg">
-        <div class="flex w-full">
-          <img [src]="casadinho" alt="" class="max-w-[170px] hover:scale-110 duration-200">
-          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
-          <div class="flex flex-col justify-between w-full pl-3">
-            <div class="flex flex-col">
-              <h4 class="flex items-center h-full p-2 text-xl font-medium">
-                Casadinho
-              </h4>
-              <p class="pl-2 text-neutral-500">
-                Combinação de chocolate amargo e brigadeiro <br> branco
-              </p>
-            </div>
-            <div class="flex items-center justify-between">
-              <h5 class="pl-2 text-xl font-semibold">
-                R$ 3,00
-              </h5>
-              <div class="flex justify-end gap-3">
-                <button class="h-12 px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
-                  Adicionar ao carrinho
-                </button>
-                <button class="h-12 px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
-                  Comprar
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="flex w-full p-2 bg-white rounded-lg shadow-lg">
-        <div class="flex w-full">
-          <img [src]="beijinho" alt="" class="max-w-[170px] hover:scale-110 duration-200">
-          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
-          <div class="flex flex-col justify-between w-full pl-3">
-            <div class="flex flex-col">
-              <h4 class="flex items-center h-full p-2 text-xl font-medium">
-                beijinho
-              </h4>
-              <p class="pl-2 text-neutral-500">
-                Brigadeiro de coco, o tradicional beijinho <br> gourmet
-              </p>
-            </div>
-
-            <div class="flex items-center justify-between">
-              <h5 class="pl-2 text-xl font-semibold">
-                R$ 3,00
-              </h5>
-              <div class="flex justify-end gap-5">
-                <button class="h-12 px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
-                  Adicionar ao carrinho
-                </button>
-                <button class="h-12 px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
-                  Comprar
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
-
 <div class="w-full bg-custom-gradient">
   <div class="container mx-auto py-[70px] w-full">
     <div class="flex items-center justify-between">
@@ -155,17 +60,17 @@
       </a>
     </div>
     <div class="grid grid-cols-1 gap-10 px-2 py-4 lg:grid-cols-2">
-      <div class="flex w-full p-2 bg-white rounded-lg">
+      <div class="flex w-full p-2 bg-white rounded-lg" *ngFor="let trufa of trufasInicio">
         <div class="flex w-full">
-          <img [src]="trufaBrigadeiro" alt="" class="max-w-[170px] max-h-[170px] hover:scale-110 duration-200">
+          <img [src]="trufa.image" alt="" class="max-w-[150px] max-h-[170px] hover:scale-110 duration-200 hover:rounded-l-2xl">
           <div class="w-1 h-full rounded-lg bg-rosinha"></div>
           <div class="flex flex-col justify-between w-full pl-3">
               <div class="flex flex-col">
                 <h4 class="flex items-center h-full p-2 text-xl font-medium">
-                  Trufa de brigadeiro 30g
+                  {{ trufa.title }}
                 </h4>
-                <p class="pl-2 text-neutral-500">
-                  Trufa de chocolate ao leite recheada com creme <br> de brigadeiro
+                <p class="pl-2 text-neutral-500 max-w-[410px]">
+                  {{ trufa.description }}
                 </p>
               </div>
 
@@ -178,99 +83,6 @@
                   Adicionar ao carrinho
                 </button>
                 <button class="h-12 px-5 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
-                  Comprar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex w-full p-2 bg-white rounded-lg">
-        <div class="flex w-full">
-          <img [src]="trufaSuica" alt="" class="max-w-[170px] hover:scale-110 duration-200">
-          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
-          <div class="flex flex-col justify-between w-full pl-3">
-            <div class="flex flex-col">
-              <h4 class="items-center h-full p-2 text-xl font-medium fflex">
-                Trufa suiça 30g
-              </h4>
-              <p class="pl-2 text-neutral-500">
-                Trufa de chocolate ao leite com recheio cremoso <br> sabor trufas
-              </p>
-            </div>
-
-            <div class="flex items-center justify-between">
-              <h5 class="pl-2 text-xl font-semibold">
-                R$ 4,50
-              </h5>
-              <div class="flex justify-end gap-3">
-                <button class="h-12 px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
-                  Adicionar ao carrinho
-                </button>
-                <button class="h-12 px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
-                  Comprar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex w-full p-2 bg-white rounded-lg">
-        <div class="flex w-full">
-          <img [src]="trufaTradicional" alt="" class="max-w-[170px] hover:scale-110 duration-200">
-          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
-          <div class="flex flex-col justify-between w-full pl-3">
-            <div class="flex flex-col">
-              <h4 class="flex items-center h-full p-2 text-xl font-medium">
-                Trufa tradicional 30g
-              </h4>
-              <p class="pl-2 text-neutral-500">
-                Trufa de chocolate ao leite com recheio cremoso <br> de chocolate
-              </p>
-            </div>
-            <div class="flex items-center justify-between">
-              <h5 class="pl-2 text-xl font-semibold">
-                R$ 3,00
-              </h5>
-              <div class="flex justify-end gap-3">
-                <button class="h-12 px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
-                  Adicionar ao carrinho
-                </button>
-                <button class="h-12 px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
-                  Comprar
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="flex w-full p-2 bg-white rounded-lg">
-        <div class="flex w-full">
-          <img [src]="trufaCereja" alt="" class="max-w-[170px] hover:scale-110 duration-200">
-          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
-          <div class="flex flex-col justify-between w-full pl-3">
-            <div class="flex flex-col">
-              <h4 class="flex items-center h-full p-2 text-xl font-medium">
-                Trufa de cereja 30g
-              </h4>
-              <p class="pl-2 text-neutral-500">
-                Trufa de chocolate ao leite com recheio sabor <br> cereja
-              </p>
-            </div>
-
-            <div class="flex items-center justify-between">
-              <h5 class="pl-2 text-xl font-semibold">
-                R$ 4,50
-              </h5>
-              <div class="flex justify-end gap-5">
-                <button class="h-12 px-5 py-2 transition-all duration-200 border-2 border-solid rounded shadow-md border-rosinha-escuro text-rosinha-escuro hover:scale-105 active:scale-95">
-                  Adicionar ao carrinho
-                </button>
-                <button class="h-12 px-5 py-2 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
                   Comprar
                 </button>
               </div>
