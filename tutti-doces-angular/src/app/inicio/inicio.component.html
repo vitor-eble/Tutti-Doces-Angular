@@ -1,5 +1,5 @@
 <div class="w-full">
-  <div class="container mx-auto py-[70px] w-full">
+  <div class="xl:container mx-auto py-[70px] w-full md:px-3">
     <div class="flex items-center justify-between">
       <h1 class="pt-[1px] pb-[5px] text-4xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute before:w-[200px] before:top-[45px] before:rounded">
         Brigadeiros
@@ -11,34 +11,43 @@
         <img [src]="verMais" alt="" class="w-8">
       </a>
     </div>
-    <div class="grid grid-cols-1 gap-10 px-2 py-4 lg:grid-cols-2">
+    <div class="grid grid-cols-1 gap-3 px-2 py-4 2xl:gap-10 lg:grid-cols-2">
 
-      <div class="flex w-full p-2 bg-white rounded-lg shadow-lg " *ngFor="let brigadeiro of brigadeiroInicio">
+      <div class="flex w-full p-2 bg-white rounded-lg shadow-lg " *ngFor="let brigadeiro of brigadeiroInicio; let i = index ">
         <div class="flex w-full">
-          <img [src]="brigadeiro.image" alt="" class="max-w-[170px] max-h-[170px] hover:scale-110 duration-200">
-          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
-          <div class="flex flex-col justify-between w-full pl-3">
+          <img [src]="brigadeiro.image" alt="" class="xl:w-[170px] xl:h-[170px] w-[140px] h-[140px] hover:scale-110 duration-200">
+          <div class="flex flex-col justify-between w-full pl-0 border-l-2 border-solid xl:pl-3 lg:pl-1 border-rosinha-escuro lg:gap-3">
               <div class="flex flex-col">
-                <h4 class="flex items-center h-full p-2 text-xl font-medium">
-                  {{ brigadeiro.title }}
-                </h4>
-                <p class="pl-2 text-neutral-500 max-w-[410px]">
+                <div class="flex items-center justify-between">
+                  <h5 class="flex items-center h-full p-2 text-xl font-semibold lg:p-1">
+                    {{ brigadeiro.title }}
+                  </h5>
+                  <h4 class="pr-2 text-xl font-semibold lg:pr-1 lg:text-lg">
+                    {{ brigadeiro.value }}
+                  </h4>
+                </div>
+                <p class="pl-2 text-neutral-500 xl:text-base  2xl:max-w-[410px] xl:max-w-[300px] lg:pl-1 lg:text-sm lg:max-w-[250px]">
                   {{ brigadeiro.description }}
                 </p>
               </div>
 
-            <div class="flex items-center justify-between">
-              <h5 class="pl-2 text-xl font-semibold">
-                R$ 3,00
-              </h5>
-              <div class="flex justify-end gap-3">
-                <button class="h-12 px-5 transition-all duration-200 border-2 border-solid rounded shadow-md text-rosinha-escuro bg-slate-50 border-rosinha-escuro hover:scale-105 active:scale-95 lg:px-3" (click)="addCart()">
-                  Adicionar ao carrinho
-                </button>
-                <button class="h-12 px-5 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95 lg:px-3" (click)="buyingProduct()">
-                  Comprar
-                </button>
-              </div>
+              <div class="flex justify-end gap-2 xl:gap-3">
+                <div class="flex items-center">
+                  <button class="button-decrementa" (click)="decrementaBrigadeiro(i)">
+                    -
+                  </button>
+                  <div class="value-product">
+                    {{ valueProductBrigadeiro[i] }}
+                  </div>
+                  <button class="button-incrementa" (click)="incrementaBrigadeiro(i)">
+                    +
+                  </button>
+                </div>
+              <button class="button-cart" (click)="addCart(i, 'brigadeiro')">
+                <span class="button-cart-span material-symbols-outlined">
+                  shopping_cart
+                  </span>
+              </button>
             </div>
           </div>
         </div>
@@ -46,8 +55,9 @@
     </div>
   </div>
 </div>
+
 <div class="w-full ">
-  <div class="container mx-auto py-[70px] w-full">
+  <div class="xl:container mx-auto py-[70px] w-full md:px-3">
     <div class="flex items-center justify-between">
       <h1 class="pt-[1px] pb-[5px] text-4xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute before:w-[110px] before:top-[45px]">
         Trufas
@@ -59,34 +69,45 @@
         <img [src]="verMais" alt="" class="w-8">
       </a>
     </div>
-    <div class="grid grid-cols-1 gap-10 px-2 py-4 lg:grid-cols-2">
-      <div class="flex w-full p-2 bg-white rounded-lg shadow-lg" *ngFor="let trufa of trufasInicio">
+    <div class="grid grid-cols-1 gap-3 px-2 py-4 2xl:gap-10 lg:grid-cols-2">
+
+      <div class="flex w-full p-2 bg-white rounded-lg shadow-lg" *ngFor="let trufa of trufasInicio; let i = index">
         <div class="flex w-full">
-          <img [src]="trufa.image" alt="" class="max-w-[150px] max-h-[170px] hover:scale-110 duration-200 hover:rounded-l-2xl">
-          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
-          <div class="flex flex-col justify-between w-full pl-3">
+          <img [src]="trufa.image" alt="" class="xl:w-[170px] xl:h-[170px] w-[140px] h-[140px] hover:scale-110 duration-200">
+          <div class="flex flex-col justify-between w-full pl-0 border-l-2 border-solid xl:pl-3 lg:pl-1 border-rosinha-escuro lg:gap-3">
               <div class="flex flex-col">
-                <h4 class="flex items-center h-full p-2 text-xl font-medium">
-                  {{ trufa.title }}
-                </h4>
-                <p class="pl-2 text-neutral-500 max-w-[410px]">
+                <div class="flex items-center justify-between">
+                  <h5 class="flex items-center h-full p-2 text-xl font-semibold lg:p-1">
+                    {{ trufa.title }}
+                  </h5>
+                  <h4 class="pr-2 text-xl font-semibold lg:pr-1 lg:text-lg">
+                    {{  trufa.value}}
+                  </h4>
+                </div>
+                <p class="pl-2 text-neutral-500 xl:text-base  2xl:max-w-[410px] xl:max-w-[300px] lg:pl-1 lg:text-sm lg:max-w-[250px]">
                   {{ trufa.description }}
                 </p>
               </div>
 
-            <div class="flex items-center justify-between">
-              <h5 class="pl-2 text-xl font-semibold">
-                R$ 4,50
-              </h5>
-              <div class="flex justify-end gap-3">
-                <button class="h-12 px-5 transition-all duration-200 border-2 border-solid rounded shadow-md text-rosinha-escuro bg-slate-50 border-rosinha-escuro hover:scale-105 active:scale-95 lg:px-3" (click)="addCart()">
-                  Adicionar ao carrinho
-                </button>
-                <button class="h-12 px-5 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95 lg:px-3" (click)="buyingProduct()">
-                  Comprar
-                </button>
-              </div>
-            </div>
+
+
+              <div class="flex justify-end gap-2 xl:gap-3">
+                <div class="flex items-center">
+                  <button class="button-decrementa" (click)="decrementaTrufa(i)">
+                    -
+                  </button>
+                  <div class="value-product">
+                    {{ valueProductTrufa[i] }}
+                  </div>
+                  <button class="button-incrementa" (click)="incrementaTrufa(i)">
+                    +
+                  </button>
+                </div>
+              <button class="button-cart" (click)="addCart(i, 'trufa')">
+                <span class=" material-symbols-outlined button-cart-span">
+                  shopping_cart
+                  </span>
+              </button>
           </div>
         </div>
       </div>
@@ -94,7 +115,7 @@
   </div>
 </div>
 <div class="w-full">
-  <div class="container mx-auto py-[70px] w-full">
+  <div class="xl:container mx-auto py-[70px] w-full md:px-3">
     <div class="flex items-center justify-between">
       <h1 class="pt-[1px] pb-[5px] text-4xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute before:w-[150px] before:top-[45px] before:rounded ">
         Bebidas
@@ -106,34 +127,43 @@
         <img [src]="verMais" alt="" class="w-8">
       </a>
     </div>
-    <div class="grid grid-cols-1 gap-10 px-2 py-4 lg:grid-cols-2 ">
+    <div class="grid grid-cols-1 gap-3 px-2 py-4 2xl:gap-10 lg:grid-cols-2">
 
-      <div class="flex w-full p-2 bg-white rounded-lg shadow-lg"  *ngFor="let bebida of bebidasInicio">
+      <div class="flex w-full p-2 bg-white rounded-lg shadow-lg"  *ngFor="let bebida of bebidasInicio; let i = index">
         <div class="flex w-full">
-          <img [src]="bebida.image" alt="" class="max-w-[170px] max-h-[170px] hover:scale-110 duration-200 hover:rounded-2xl">
-          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
-          <div class="flex flex-col justify-between w-full pl-3">
+          <img [src]="bebida.image" alt="" class="xl:w-[170px] xl:h-[170px] w-[140px] h-[140px] hover:scale-110 duration-200">
+          <div class="flex flex-col justify-between w-full pl-0 border-l-2 border-solid xl:pl-3 lg:pl-1 border-rosinha-escuro lg:gap-3">
               <div class="flex flex-col">
-                <h4 class="flex items-center h-full p-2 text-xl font-medium">
-                  {{ bebida.title }}
-                </h4>
-                <p class="pl-2 text-neutral-500">
+                <div class="flex items-center justify-between">
+                  <h5 class="flex items-center h-full p-2 text-xl font-semibold lg:p-1">
+                    {{ bebida.title }}
+                  </h5>
+                  <h4 class="pr-2 text-xl font-semibold lg:pr-1 lg:text-lg">
+                    {{ bebida.value }}
+                  </h4>
+                </div>
+                <p class="pl-2 text-neutral-500 xl:text-base  2xl:max-w-[410px] xl:max-w-[300px] lg:pl-1 lg:text-sm lg:max-w-[250px]">
                   {{ bebida.description }}
                 </p>
               </div>
 
-            <div class="flex items-center justify-between">
-              <h5 class="pl-2 text-xl font-semibold">
-                R$ 6,00
-              </h5>
-              <div class="flex justify-end gap-3">
-                <button class="h-12 px-5 transition-all duration-200 border-2 border-solid rounded shadow-md text-rosinha-escuro bg-slate-50 border-rosinha-escuro hover:scale-105 active:scale-95 lg:px-3" (click)="addCart()">
-                  Adicionar ao carrinho
-                </button>
-                <button class="h-12 px-5 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95 lg:px-3" (click)="buyingProduct()">
-                  Comprar
-                </button>
-              </div>
+              <div class="flex justify-end gap-2 xl:gap-3">
+                <div class="flex items-center">
+                  <button class="button-decrementa" (click)="decrementaBebida(i)">
+                    -
+                  </button>
+                  <div class="value-product">
+                    {{ valueProductBebida[i] }}
+                  </div>
+                  <button class="button-incrementa" (click)="incrementaBebida(i)">
+                    +
+                  </button>
+                </div>
+              <button class="button-cart" (click)="addCart(i, 'bebida')">
+                <span class=" material-symbols-outlined button-cart-span">
+                  shopping_cart
+                  </span>
+              </button>
             </div>
           </div>
         </div>

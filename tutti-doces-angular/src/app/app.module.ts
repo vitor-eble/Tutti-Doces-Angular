@@ -7,6 +7,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { BrigadeirosComponent } from './brigadeiros/brigadeiros.component';
 import { TrufasComponent } from './trufas/trufas.component';
 import { BebidasComponent } from './bebidas/bebidas.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BebidasComponent } from './bebidas/bebidas.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
