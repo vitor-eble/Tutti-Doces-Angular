@@ -9,7 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'tutti-doces-angular';
 
-  menu(){
-    alert('menu clicado')
+  menuAberto: boolean = false
+
+  menuOpen(){
+    this.menuAberto = !this.menuAberto;
   }
 }

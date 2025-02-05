@@ -11,5 +11,9 @@
 } */
 
 .title-nav {
-  @apply md:text-4xl text-3xl font-bold cursor-pointer relative  before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-white before:w-0 before:top-[37px] before:transition-all before:duration-500 md:hover:before:w-[215px] pl-3 hover:before:w-[184px]
+  @apply md:text-4xl text-3xl font-bold cursor-pointer relative  before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-white before:w-0 before:top-[37px] before:transition-all before:duration-500 md:hover:before:w-[215px] pl-3 md:pl-0 hover:before:w-[184px]
+}
+
+.menu-cll {
+  @apply block w-full py-2 rounded hover:bg-rosinha bg-rosinha font-medium active:bg-rosinha-escuro transition-all duration-200 active:scale-95
 }
