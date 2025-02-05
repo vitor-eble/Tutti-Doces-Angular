@@ -17,7 +17,7 @@ export class BebidasService {
     {
       id: 3002,
       image: 'https://avatars.mds.yandex.net/i?id=035927d5a0b3fc3091baad09a45f5c5671cf3996297c55ab-12753080-images-thumbs&n=13',
-      title: 'Refrigerante Guaraná Antarctica',
+      title: 'Refrigerante Guaraná',
       description: '350ml',
       value: 'R$ 6,00'
     },

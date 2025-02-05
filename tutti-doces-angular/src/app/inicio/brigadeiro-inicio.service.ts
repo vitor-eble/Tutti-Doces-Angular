@@ -17,7 +17,7 @@ export class BrigadeiroInicioService {
     {
       id: 1002,
       image: 'https://dolcebrigadeiro.ch/modules/advancedcms/uploads/AdvancedCmsBlockImage/48-Brigadeiro_Passionsfrucht_Schokolade.png',
-      title: 'Brigadeiro de chocolate ao leite',
+      title: 'Brigadeiro de chocolate',
       description: 'Brigadeiro gourmet de puro chocolate ao leite suiço',
       value: 'R$ 3,00'
     },

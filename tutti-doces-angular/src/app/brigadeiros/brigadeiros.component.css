@@ -1,20 +1,21 @@
-/* .titulo {
-  padding: 10px 0 5px 0;
-    font-size: 2.2rem;
-    position: relative;
-    margin-left: 10px;
-    color: #000;
-} */
+.button-decrementa {
+  @apply flex items-center justify-center h-12 transition-all duration-200 border-2 border-solid rounded-l lg:w-10 xl:w-12 border-rosinha-escuro active:bg-custom-gradient active:text-white md:w-8;
+}
 
+.value-product {
+  @apply flex items-center justify-center h-12 text-center border-solid outline-none lg:w-10 xl:w-12 border-y-2 border-rosinha-escuro md:w-8;
+}
 
+.button-incrementa {
+  @apply flex items-center justify-center h-12 transition-all duration-200 border-2 border-solid rounded-r lg:w-10 xl:w-12 border-rosinha-escuro active:bg-custom-gradient active:text-white md:w-8;
+}
 
-/* .titulo::before {
-  content: "";
-  position: absolute;
-  border-bottom: 5px solid rgba(240,128,128,1) ;
-  border-radius: 5px;
-  width: 200px;
-  top: 60px;
-} */
+.button-cart {
+  @apply h-12 text-white transition-all duration-200 rounded shadow-md lg:px-7 xl:px-10 bg-custom-gradient hover:scale-105 active:scale-95 md:px-4;
+
+  & .button-cart-span {
+    @apply flex items-center justify-center px-5;
+  }
+}
 
 

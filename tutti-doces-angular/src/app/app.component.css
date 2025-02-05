@@ -1,5 +1,5 @@
 /* .logo {
-  @apply text-4xl cursor-pointer relative font-semibold;
+  @apply relative text-4xl font-semibold cursor-pointer;
 }
 
 .logo::before {
@@ -9,3 +9,7 @@
 .logo:hover::before {
   @apply before:w-[215px];
 } */
+
+.title-nav {
+  @apply md:text-4xl text-3xl font-bold cursor-pointer relative  before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-white before:w-0 before:top-[37px] before:transition-all before:duration-500 md:hover:before:w-[215px] pl-3 hover:before:w-[184px]
+}

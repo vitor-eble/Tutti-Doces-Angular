@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tutti-doces-angular';
+
+  menu(){
+    alert('menu clicado')
+  }
 }

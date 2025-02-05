@@ -1,37 +1,45 @@
 <div class="w-full">
-  <div class="container mx-auto py-[70px] w-full">
+  <div class="xl:container mx-auto py-[70px] w-full md:px-3">
     <h1 class="pt-[1px] pb-[5px] text-4xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute before:w-[200px] before:top-[45px] rounded">
       Brigadeiros
     </h1>
-    <div class="grid grid-cols-1 gap-10 px-2 py-4 lg:grid-cols-2 ">
+    <div class="grid grid-cols-1 gap-3 px-2 py-4 2xl:gap-10 lg:grid-cols-2">
 
-      <div class="flex w-full p-2 bg-white rounded-lg shadow-lg" *ngFor="let brigadeiro of brigadeiros">
+      <div class="flex w-full p-2 bg-white rounded-lg shadow-lg" *ngFor="let brigadeiro of brigadeiros; let i = index">
         <div class="flex w-full">
-          <img [src]="brigadeiro.image" alt="" class="max-w-[170px] max-h-[170px] hover:scale-110 duration-200">
-          <div class="w-1 h-full rounded-lg bg-rosinha"></div>
-          <div class="flex flex-col justify-between w-full pl-3">
+          <img [src]="brigadeiro.image" alt="" class="xl:w-[170px] xl:h-[170px] w-[140px] h-[140px] hover:scale-110 duration-200">
+          <div class="flex flex-col justify-between w-full pl-0 border-l-2 border-solid xl:pl-3 lg:pl-1 border-rosinha-escuro lg:gap-3">
               <div class="flex flex-col">
-                <h4 class="flex items-center h-full p-2 text-xl font-medium">
-                  {{ brigadeiro.title }}
-                </h4>
-                <p class="pl-2 text-neutral-500 max-w-[410px]">
+                <div class="flex items-center justify-between">
+                  <h5 class="flex items-center h-full p-2 text-xl font-semibold lg:p-1">
+                    {{ brigadeiro.title }}
+                  </h5>
+                  <h4 class="pr-2 text-xl font-semibold lg:pr-1 lg:text-lg">
+                    {{ brigadeiro.value }}
+                  </h4>
+                </div>
+                <p class="pl-2 text-neutral-500 xl:text-base  2xl:max-w-[410px] xl:max-w-[300px] lg:pl-1 lg:text-sm lg:max-w-[250px]">
                   {{ brigadeiro.description }}
                 </p>
               </div>
 
-            <div class="flex items-center justify-between">
-              <h5 class="pl-2 text-xl font-semibold">
-                R$ 3,00
-              </h5>
-              <div class="flex justify-end gap-3">
-                <button class="h-12 px-5 transition-all duration-200 border-2 border-solid rounded shadow-md text-rosinha-escuro bg-slate-50 border-rosinha-escuro hover:scale-105 active:scale-95">
-                  Adicionar ao carrinho
-                </button>
-                <button class="h-12 px-5 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95">
-                  Comprar
-                </button>
-              </div>
-            </div>
+              <div class="flex justify-end gap-2 xl:gap-3">
+                <div class="flex items-center">
+                  <button class="button-decrementa" (click)="decrementaBrigadeiro(i)">
+                    -
+                  </button>
+                  <div class="value-product">
+                    {{ valueProductBrigaidero[i] }}
+                  </div>
+                  <button class="button-incrementa" (click)="incrementaBrigaidero(i)">
+                    +
+                  </button>
+                </div>
+              <button class="button-cart" >
+                <span class="button-cart-span material-symbols-outlined" (click)="addCart(i, 'brigadeiro')">
+                  shopping_cart
+                  </span>
+              </button>
           </div>
         </div>
       </div>

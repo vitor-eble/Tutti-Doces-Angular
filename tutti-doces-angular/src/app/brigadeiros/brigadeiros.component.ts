@@ -12,11 +12,36 @@ import { Card } from '../card.modal';
 export class BrigadeirosComponent implements OnInit {
 
   brigadeiros: Card[] = [];
+  valueProductBrigaidero: number[] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
   constructor(private brigadeiroService: BrigadeirosService){ }
 
   ngOnInit() {
     this.brigadeiros = this.brigadeiroService.getBrigadeiros()
+  }
+
+  decrementaBrigadeiro(index: number) {
+    if(this.valueProductBrigaidero[index] > 1){
+      this.valueProductBrigaidero[index]--;
+    }
+  }
+
+  incrementaBrigaidero(index: number){
+    this.valueProductBrigaidero[index]++
+  }
+
+  addCart(index: number, tipo: string){
+    let produto: Card | undefined;
+    let quantidade = 1;
+
+    if( tipo === 'brigadeiro'){
+      produto = this.brigadeiros[index];
+      quantidade = this.valueProductBrigaidero[index];
+    }
+
+    if(produto) {
+      alert(` Você adicionou ${quantidade}x ${produto.title} ao carrinho! `)
+    }
   }
 
 }
