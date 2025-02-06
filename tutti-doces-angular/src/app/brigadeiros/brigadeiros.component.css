@@ -19,7 +19,7 @@
 }
 
 .card-produto-preco {
-  @apply md:pr-2 xl:text-xl font-semibold lg:pr-1 lg:text-lg text-sm pt-1 w-16 flex items-start
+  @apply md:pr-2 xl:text-xl font-semibold lg:pr-1 lg:text-lg text-sm pt-1 md:w-20 w-16 flex items-start justify-end
 }
 
 .card-produto-description {

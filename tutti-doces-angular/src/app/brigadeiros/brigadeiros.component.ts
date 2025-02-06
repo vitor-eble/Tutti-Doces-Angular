@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BrigadeirosService } from './brigadeiros.service';
 import { Card } from '../card.modal';
 
@@ -11,10 +11,14 @@ import { Card } from '../card.modal';
 })
 export class BrigadeirosComponent implements OnInit {
 
+  @Input() produto: any = {}
+
   brigadeiros: Card[] = [];
   valueProductBrigaidero: number[] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
-  constructor(private brigadeiroService: BrigadeirosService){ }
+  constructor(
+    private brigadeiroService: BrigadeirosService,
+  ){ }
 
   ngOnInit() {
     this.brigadeiros = this.brigadeiroService.getBrigadeiros()

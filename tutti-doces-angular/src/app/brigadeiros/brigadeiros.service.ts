@@ -10,7 +10,7 @@ export class BrigadeirosService {
     {
       id: 1001,
       image: 'https://dolcebrigadeiro.ch/modules/advancedcms/uploads/AdvancedCmsBlockImage/28-Brigadeiro_Klassisch.png',
-      title: 'Clássico',
+      title: 'Brigadeiro clássico',
       description: 'Brigadeiro de chocolate meio-amargo com cacau 54%',
       value: 'R$ 3,00'
     },

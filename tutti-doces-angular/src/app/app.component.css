@@ -17,3 +17,17 @@
 .menu-cll {
   @apply block w-full py-2 rounded bg-white font-medium  transition-all duration-200 active:scale-95
 }
+
+.menu-pc-middle {
+  @apply text-base font-bold text-black p-1
+}
+
+.menu-pc-middle.active {
+  @apply text-white border-b-2 border-solid border-white
+}
+
+.menu-pc-right {
+  @apply flex gap-1 text-base font-bold text-black
+}
+
+
