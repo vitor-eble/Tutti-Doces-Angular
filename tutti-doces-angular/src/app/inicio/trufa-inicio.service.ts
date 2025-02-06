@@ -10,7 +10,7 @@ export class TrufaInicioService {
     {
       id: 2001,
       image: 'https://acdn.mitiendanube.com/stores/001/071/840/products/truffa_06-f56c7232acd3da347217271804971475-480-0.webp',
-      title: 'Trufa de brigadeiro 30g',
+      title: 'Trufa brigadeiro 30g',
       description: 'Trufa de chocolate ao leite  com creme de brigadeiro',
       value: 'R$ 4,50'
     },

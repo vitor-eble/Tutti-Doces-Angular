@@ -11,7 +11,7 @@ export class BrigadeirosService {
       id: 1001,
       image: 'https://dolcebrigadeiro.ch/modules/advancedcms/uploads/AdvancedCmsBlockImage/28-Brigadeiro_Klassisch.png',
       title: 'Clássico',
-      description: 'Brigadeiro de chocolate meio-amargo com cacau 54%, o tradicional brigadeiro gourmet',
+      description: 'Brigadeiro de chocolate meio-amargo com cacau 54%',
       value: 'R$ 3,00'
     },
     {

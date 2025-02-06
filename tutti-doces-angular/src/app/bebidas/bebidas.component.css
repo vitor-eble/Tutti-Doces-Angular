@@ -1,19 +1,47 @@
+.cards {
+  @apply grid grid-cols-1 gap-3 px-2 py-4 2xl:gap-10 lg:grid-cols-2
+}
+
+.card {
+  @apply flex w-full p-2 bg-white rounded-lg shadow-lg
+}
+
+.card-produto-image {
+  @apply xl:w-[170px] xl:h-[170px] w-[140px] h-[140px] hover:scale-110 duration-200
+}
+
+.card-description {
+  @apply flex flex-col justify-between w-full pl-0 border-l-2 border-solid xl:pl-3 lg:pl-1 border-rosinha-escuro lg:gap-3
+}
+
+.card-produto-titulo {
+  @apply flex items-center h-full xl:p-2 xl:text-xl font-semibold lg:p-1 lg:text-lg pl-2 pt-1 text-base
+}
+
+.card-produto-preco {
+  @apply md:pr-2 xl:text-xl font-semibold lg:pr-1 lg:text-lg text-sm pt-1 w-16 flex items-start justify-end
+}
+
+.card-produto-description {
+  @apply pl-2 text-neutral-500 xl:text-base  2xl:max-w-[410px] xl:max-w-[300px] lg:pl-1 lg:text-sm lg:max-w-[250px] text-sm
+}
+
 .button-decrementa {
-  @apply flex items-center justify-center h-12 transition-all duration-200 border-2 border-solid rounded-l lg:w-10 xl:w-12 border-rosinha-escuro active:bg-custom-gradient active:text-white md:w-8;
+  @apply flex items-center justify-center h-12 transition-all duration-200 border-2 border-solid rounded-l w-7 md:w-10 xl:w-12 border-rosinha-escuro active:bg-custom-gradient active:text-white;
 }
 
 .value-product {
-  @apply flex items-center justify-center h-12 text-center border-solid outline-none lg:w-10 xl:w-12 border-y-2 border-rosinha-escuro md:w-8;
+  @apply flex items-center justify-center h-12 text-center border-solid outline-none w-7 md:w-10 xl:w-12 border-y-2 border-rosinha-escuro;
 }
 
 .button-incrementa {
-  @apply flex items-center justify-center h-12 transition-all duration-200 border-2 border-solid rounded-r lg:w-10 xl:w-12 border-rosinha-escuro active:bg-custom-gradient active:text-white md:w-8;
+  @apply flex items-center justify-center h-12 transition-all duration-200 border-2 border-solid rounded-r w-7 md:w-10 xl:w-12 border-rosinha-escuro active:bg-custom-gradient active:text-white;
 }
 
 .button-cart {
-  @apply h-12 text-white transition-all duration-200 rounded shadow-md lg:px-7 xl:px-10 bg-custom-gradient hover:scale-105 active:scale-95 md:px-4;
+  @apply h-12 text-white transition-all duration-200 rounded shadow-md px-7 md:px-7 xl:px-10 bg-custom-gradient hover:scale-105 active:scale-95;
 
   & .button-cart-span {
-    @apply flex items-center justify-center px-5;
+    @apply flex items-center justify-center md:px-5;
   }
 }

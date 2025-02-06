@@ -11,7 +11,15 @@ export class AppComponent {
 
   menuAberto: boolean = false
 
-  menuOpen(){
+  menuOpen() {
     this.menuAberto = !this.menuAberto;
+    console.log("Menu aberto:", this.menuAberto);
   }
+
+  closeMenu() {
+    this.menuAberto = false;
+    console.log("Menu fechado:", this.menuAberto);
+  }
+
+  // (click)="menuAberto = false"
 }

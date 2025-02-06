@@ -1,14 +1,14 @@
 <div class="w-full">
-  <div class="xl:container mx-auto py-[70px] w-full md:px-3">
+  <div class="xl:container mx-auto py-[70px] w-full md:px-3 px-1">
     <div class="flex items-center justify-between">
-      <h1 class="pt-[1px] pb-[5px] text-4xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute before:w-[200px] before:top-[45px] before:rounded">
+      <h1 class="pt-[1px] pb-[5px] md:text-4xl text-3xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute before:md:w-[200px] md:before:top-[45px] before:top-[40px] before:rounded before:w-[169px]">
         Brigadeiros
       </h1>
-      <a class="flex items-center w-[142px] gap-1 relative before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-rosinha-escuro before:w-0 before:top-[30px] before:transition-all before:duration-500 hover:before:w-[140px] hover:before:rounded mr-2" routerLink="/brigadeiros">
-        <h2 class="text-2xl">
+      <a class="flex justify-end items-center w-[142px] gap-1 relative before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-rosinha-escuro before:w-0 before:top-[30px] before:transition-all before:duration-500 hover:before:w-[140px] hover:before:rounded mr-2" routerLink="/brigadeiros">
+        <h2 class="text-base md:text-2xl">
           Ver mais
         </h2>
-        <img [src]="verMais" alt="" class="w-8">
+        <img [src]="verMais" alt="" class="w-6 md:w-8">
       </a>
     </div>
     <div class="cards">
@@ -18,7 +18,7 @@
           <img [src]="brigadeiro.image" alt="" class="card-produto-image">
           <div class="card-description">
             <div class="flex flex-col">
-              <div class="flex items-center justify-between">
+              <div class="flex items-start justify-between md:items-center">
                 <h5 class="card-produto-titulo">
                   {{ brigadeiro.title }}
                 </h5>
@@ -59,14 +59,14 @@
 <div class="w-full ">
   <div class="xl:container mx-auto py-[70px] w-full md:px-3">
     <div class="flex items-center justify-between">
-      <h1 class="pt-[1px] pb-[5px] text-4xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute before:w-[110px] before:top-[45px]">
+      <h1 class="pt-[1px] pb-[5px] md:text-4xl text-3xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute md:before:w-[110px] md:before:top-[45px] before:top-[40px] before:w-[93px]">
         Trufas
       </h1>
-      <a class="flex items-center w-[142px] gap-1 relative before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-rosinha-escuro before:w-0 before:top-[30px] before:transition-all before:duration-500 hover:before:w-[140px] hover:before:rounded mr-2" routerLink="/trufas">
-        <h2 class="text-2xl">
+      <a class="flex justify-end items-center w-[142px] gap-1 relative before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-rosinha-escuro before:w-0 before:top-[30px] before:transition-all before:duration-500 hover:before:w-[140px] hover:before:rounded mr-2" routerLink="/trufas">
+        <h2 class="text-base md:text-2xl">
           Ver mais
         </h2>
-        <img [src]="verMais" alt="" class="w-8">
+        <img [src]="verMais" alt="" class="w-6 md:w-8">
       </a>
     </div>
     <div class="cards">
@@ -76,7 +76,7 @@
           <img [src]="trufa.image" alt="" class="card-produto-image">
           <div class="card-description">
             <div class="flex flex-col">
-              <div class="flex items-center justify-between">
+              <div class="flex items-start justify-between md:items-center">
                 <h5 class="card-produto-titulo">
                   {{ trufa.title }}
                 </h5>
@@ -89,7 +89,7 @@
               </p>
             </div>
             <div class="flex justify-end gap-2 xl:gap-3">
-              <div class="flex items-center">
+              <div class="flex items-center shadow-md">
                 <button class="button-decrementa" (click)="decrementaBrigadeiro(i)">
                   -
                 </button>
@@ -114,14 +114,14 @@
 <div class="w-full">
   <div class="xl:container mx-auto py-[70px] w-full md:px-3">
     <div class="flex items-center justify-between">
-      <h1 class="pt-[1px] pb-[5px] text-4xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute before:w-[150px] before:top-[45px] before:rounded ">
+      <h1 class="pt-[1px] pb-[5px] md:text-4xl text-3xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute md:before:w-[150px] md:before:top-[45px] before:rounded before:w-[121px] before:top-[40px]">
         Bebidas
       </h1>
-      <a class="flex items-center w-[142px] gap-1 relative before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-rosinha-escuro before:w-0 before:top-[30px] before:transition-all before:duration-500 hover:before:w-[140px] hover:before:rounded mr-2" routerLink="/bebidas">
-        <h2 class="text-2xl">
+      <a class="flex justify-end items-center w-[142px] gap-1 relative before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-rosinha-escuro before:w-0 before:top-[30px] before:transition-all before:duration-500 hover:before:w-[140px] hover:before:rounded mr-2" routerLink="/bebidas">
+        <h2 class="text-base md:text-2xl">
           Ver mais
         </h2>
-        <img [src]="verMais" alt="" class="w-8">
+        <img [src]="verMais" alt="" class="w-6 md:w-8">
       </a>
     </div>
     <div class="cards">
@@ -131,7 +131,7 @@
           <img [src]="bebida.image" alt="" class="card-produto-image">
           <div class="card-description">
               <div class="flex flex-col">
-                <div class="flex items-center justify-between">
+                <div class="flex items-start justify-between md:items-center">
                   <h5 class="card-produto-titulo">
                     {{ bebida.title }}
                   </h5>

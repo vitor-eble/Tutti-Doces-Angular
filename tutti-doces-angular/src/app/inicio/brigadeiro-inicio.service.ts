@@ -17,7 +17,7 @@ export class BrigadeiroInicioService {
     {
       id: 1002,
       image: 'https://dolcebrigadeiro.ch/modules/advancedcms/uploads/AdvancedCmsBlockImage/48-Brigadeiro_Passionsfrucht_Schokolade.png',
-      title: 'Brigadeiro de chocolate',
+      title: 'Brigadeiro chocolate',
       description: 'Brigadeiro gourmet de puro chocolate ao leite suiço',
       value: 'R$ 3,00'
     },
@@ -31,7 +31,7 @@ export class BrigadeiroInicioService {
     {
       id: 1004,
       image: 'https://dolcebrigadeiro.ch/modules/advancedcms/uploads/AdvancedCmsBlockImage/31-Brigadeiro_Beijinho.png',
-      title: 'Brigadeiro de beijinho',
+      title: 'Brigadeiro beijinho',
       description: 'Brigadeiro de coco, o tradicional beijinho gourmet',
       value: 'R$ 3,00'
     }

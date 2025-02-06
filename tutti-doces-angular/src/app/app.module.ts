@@ -8,6 +8,7 @@ import { BrigadeirosComponent } from './brigadeiros/brigadeiros.component';
 import { TrufasComponent } from './trufas/trufas.component';
 import { BebidasComponent } from './bebidas/bebidas.component';
 import { FormsModule } from '@angular/forms';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     BrigadeirosComponent,
     TrufasComponent,
     BebidasComponent,
+    CarrinhoComponent,
   ],
   imports: [
     BrowserModule,
