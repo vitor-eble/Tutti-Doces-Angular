@@ -9,6 +9,8 @@ import { TrufasComponent } from './trufas/trufas.component';
 import { BebidasComponent } from './bebidas/bebidas.component';
 import { FormsModule } from '@angular/forms';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { CarrinhoComprasComponent } from './carrinho/carrinho-compras/carrinho-compras.component';
+import { CarrinhoResumoComponent } from './carrinho/carrinho-resumo/carrinho-resumo.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
     TrufasComponent,
     BebidasComponent,
     CarrinhoComponent,
+    CarrinhoComprasComponent,
+    CarrinhoResumoComponent,
   ],
   imports: [
     BrowserModule,

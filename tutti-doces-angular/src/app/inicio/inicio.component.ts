@@ -96,7 +96,7 @@ export class InicioComponent implements OnInit {
     if (produtoSelecionado) {
       console.log(`Adicionando ao carrinho: ${quantidade}x ${produtoSelecionado.title}`);
       this.carrinhoService.adicionarProduto(produtoSelecionado, quantidade)
-      alert(` Você adicionou ${quantidade}x ${produtoSelecionado.title} ao carrinho!`);
+      // alert(` Você adicionou ${quantidade}x ${produtoSelecionado.title} ao carrinho!`);
     } else {
       console.error('produto não encontrado para o tipo', tipo);
     }

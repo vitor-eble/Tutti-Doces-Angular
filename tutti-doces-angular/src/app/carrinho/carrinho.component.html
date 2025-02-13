@@ -1,56 +1,14 @@
 <div class="w-full">
-  <div class="xl:container mx-auto py-[70px] w-full md:px-3 px-1">
+  <div class="xl:container mx-auto py-[70px] w-full md:px-3 px-2">
 
-    <div class="pb-5">
+    <div class="px-2 pb-5">
       <h1 class="border-b-[3px] border-solid md:text-4xl text-3xl border-rosinha-escuro">
         Meu carrinho
       </h1>
     </div>
 
-    <div class="grid lg:grid-cols-[1fr_400px] grid-cols-1 gap-5">
-      <div class="flex flex-col gap-3">
-        <div class="card" *ngFor="let item of produtos">
-          <div class="flex w-full">
-            <img [src]="item.produto.image" alt="" class="card-produto-image">
-            <div class="card-description">
-              <div class="flex flex-col">
-                <div class="flex items-start justify-between md:items-center">
-                  <h5 class="card-produto-titulo">
-                    {{ item.produto.title }}
-                  </h5>
-                  <h4 class="card-produto-preco">
-                    {{ item.produto.value }}
-                  </h4>
-                </div>
-                <p class="card-produto-description">
-                  {{ item.produto.description }}
-                </p>
-              </div>
-
-              <div class="flex justify-end gap-2 xl:gap-3">
-                <div class="flex items-center">
-                  <button class="button-decrementa" (click)="decrementaQuantidade(item.produto)">
-                    -
-                  </button>
-                  <div class="value-product">
-                    {{ item.quantidade }}
-                  </div>
-                  <button class="button-incrementa" (click)="incrementaQuantidade(item.produto)">
-                    +
-                  </button>
-                </div>
-                <button class="button-cart" (click)="removerProduto(item.produto)">
-                  <span class="button-cart-span">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-                      <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
-                    </svg>
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="grid xl:grid-cols-[1fr_400px] lg:grid-cols-[1fr_300px] grid-cols-1 gap-5">
+      <app-carrinho-compras></app-carrinho-compras>
       <div class="">
         a
       </div>
