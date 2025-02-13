@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
 import { TrufaInicioService } from './trufa-inicio.service';
 import { BrigadeiroInicioService } from './brigadeiro-inicio.service';
 import { BebidasInicioService } from './bebidas-inicio.service';
 import { Card } from '../card.modal';
+import { CarrinhoService } from './../carrinho/carrinho.service';
 
 @Component({
   selector: 'app-inicio',
@@ -27,13 +29,18 @@ export class InicioComponent implements OnInit {
   constructor(
     private trufaInicioService: TrufaInicioService,
     private brigadeiroInicioService: BrigadeiroInicioService,
-    private bebidasInicioService: BebidasInicioService
+    private bebidasInicioService: BebidasInicioService,
+    private carrinhoService: CarrinhoService
   ){  }
 
   ngOnInit() {
     this.trufasInicio = this.trufaInicioService.getTrufasInicio();
     this.brigadeiroInicio = this.brigadeiroInicioService.getBrigadeiroInicio()
-    this.bebidasInicio = this.bebidasInicioService.getBebidasInicio()
+    this.bebidasInicio = this.bebidasInicioService.getBebidasInicio();
+
+    console.log('Lista de Brigadeiros:', this.brigadeiroInicio);
+    console.log('Lista de Trufas:', this.trufasInicio);
+    console.log('Lista de Bebidas:', this.bebidasInicio);
   }
 
   decrementaBrigadeiro(index: number){
@@ -67,22 +74,31 @@ export class InicioComponent implements OnInit {
   }
 
   addCart(index: number, tipo: string) {
-    let produto: Card | undefined;
+    let produtoSelecionado: Card | undefined;
     let quantidade = 1;
 
+    console.log('tipo de produto', tipo);
+
     if (tipo === 'brigadeiro') {
-      produto = this.brigadeiroInicio[index];
+      produtoSelecionado = this.brigadeiroInicio[index];
       quantidade = this.valueProductBrigadeiro[index];
+      console.log('Produto Selecionado (Brigadeiro):', produtoSelecionado);
     } else if (tipo === 'trufa') {
-      produto = this.trufasInicio[index];
+      produtoSelecionado = this.trufasInicio[index];
       quantidade = this.valueProductTrufa[index];
+      console.log('Produto Selecionado (Trufa):', produtoSelecionado);
     } else if (tipo === 'bebida') {
-      produto = this.bebidasInicio[index];
+      produtoSelecionado = this.bebidasInicio[index];
       quantidade = this.valueProductBebida[index];
+      console.log('Produto Selecionado (Bebida):', produtoSelecionado);
     }
 
-    if (produto) {
-      alert(` Você adicionou ${quantidade}x ${produto.title} ao carrinho!`);
+    if (produtoSelecionado) {
+      console.log(`Adicionando ao carrinho: ${quantidade}x ${produtoSelecionado.title}`);
+      this.carrinhoService.adicionarProduto(produtoSelecionado, quantidade)
+      alert(` Você adicionou ${quantidade}x ${produtoSelecionado.title} ao carrinho!`);
+    } else {
+      console.error('produto não encontrado para o tipo', tipo);
     }
   }
 }
