@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { TrufaService } from './trufa.service';
 import { Card } from '../card.modal';
+import { CarrinhoService } from '../carrinho/carrinho.service';
 
 @Component({
   selector: 'app-trufas',
@@ -14,7 +16,10 @@ export class TrufasComponent implements OnInit {
   trufas: Card[] = [];
   valueProductTrufa: number[] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
-  constructor(private TrufaService: TrufaService) { }
+  constructor(
+    private TrufaService: TrufaService,
+    private carrinhoService: CarrinhoService
+  ) { }
 
   ngOnInit(){
     this.trufas = this.TrufaService.getTrufas();
@@ -31,16 +36,16 @@ export class TrufasComponent implements OnInit {
   }
 
   addCart(index: number, tipo: string){
-    let produto: Card | undefined;
+    let produtoSelecionado: Card | undefined;
     let quantidade = 1;
 
     if(tipo === 'trufa'){
-      produto = this.trufas[index];
+      produtoSelecionado = this.trufas[index];
       quantidade = this.valueProductTrufa[index];
     }
 
-    if(produto) {
-      alert(` Você adicionou ${quantidade}x ${produto.title} ao carrinho!`);
+    if(produtoSelecionado) {
+      this.carrinhoService.adicionarProduto(produtoSelecionado, quantidade)
     }
   }
 }

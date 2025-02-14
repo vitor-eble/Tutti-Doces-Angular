@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+
 import { BrigadeirosService } from './brigadeiros.service';
 import { Card } from '../card.modal';
+import { CarrinhoService } from '../carrinho/carrinho.service';
 
 @Component({
   selector: 'app-brigadeiros',
@@ -18,6 +20,7 @@ export class BrigadeirosComponent implements OnInit {
 
   constructor(
     private brigadeiroService: BrigadeirosService,
+    private carrinhoService: CarrinhoService
   ){ }
 
   ngOnInit() {
@@ -35,16 +38,19 @@ export class BrigadeirosComponent implements OnInit {
   }
 
   addCart(index: number, tipo: string){
-    let produto: Card | undefined;
+    let produtoSelecionado: Card | undefined;
     let quantidade = 1;
-
-    if( tipo === 'brigadeiro'){
-      produto = this.brigadeiros[index];
-      quantidade = this.valueProductBrigaidero[index];
+    if(tipo === 'brigadeiro') {
+      produtoSelecionado = this.brigadeiros[index];
+      quantidade = this.valueProductBrigaidero[index]
     }
 
-    if(produto) {
-      alert(` Você adicionou ${quantidade}x ${produto.title} ao carrinho! `)
+
+    if(produtoSelecionado) {
+      this.carrinhoService.adicionarProduto(produtoSelecionado, quantidade)
+    } else {
+      console.error('produto nao econtrado para o tipo', tipo);
+
     }
   }
 

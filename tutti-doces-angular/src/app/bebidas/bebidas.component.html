@@ -15,7 +15,7 @@
                   {{ bebida.title }}
                 </h5>
                 <h4 class="card-produto-preco">
-                  {{ bebida.value }}
+                 {{ bebida.value | currency: 'BRL':'symbol':'1.2-2' }}
                 </h4>
               </div>
               <p class="card-produto-description">

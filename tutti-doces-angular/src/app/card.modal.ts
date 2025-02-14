@@ -3,5 +3,5 @@ export interface Card {
   image: string;
   title: string;
   description: string;
-  value: string;
+  value: number;
 }

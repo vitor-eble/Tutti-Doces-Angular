@@ -3,40 +3,41 @@
 }
 
 .card-produto-image {
-  @apply w-[140px] xl:w-[170px] xl:h-[170px]  h-[140px] hover:scale-110 duration-200 flex justify-center
-
+  @apply w-[140px] xl:w-[150px] xl:h-[150px]  h-[140px] hover:scale-110 duration-200 flex justify-center
 }
 
 .card-description {
-  @apply flex flex-col justify-between w-full border-t-2 border-solid  border-rosinha-escuro lg:gap-3
+  @apply flex flex-col justify-between w-full border-t-2 border-solid  border-rosinha-escuro gap-3 pt-1
 }
 
 .card-produto-titulo {
-  @apply flex items-center h-full xl:p-2 xl:text-xl font-semibold lg:p-1 lg:text-lg text-base
+  @apply flex items-center h-full pl-1  font-semibold lg:text-lg text-base
 }
 
 .card-produto-preco {
-  @apply  xl:text-xl font-semibold  lg:text-lg text-sm  md:w-20 w-16 flex items-start justify-end p-1 xl:w-24
+  @apply  xl:text-base font-semibold  lg:text-lg text-sm  md:w-20 w-16 2xl:w-20 flex items-start justify-end p-1
 }
 
 .card-produto-description {
-  @apply pl-2 text-neutral-500 xl:text-base  2xl:max-w-[410px] xl:max-w-[300px] lg:pl-1 lg:text-sm lg:max-w-[250px]  text-sm
+  @apply pl-1 text-neutral-500 2xl:max-w-[410px] xl:max-w-[300px]  lg:text-sm lg:max-w-[250px]  text-sm h-12
 }
 
 .button-decrementa {
-  @apply flex items-center justify-center h-12 transition-all duration-200 border-2 border-solid rounded-l w-7 md:w-10 xl:w-12 border-rosinha-escuro active:bg-custom-gradient active:text-white;
+  @apply flex items-center justify-center h-12 transition-all duration-200 active:bg-custom-gradient active:text-white;
 }
 
 .value-product {
-  @apply flex items-center justify-center h-12 text-center border-solid outline-none w-7 md:w-10 xl:w-12 border-y-2 border-rosinha-escuro;
+  @apply flex items-center justify-center h-12 text-center border-solid outline-none border-x-2 border-rosinha-escuro;
+  /* md:w-10 xl:w-12 2xl:w-[50px] w-7 */
 }
 
 .button-incrementa {
-  @apply flex items-center justify-center h-12 transition-all duration-200 border-2 border-solid rounded-r w-7 md:w-10 xl:w-12 border-rosinha-escuro active:bg-custom-gradient active:text-white;
+  @apply flex items-center justify-center h-12 transition-all duration-200 active:bg-custom-gradient active:text-white;
 }
 
 .button-cart {
-  @apply h-12 text-white transition-all duration-200 rounded shadow-md px-7 md:px-7 xl:px-10 bg-custom-gradient hover:scale-105 active:scale-95;
+  @apply h-[52px] text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95 w-1/2;
+  /* px-7 md:px-7 xl:px-10 */
 
   & .button-cart-span {
     @apply flex items-center justify-center md:px-5;

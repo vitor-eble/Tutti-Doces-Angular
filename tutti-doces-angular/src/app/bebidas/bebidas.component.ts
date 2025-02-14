@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { BebidasService } from './bebidas.service';
 import { Card } from '../card.modal';
+import { CarrinhoService } from '../carrinho/carrinho.service';
 
 @Component({
   selector: 'app-bebidas',
@@ -14,7 +16,10 @@ export class BebidasComponent implements OnInit {
   bebidas: Card[] = [];
   valueProductBebidas: number[] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
-  constructor(private bebidasService: BebidasService) { }
+  constructor(
+    private bebidasService: BebidasService,
+    private carrinhoService: CarrinhoService
+  ) { }
 
   ngOnInit(){
     this.bebidas = this.bebidasService.getBebidas()
@@ -31,16 +36,16 @@ export class BebidasComponent implements OnInit {
   }
 
   addCart(index: number, tipo: string){
-    let produto: Card | undefined;
+    let produtoSelecionado: Card | undefined;
     let quantidade = 1;
 
     if(tipo === 'bebida'){
-      produto = this.bebidas[index];
+      produtoSelecionado = this.bebidas[index];
       quantidade = this.valueProductBebidas[index];
     }
 
-    if(produto) {
-      alert(`Você adicionou${quantidade}x ${produto.title} ao carrinho! `)
+    if(produtoSelecionado) {
+      this.carrinhoService.adicionarProduto(produtoSelecionado, quantidade)
     }
   }
 }
