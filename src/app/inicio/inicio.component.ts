@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TrufaInicioService } from './trufa-inicio.service';
-import { BrigadeiroInicioService } from './brigadeiro-inicio.service';
-import { BebidasInicioService } from './bebidas-inicio.service';
 import { Card } from '../card.modal';
 import { CarrinhoService } from './../carrinho/carrinho.service';
+import { BrigadeirosService } from './../brigadeiros/brigadeiros.service';
+import { TrufaService } from '../trufas/trufa.service';
+import { BebidasService } from '../bebidas/bebidas.service';
 
 @Component({
   selector: 'app-inicio',
@@ -15,32 +15,27 @@ import { CarrinhoService } from './../carrinho/carrinho.service';
 })
 export class InicioComponent implements OnInit {
 
-  valueProductBrigadeiro: number[] = [1, 1, 1, 1];
-  valueProductTrufa: number[] = [1, 1, 1, 1];
-  valueProductBebida: number[] = [1, 1, 1, 1];
-
-
-  verMais: string = 'https://cdn-icons-png.flaticon.com/128/11431/11431124.png'
-
   trufasInicio: Card[] = [];
   brigadeiroInicio: Card[] = [];
   bebidasInicio: Card[] = [];
 
+  valueProductBrigadeiro: number[] = [1, 1, 1, 1];
+  valueProductTrufa: number[] = [1, 1, 1, 1];
+  valueProductBebida: number[] = [1, 1, 1, 1];
+
+  verMais: string = 'https://cdn-icons-png.flaticon.com/128/11431/11431124.png'
+
   constructor(
-    private trufaInicioService: TrufaInicioService,
-    private brigadeiroInicioService: BrigadeiroInicioService,
-    private bebidasInicioService: BebidasInicioService,
-    private carrinhoService: CarrinhoService
+    private carrinhoService: CarrinhoService,
+    private brigadeirosService: BrigadeirosService,
+    private trufasService: TrufaService,
+    private bebidasService: BebidasService,
   ){  }
 
   ngOnInit() {
-    this.trufasInicio = this.trufaInicioService.getTrufasInicio();
-    this.brigadeiroInicio = this.brigadeiroInicioService.getBrigadeiroInicio()
-    this.bebidasInicio = this.bebidasInicioService.getBebidasInicio();
-
-    console.log('Lista de Brigadeiros:', this.brigadeiroInicio);
-    console.log('Lista de Trufas:', this.trufasInicio);
-    console.log('Lista de Bebidas:', this.bebidasInicio);
+    this.brigadeiroInicio = this.brigadeirosService.getBrigadeiros().slice(0,4);
+    this.trufasInicio = this.trufasService.getTrufas().slice(0,4);
+    this.bebidasInicio = this.bebidasService.getBebidas().slice(0,4)
   }
 
   decrementaBrigadeiro(index: number){
