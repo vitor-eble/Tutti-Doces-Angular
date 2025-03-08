@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TrufaService } from './trufa.service';
-import { Card } from '../card.modal';
-import { CarrinhoService } from '../carrinho/carrinho.service';
+import { TrufaService } from '../../services/trufa.service';
+import { Card } from '../../card.modal';
+import { CarrinhoService } from '../../services/carrinho.service';
 
 @Component({
   selector: 'app-trufas',
   standalone: false,
-
   templateUrl: './trufas.component.html',
   styleUrl: './trufas.component.css'
 })

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Card } from '../card.modal';
-import { CarrinhoService } from './../carrinho/carrinho.service';
-import { BrigadeirosService } from './../brigadeiros/brigadeiros.service';
-import { TrufaService } from '../trufas/trufa.service';
-import { BebidasService } from '../bebidas/bebidas.service';
+import { Card } from '../../card.modal';
+import { CarrinhoService } from '../../services/carrinho.service';
+import { BrigadeirosService } from '../../services/brigadeiros.service';
+import { TrufaService } from '../../services/trufa.service';
+import { BebidasService } from '../../services/bebidas.service';
 
 @Component({
   selector: 'app-inicio',

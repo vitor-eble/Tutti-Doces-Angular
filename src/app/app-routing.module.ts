@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BrigadeirosComponent } from './brigadeiros/brigadeiros.component';
-import { InicioComponent } from './inicio/inicio.component';
-import { TrufasComponent } from './trufas/trufas.component';
-import { BebidasComponent } from './bebidas/bebidas.component';
-import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { BrigadeirosComponent } from './pages/brigadeiros/brigadeiros.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
+import { TrufasComponent } from './pages/trufas/trufas.component';
+import { BebidasComponent } from './pages/bebidas/bebidas.component';
+import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
