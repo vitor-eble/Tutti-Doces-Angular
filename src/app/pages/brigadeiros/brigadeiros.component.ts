@@ -13,8 +13,6 @@ import { CarrinhoService } from '../../services/carrinho.service';
 })
 export class BrigadeirosComponent implements OnInit {
 
-  @Input() produto: any = {}
-
   brigadeiros: Card[] = [];
   valueProductBrigaidero: number[] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 

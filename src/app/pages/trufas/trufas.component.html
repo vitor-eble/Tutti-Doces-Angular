@@ -7,7 +7,7 @@
 
       <div class="card" *ngFor="let trufa of trufas; let i = index">
         <div class="flex w-full">
-          <img [src]="trufa.image" class="card-produto-image">
+          <img [src]="trufa.image" class="card-produto-image" title="img-trufa">
           <div class="card-description">
               <div class="flex flex-col">
                 <div class="flex items-start justify-between md:items-center">
@@ -15,7 +15,7 @@
                     {{ trufa.title }}
                   </h5>
                   <h4 class="card-produto-preco">
-                    {{  trufa.value | currency: 'BRL':'symbol':'1.2-2'}}
+                    {{ trufa?.value | currency:'BRL':'symbol':'1.2-2' }}
                   </h4>
                 </div>
                 <p class="card-produto-description">
