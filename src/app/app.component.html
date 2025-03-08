@@ -7,7 +7,7 @@
 
       <nav class="relative flex items-center justify-between pr-3 md:pr-0 ">
 
-        <ul class="items-center justify-center hidden gap-4 list-none lg:flex">
+        <div class="items-center justify-center hidden gap-4 list-none lg:flex">
           <a routerLink="/inicio" class="menu-pc-middle" routerLinkActive="active">
             Inicio
           </a>
@@ -20,7 +20,7 @@
           <a routerLink="/bebidas" class="menu-pc-middle" routerLinkActive="active">
             Bebidas
           </a>
-        </ul>
+        </div>
 
         <div *ngIf="menuAberto" class="fixed inset-0 z-500">
           <div class="absolute top-[83px] flex flex-col w-full gap-3 p-6 text-center bg-custom-gradient rounded-b-lg shadow-lg">
