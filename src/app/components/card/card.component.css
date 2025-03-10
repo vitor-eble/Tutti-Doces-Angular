@@ -39,11 +39,8 @@
 }
 
 .button-cart {
-  @apply h-12 text-white transition-all duration-200 rounded shadow-md px-7 md:px-7 xl:px-10 bg-custom-gradient hover:scale-105 active:scale-95;
+  @apply h-12 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95 xl:w-52
 
-  & .button-cart-span {
-    @apply flex items-center justify-center md:px-5;
-  }
 }
 
 

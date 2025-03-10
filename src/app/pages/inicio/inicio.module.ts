@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { InicioComponent } from './inicio.component';
+import { CardModule } from "../../components/card/card.module";
 
 
 
@@ -10,7 +11,8 @@ import { InicioComponent } from './inicio.component';
     InicioComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    CardModule
+]
 })
 export class InicioModule { }

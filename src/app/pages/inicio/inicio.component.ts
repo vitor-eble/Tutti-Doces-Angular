@@ -15,13 +15,13 @@ import { BebidasService } from '../../services/bebidas.service';
 })
 export class InicioComponent implements OnInit {
 
-  trufasInicio: Card[] = [];
-  brigadeiroInicio: Card[] = [];
-  bebidasInicio: Card[] = [];
+  trufas: Card[] = [];
+  brigadeiros: Card[] = [];
+  bebidas: Card[] = [];
 
-  valueProductBrigadeiro: number[] = [1, 1, 1, 1];
-  valueProductTrufa: number[] = [1, 1, 1, 1];
-  valueProductBebida: number[] = [1, 1, 1, 1];
+  valueProductBrigadeiro: number[] = [];
+  valueProductTrufa: number[] = [];
+  valueProductBebida: number[] = [];
 
   verMais: string = 'https://cdn-icons-png.flaticon.com/128/11431/11431124.png'
 
@@ -33,9 +33,13 @@ export class InicioComponent implements OnInit {
   ){  }
 
   ngOnInit() {
-    this.brigadeiroInicio = this.brigadeirosService.getBrigadeiros().slice(0,4);
-    this.trufasInicio = this.trufasService.getTrufas().slice(0,4);
-    this.bebidasInicio = this.bebidasService.getBebidas().slice(0,4)
+    this.brigadeiros = this.brigadeirosService.getBrigadeiros().slice(0,4);
+    this.trufas = this.trufasService.getTrufas().slice(0,4);
+    this.bebidas = this.bebidasService.getBebidas().slice(0,4);
+
+    this.valueProductBrigadeiro = new Array(this.brigadeiros.length).fill(1);
+    this.valueProductTrufa = new Array(this.trufas.length).fill(1);
+    this.valueProductBebida = new Array(this.bebidas.length).fill(1)
   }
 
   decrementaBrigadeiro(index: number){
@@ -69,31 +73,29 @@ export class InicioComponent implements OnInit {
   }
 
   addCart(index: number, tipo: string) {
-    let produtoSelecionado: Card | undefined;
-    let quantidade = 1;
+    let produtoSelecionado: Card | undefined
+    let quantidade = 1
 
-    console.log('tipo de produto', tipo);
-
-    if (tipo === 'brigadeiro') {
-      produtoSelecionado = this.brigadeiroInicio[index];
-      quantidade = this.valueProductBrigadeiro[index];
-      console.log('Produto Selecionado (Brigadeiro):', produtoSelecionado);
-    } else if (tipo === 'trufa') {
-      produtoSelecionado = this.trufasInicio[index];
-      quantidade = this.valueProductTrufa[index];
-      console.log('Produto Selecionado (Trufa):', produtoSelecionado);
-    } else if (tipo === 'bebida') {
-      produtoSelecionado = this.bebidasInicio[index];
-      quantidade = this.valueProductBebida[index];
-      console.log('Produto Selecionado (Bebida):', produtoSelecionado);
+    switch(tipo){
+      case 'brigadeiro':
+        produtoSelecionado = this.brigadeiros[index];
+        quantidade = this.valueProductBrigadeiro[index];
+        break
+      case 'trufa':
+        produtoSelecionado = this.trufas[index];
+        quantidade = this.valueProductTrufa[index];
+        break;
+      case 'bebida':
+        produtoSelecionado = this.bebidas[index];
+        quantidade = this.valueProductBebida[index];
+        break;
+      default:
+        console.log('Tipo de produto nao encontrado');
+        return
     }
 
-    if (produtoSelecionado) {
-      console.log(`Adicionando ao carrinho: ${quantidade}x ${produtoSelecionado.title}`);
-      this.carrinhoService.adicionarProduto(produtoSelecionado, quantidade)
-      // alert(` Você adicionou ${quantidade}x ${produtoSelecionado.title} ao carrinho!`);
-    } else {
-      console.error('produto não encontrado para o tipo', tipo);
+    if(produtoSelecionado){
+      this.carrinhoService.adicionarProduto(produtoSelecionado, quantidade);
     }
   }
 }

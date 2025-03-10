@@ -15,7 +15,6 @@ import { PagesModule } from './pages/pages.module';
     AppRoutingModule,
     PagesModule,
     FormsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

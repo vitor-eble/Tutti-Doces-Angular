@@ -35,9 +35,14 @@ export class TrufasComponent implements OnInit {
     this.valueProductTrufa[index]++
   }
 
-  addCart(index: number){
-    let produtoSelecionado = this.trufas[index];
-    let quantidade = this.valueProductTrufa[index];
+  addCart({ index, tipo }: { index:number, tipo: string }){
+    let produtoSelecionado: Card | undefined
+    let quantidade = 1
+
+    if(tipo === 'trufa'){
+      produtoSelecionado = this.trufas[index];
+      quantidade = this.valueProductTrufa[index]
+    }
 
     if(produtoSelecionado && quantidade > 0) {
       this.carrinhoService.adicionarProduto(produtoSelecionado, quantidade)

@@ -17,21 +17,21 @@
         </div>
 
         <div class="flex justify-end gap-2 xl:gap-3">
-          <div class="flex items-center">
-            <button class="button-decrementa" (click)="removeProduct()" [hidden]="quantidade <= 0">
+          <div class="flex items-center ">
+            <button class="flex-grow button-decrementa" (click)="removeProduct()" [hidden]="quantidade <= 0">
               -
             </button>
-            <div class="value-product">
+            <div class=" value-product">
               {{ quantidade }}
             </div>
-            <button class="button-incrementa" (click)="addProduct()">
+            <button class=" button-incrementa" (click)="addProduct()">
               +
             </button>
           </div>
-        <button class="button-cart" [disabled]="quantidade <= 0">
-          <span class="button-cart-span material-symbols-outlined" (click)="addCart()">
+        <button class=" button-cart" [disabled]="quantidade <= 0" (click)="addCart()">
+          <span class="button-cart-span material-symbols-outlined" >
             shopping_cart
-            </span>
+          </span>
         </button>
     </div>
   </div>

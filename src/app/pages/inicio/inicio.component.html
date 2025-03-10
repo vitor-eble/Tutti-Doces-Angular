@@ -12,46 +12,17 @@
       </a>
     </div>
     <div class="cards">
-
-      <div class="card" *ngFor="let brigadeiro of brigadeiroInicio; let i = index ">
-        <div class="flex w-full ">
-          <img [src]="brigadeiro.image" alt="" class="card-produto-image">
-          <div class="card-description">
-            <div class="flex flex-col">
-              <div class="flex items-start justify-between md:items-center">
-                <h5 class="card-produto-titulo">
-                  {{ brigadeiro.title }}
-                </h5>
-                <h4 class="card-produto-preco">
-                  {{ brigadeiro.value | currency:'BRL':'symbol':'1.2-2' }}
-                </h4>
-              </div>
-              <p class="card-produto-description">
-                {{ brigadeiro.description }}
-              </p>
-            </div>
-
-            <div class="flex justify-end gap-2 xl:gap-3">
-              <div class="flex items-center">
-                <button class="button-decrementa" (click)="decrementaBrigadeiro(i)">
-                  -
-                </button>
-                <div class="value-product">
-                  {{ valueProductBrigadeiro[i] }}
-                </div>
-                <button class="button-incrementa" (click)="incrementaBrigadeiro(i)">
-                  +
-                </button>
-              </div>
-              <button class="button-cart" (click)="addCart(i, 'brigadeiro')">
-                <span class="button-cart-span material-symbols-outlined">
-                  shopping_cart
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-card
+        *ngFor="let brigadeiro of brigadeiros; let i = index"
+        [produto]="brigadeiro"
+        [quantidade]="valueProductBrigadeiro[i]"
+        [index]="i"
+        [tipo]="'brigadeiro'"
+        (add)="incrementaBrigadeiro($event)"
+        (remove)="decrementaBrigadeiro($event)"
+        (cart)="addCart($event.index, $event.tipo)"
+      >
+      </app-card>
     </div>
   </div>
 </div>
@@ -70,44 +41,18 @@
       </a>
     </div>
     <div class="cards">
+      <app-card
+        *ngFor="let trufa of trufas; let i = index"
+        [produto]="trufa"
+        [quantidade]="valueProductTrufa[i]"
+        [index]="i"
+        [tipo]="'trufa'"
+        (add)="incrementaTrufa($event)"
+        (remove)="decrementaTrufa($event)"
+        (cart)="addCart($event.index, $event.tipo)"
+      >
+      </app-card>
 
-      <div class="card" *ngFor="let trufa of trufasInicio; let i = index">
-        <div class="flex w-full">
-          <img [src]="trufa.image" alt="" class="card-produto-image">
-          <div class="card-description">
-            <div class="flex flex-col">
-              <div class="flex items-start justify-between md:items-center">
-                <h5 class="card-produto-titulo">
-                  {{ trufa.title }}
-                </h5>
-                <h4 class="card-produto-preco">
-                  {{  trufa.value | currency:'BRL':'symbol':'1.2-2' }}
-                </h4>
-              </div>
-              <p class="card-produto-description">
-                {{ trufa.description }}
-              </p>
-            </div>
-            <div class="flex justify-end gap-2 xl:gap-3">
-              <div class="flex items-center shadow-md">
-                <button class="button-decrementa" (click)="decrementaBrigadeiro(i)">
-                  -
-                </button>
-                <div class="value-product">
-                  {{ valueProductBrigadeiro[i] }}
-                </div>
-                <button class="button-incrementa" (click)="incrementaBrigadeiro(i)">
-                  +
-                </button>
-              </div>
-              <button class="button-cart" (click)="addCart(i, 'trufa')">
-                <span class="button-cart-span material-symbols-outlined">
-                  shopping_cart
-                </span>
-              </button>
-            </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -125,45 +70,17 @@
       </a>
     </div>
     <div class="cards">
-
-      <div class="card"  *ngFor="let bebida of bebidasInicio; let i = index">
-        <div class="flex w-full">
-          <img [src]="bebida.image" alt="" class="card-produto-image">
-          <div class="card-description">
-              <div class="flex flex-col">
-                <div class="flex items-start justify-between md:items-center">
-                  <h5 class="card-produto-titulo">
-                    {{ bebida.title }}
-                  </h5>
-                  <h4 class="card-produto-preco">
-                    {{ bebida.value | currency:'BRL':'symbol':'1.2-2' }}
-                  </h4>
-                </div>
-                <p class="card-produto-description">
-                  {{ bebida.description }}
-                </p>
-              </div>
-              <div class="flex justify-end gap-2 xl:gap-3">
-                <div class="flex items-center">
-                  <button class="button-decrementa" (click)="decrementaBebida(i)">
-                    -
-                  </button>
-                  <div class="value-product">
-                    {{ valueProductBebida[i] }}
-                  </div>
-                  <button class="button-incrementa" (click)="incrementaBebida(i)">
-                    +
-                  </button>
-                </div>
-              <button class="button-cart" (click)="addCart(i, 'bebida')">
-                <span class="material-symbols-outlined button-cart-span">
-                  shopping_cart
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-card
+      *ngFor="let bebida of bebidas; let i = index"
+      [produto]="bebida"
+      [quantidade]="valueProductBebida[i]"
+      [index]="i"
+      [tipo]="'bebida'"
+      (add)="incrementaBebida($event)"
+      (remove)="decrementaBebida($event)"
+      (cart)="addCart($event.index, $event.tipo)"
+      >
+    </app-card>
     </div>
   </div>
 </div>

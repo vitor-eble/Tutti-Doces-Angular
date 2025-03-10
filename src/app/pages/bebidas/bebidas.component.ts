@@ -36,11 +36,16 @@ export class BebidasComponent implements OnInit {
     this.valueProductBebidas[index]++
   }
 
-  addCart(index: number){
-    let produtoSelecionado = this.bebidas[index];
-    let quantidade = this.valueProductBebidas[index];
+  addCart({index, tipo}: {index: number, tipo: string}){
+    let produtoSelecionado: Card | undefined
+    let quantidade = 1
 
-    if(produtoSelecionado && quantidade > 0){
+    if(tipo === 'bebida'){
+      produtoSelecionado = this.bebidas[index]
+      quantidade = this.valueProductBebidas[index]
+    }
+
+    if(produtoSelecionado){
       this.carrinhoService.adicionarProduto(produtoSelecionado, quantidade)
     }
 
