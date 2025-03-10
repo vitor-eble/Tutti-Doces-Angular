@@ -4,46 +4,17 @@
       bebidas
     </h1>
     <div class="cards">
-
-      <div class="card" *ngFor="let bebida of bebidas; let i = index" >
-        <div class="flex w-full">
-          <img [src]="bebida.image" alt="" class="card-produto-image">
-          <div class="card-description">
-            <div class="flex flex-col">
-              <div class="flex items-start justify-between md:items-center">
-                <h5 class="card-produto-titulo">
-                  {{ bebida.title }}
-                </h5>
-                <h4 class="card-produto-preco">
-                 {{ bebida.value | currency:'BRL':'symbol':'1.2-2' }}
-                </h4>
-              </div>
-              <p class="card-produto-description">
-                {{ bebida.description }}
-              </p>
-            </div>
-
-            <div class="flex justify-end gap-2 xl:gap-3">
-              <div class="flex items-center">
-                <button class="button-decrementa" (click)="decrementaBebida(i)">
-                  -
-                </button>
-                <div class="value-product">
-                  {{ valueProductBebidas[i] }}
-                </div>
-                <button class="button-incrementa" (click)="incrementaBebida(i)">
-                  +
-                </button>
-              </div>
-              <button class="button-cart" (click)="addCart(i, 'bebida')">
-                <span class="button-cart-span material-symbols-outlined">
-                  shopping_cart
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-card
+      *ngFor="let bebida of bebidas; let i = index"
+      [produto]="bebida"
+      [quantidade]="valueProductBebidas[i]"
+      [index]="i"
+      [tipo]="'bebida'"
+      (add)="incrementaBebida($event)"
+      (remove)="decrementaBebida($event)"
+      (cart)="addCart($event)"
+      >
+      </app-card>
     </div>
   </div>
 </div>
