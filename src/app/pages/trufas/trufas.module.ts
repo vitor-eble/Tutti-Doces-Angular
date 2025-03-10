@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TrufasComponent } from './trufas.component';
+import { CardModule } from "../../components/card/card.module";
 
 
 
@@ -9,7 +10,8 @@ import { TrufasComponent } from './trufas.component';
     TrufasComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    CardModule
+]
 })
 export class TrufasModule { }

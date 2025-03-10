@@ -18,7 +18,7 @@
 
         <div class="flex justify-end gap-2 xl:gap-3">
           <div class="flex items-center">
-            <button class="button-decrementa" (click)="removeProduct()" [disabled]="quantidade <= 0">
+            <button class="button-decrementa" (click)="removeProduct()" [hidden]="quantidade <= 0">
               -
             </button>
             <div class="value-product">

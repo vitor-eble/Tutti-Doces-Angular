@@ -4,46 +4,17 @@
       Trufas
     </h1>
     <div class="cards">
-
-      <div class="card" *ngFor="let trufa of trufas; let i = index">
-        <div class="flex w-full">
-          <img [src]="trufa.image" class="card-produto-image" title="img-trufa">
-          <div class="card-description">
-              <div class="flex flex-col">
-                <div class="flex items-start justify-between md:items-center">
-                  <h5 class="card-produto-titulo">
-                    {{ trufa.title }}
-                  </h5>
-                  <h4 class="card-produto-preco">
-                    {{ trufa?.value | currency:'BRL':'symbol':'1.2-2' }}
-                  </h4>
-                </div>
-                <p class="card-produto-description">
-                  {{ trufa.description }}
-                </p>
-              </div>
-
-              <div class="flex justify-end gap-2 xl:gap-3">
-                <div class="flex items-center">
-                  <button class="button-decrementa" (click)="decrementaTrufa(i)">
-                    -
-                  </button>
-                  <div class="value-product">
-                    {{ valueProductTrufa[i] }}
-                  </div>
-                  <button class="button-incrementa" (click)="incrementaTrufa(i)">
-                    +
-                  </button>
-                </div>
-                <button class="button-cart" (click)="addCart(i, 'trufa')">
-                  <span class="button-cart-span material-symbols-outlined">
-                    shopping_cart
-                  </span>
-                </button>
-              </div>
-          </div>
-        </div>
-      </div>
+      <app-card
+      *ngFor="let trufa of trufas; let i = index"
+      [produto]="trufa"
+      [quantidade]="valueProductTrufa[i]"
+      [index]="i"
+      [tipo]="'trufa'"
+      (add)="incrementaTrufa($event)"
+      (remove)="decrementaTrufa($event)"
+      (cart)="addCart($event)"
+      >
+      </app-card>
     </div>
   </div>
 </div>
