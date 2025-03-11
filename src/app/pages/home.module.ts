@@ -6,13 +6,16 @@ import { BrigadeirosModule } from './brigadeiros/brigadeiros.module';
 import { CarrinhoModule } from './carrinho/carrinho.module';
 import { InicioModule } from './inicio/inicio.module';
 import { TrufasModule } from './trufas/trufas.module';
-import { CardComponent } from '../components/card/card.component';
 import { CardModule } from '../components/card/card.module';
+import { HomeComponent } from './home.component';
+import { HomeRoutingModule } from './home.routing.module';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HomeComponent
+  ],
   imports: [
     CommonModule,
     BebidasModule,
@@ -20,7 +23,8 @@ import { CardModule } from '../components/card/card.module';
     CarrinhoModule,
     InicioModule,
     TrufasModule,
-    CardModule
+    CardModule,
+    HomeRoutingModule
   ]
 })
-export class PagesModule { }
+export class HomeModule { }

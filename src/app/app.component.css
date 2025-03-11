@@ -10,24 +10,6 @@
   @apply before:w-[215px];
 } */
 
-.title-nav {
-  @apply md:text-4xl text-3xl font-bold cursor-pointer relative  before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-white before:w-0 before:top-[37px] before:transition-all before:duration-500 md:hover:before:w-[215px] md:pl-0 hover:before:w-[184px]
-}
 
-.menu-cll {
-  @apply block w-full py-2 rounded bg-white font-medium  transition-all duration-200 active:scale-95
-}
-
-.menu-pc-middle {
-  @apply text-base font-bold text-black p-1
-}
-
-.menu-pc-middle.active {
-  @apply text-white border-b-2 border-solid border-white
-}
-
-.menu-pc-right {
-  @apply flex gap-1 text-base font-bold text-black
-}
 
 

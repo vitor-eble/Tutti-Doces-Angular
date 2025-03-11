@@ -1,0 +1,86 @@
+<div class="w-full">
+  <div class="w-full px-1 pt-16 mx-auto xl:container md:px-3">
+    <div class="flex items-center justify-between">
+      <h1 class="pt-[1px] pb-[5px] md:text-4xl text-3xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute before:md:w-[200px] md:before:top-[45px] before:top-[40px] before:rounded before:w-[169px]">
+        Brigadeiros
+      </h1>
+      <a class="flex justify-end items-center w-[142px] gap-1 relative before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-rosinha-escuro before:w-0 before:top-[30px] before:transition-all before:duration-500 hover:before:w-[140px] hover:before:rounded mr-2" routerLink="/brigadeiros">
+        <h2 class="text-base md:text-2xl">
+          Ver mais
+        </h2>
+        <img [src]="verMais" alt="" class="w-6 md:w-8">
+      </a>
+    </div>
+    <div class="cards">
+      <app-card
+        *ngFor="let brigadeiro of brigadeiros; let i = index"
+        [produto]="brigadeiro"
+        [quantidade]="amountBrigadeiro[i]"
+        [index]="i"
+        [tipo]="'brigadeiro'"
+        (add)="incrementaBrigadeiro($event)"
+        (remove)="decrementaBrigadeiro($event)"
+        (cart)="addCart($event.index, $event.tipo)"
+      >
+      </app-card>
+    </div>
+  </div>
+</div>
+
+<div class="w-full ">
+  <div class="w-full pt-16 mx-auto xl:container md:px-3">
+    <div class="flex items-center justify-between">
+      <h1 class="pt-[1px] pb-[5px] md:text-4xl text-3xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute md:before:w-[110px] md:before:top-[45px] before:top-[40px] before:w-[93px]">
+        Trufas
+      </h1>
+      <a class="flex justify-end items-center w-[142px] gap-1 relative before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-rosinha-escuro before:w-0 before:top-[30px] before:transition-all before:duration-500 hover:before:w-[140px] hover:before:rounded mr-2" routerLink="/trufas">
+        <h2 class="text-base md:text-2xl">
+          Ver mais
+        </h2>
+        <img [src]="verMais" alt="" class="w-6 md:w-8">
+      </a>
+    </div>
+    <div class="cards">
+      <app-card
+        *ngFor="let trufa of trufas; let i = index"
+        [produto]="trufa"
+        [quantidade]="amounttrufa[i]"
+        [index]="i"
+        [tipo]="'trufa'"
+        (add)="incrementaTrufa($event)"
+        (remove)="decrementaTrufa($event)"
+        (cart)="addCart($event.index, $event.tipo)"
+      >
+      </app-card>
+
+    </div>
+  </div>
+</div>
+<div class="w-full">
+  <div class="w-full pt-16 mx-auto xl:container md:px-3">
+    <div class="flex items-center justify-between">
+      <h1 class="pt-[1px] pb-[5px] md:text-4xl text-3xl relative ml-2 text-black before:border-b-4 before:border-solid before:border-rosinha-escuro before:absolute md:before:w-[150px] md:before:top-[45px] before:rounded before:w-[121px] before:top-[40px]">
+        Bebidas
+      </h1>
+      <a class="flex justify-end items-center w-[142px] gap-1 relative before:content-[''] before:absolute before:border-b-[3px] before:border-solid before:border-rosinha-escuro before:w-0 before:top-[30px] before:transition-all before:duration-500 hover:before:w-[140px] hover:before:rounded mr-2" routerLink="/bebidas">
+        <h2 class="text-base md:text-2xl">
+          Ver mais
+        </h2>
+        <img [src]="verMais" alt="" class="w-6 md:w-8">
+      </a>
+    </div>
+    <div class="cards">
+      <app-card
+      *ngFor="let bebida of bebidas; let i = index"
+      [produto]="bebida"
+      [quantidade]="amountbebida[i]"
+      [index]="i"
+      [tipo]="'bebida'"
+      (add)="incrementaBebida($event)"
+      (remove)="decrementaBebida($event)"
+      (cart)="addCart($event.index, $event.tipo)"
+      >
+    </app-card>
+    </div>
+  </div>
+</div>
