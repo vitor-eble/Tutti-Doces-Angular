@@ -14,7 +14,7 @@ import { CarrinhoService } from '../../services/carrinho.service';
 export class BrigadeirosComponent implements OnInit {
 
   brigadeiros: Card[] = [];
-  valueProductBrigadeiro: number[] = [];
+  amountBrigadeiros: number[] = []
 
   constructor(
     private brigadeiroService: BrigadeirosService,
@@ -23,17 +23,17 @@ export class BrigadeirosComponent implements OnInit {
 
   ngOnInit() {
     this.brigadeiros = this.brigadeiroService.getBrigadeiros();
-    this.valueProductBrigadeiro = new Array(this.brigadeiros.length).fill(1)
+    this.brigadeiroService.amountBrigadeiros = new Array(this.brigadeiros.length).fill(1)
+    this.amountBrigadeiros = this.brigadeiroService.amountBrigadeiros
   }
 
+
   decrementaBrigadeiro(index: number) {
-    if(this.valueProductBrigadeiro[index] > 1){
-      this.valueProductBrigadeiro[index]--;
-    }
+    this.brigadeiroService.decrementaBrigadeiros(index)
   }
 
   incrementaBrigaidero(index: number){
-    this.valueProductBrigadeiro[index]++
+    this.brigadeiroService.incrementaBrigadeiros(index)
   }
 
   addCart({ index, tipo }: { index: number; tipo: string }) {
@@ -42,7 +42,7 @@ export class BrigadeirosComponent implements OnInit {
 
     if (tipo === 'brigadeiro') {
         produtoSelecionado = this.brigadeiros[index];
-        quantidade = this.valueProductBrigadeiro[index];
+        quantidade = this.amountBrigadeiros[index];
     }
 
     if (produtoSelecionado) {
@@ -50,6 +50,6 @@ export class BrigadeirosComponent implements OnInit {
     } else {
         console.error('Produto não encontrado para o tipo', tipo);
     }
-}
+  }
 
 }

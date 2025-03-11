@@ -6,6 +6,9 @@ import { Card } from '../card.modal';
 })
 export class BrigadeirosService {
 
+  amountBrigadeiros: number[] = []
+
+
   private brigadeiros: Card[] = [
     {
       id: 1001,
@@ -177,8 +180,25 @@ export class BrigadeirosService {
     },
   ];
 
+  // setAmountbrigadeiros(i:number, amount: number){
+  //   this.amountBrigadeiros[i] = amount
+  // }
+  getAmountBrigadeiros(){
+    return this.amountBrigadeiros
+  }
+
   getBrigadeiros(): Card[]{
     return this.brigadeiros
+  }
+
+  decrementaBrigadeiros(i: number) {
+    if(this.amountBrigadeiros[i] > 1){
+      this.amountBrigadeiros[i]--
+    }
+  }
+
+  incrementaBrigadeiros(i: number){
+    this.amountBrigadeiros[i]++
   }
 
   constructor() { }
