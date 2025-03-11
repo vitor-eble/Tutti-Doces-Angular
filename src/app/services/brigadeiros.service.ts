@@ -180,9 +180,6 @@ export class BrigadeirosService {
     },
   ];
 
-  // setAmountbrigadeiros(i:number, amount: number){
-  //   this.amountBrigadeiros[i] = amount
-  // }
   getAmountBrigadeiros(){
     return this.amountBrigadeiros
   }

@@ -7,7 +7,7 @@
       <app-card
       *ngFor="let bebida of bebidas; let i = index"
       [produto]="bebida"
-      [quantidade]="valueProductBebidas[i]"
+      [quantidade]="amountBebida[i]"
       [index]="i"
       [tipo]="'bebida'"
       (add)="incrementaBebida($event)"

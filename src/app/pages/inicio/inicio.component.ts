@@ -19,9 +19,9 @@ export class InicioComponent implements OnInit {
   brigadeiros: Card[] = [];
   bebidas: Card[] = [];
 
-  valueProductBrigadeiro: number[] = [];
-  valueProductTrufa: number[] = [];
-  valueProductBebida: number[] = [];
+  amountBrigadeiro: number[] = []
+  amounttrufa: number[] = []
+  amountbebida: number[] = [];
 
   verMais: string = 'https://cdn-icons-png.flaticon.com/128/11431/11431124.png'
 
@@ -34,42 +34,40 @@ export class InicioComponent implements OnInit {
 
   ngOnInit() {
     this.brigadeiros = this.brigadeirosService.getBrigadeiros().slice(0,4);
-    this.trufas = this.trufasService.getTrufas().slice(0,4);
-    this.bebidas = this.bebidasService.getBebidas().slice(0,4);
+    this.brigadeirosService.amountBrigadeiros = new Array(this.brigadeiros.length).fill(1);
+    this.amountBrigadeiro = this.brigadeirosService.amountBrigadeiros
 
-    this.valueProductBrigadeiro = new Array(this.brigadeiros.length).fill(1);
-    this.valueProductTrufa = new Array(this.trufas.length).fill(1);
-    this.valueProductBebida = new Array(this.bebidas.length).fill(1)
+    this.trufas = this.trufasService.getTrufas().slice(0,4);
+    this.trufasService.amountTrufas = new Array(this.trufas.length).fill(1);
+    this.amounttrufa = this.trufasService.amountTrufas
+
+    this.bebidas = this.bebidasService.getBebidas().slice(0,4);
+    this.bebidasService.amountBebidas = new Array(this.bebidas.length).fill(1)
+    this.amountbebida = this.bebidasService.amountBebidas
   }
 
   decrementaBrigadeiro(index: number){
-    if (this.valueProductBrigadeiro[index] > 1) {
-      this.valueProductBrigadeiro[index]--;
-    }
+    this.brigadeirosService.decrementaBrigadeiros(index)
   }
 
   decrementaTrufa(index: number){
-    if (this.valueProductTrufa[index] > 1) {
-      this.valueProductTrufa[index]--;
-    }
+    this.trufasService.decrementaTrufas(index);
   }
 
   decrementaBebida(index: number){
-    if(this.valueProductBebida[index] > 1){
-      this.valueProductBebida[index]--;
-    }
+    this.bebidasService.decrementabebida(index);
   }
 
   incrementaBrigadeiro(index: number){
-    this.valueProductBrigadeiro[index]++;
+    this.brigadeirosService.incrementaBrigadeiros(index)
   }
 
   incrementaTrufa(index: number){
-    this.valueProductTrufa[index]++
+    this.trufasService.incrementaTrufas(index)
   }
 
   incrementaBebida(index: number){
-    this.valueProductBebida[index]++
+    this.bebidasService.incrementaBebidas(index)
   }
 
   addCart(index: number, tipo: string) {
@@ -79,15 +77,15 @@ export class InicioComponent implements OnInit {
     switch(tipo){
       case 'brigadeiro':
         produtoSelecionado = this.brigadeiros[index];
-        quantidade = this.valueProductBrigadeiro[index];
+        quantidade = this.amountBrigadeiro[index];
         break
       case 'trufa':
         produtoSelecionado = this.trufas[index];
-        quantidade = this.valueProductTrufa[index];
+        quantidade = this.amounttrufa[index];
         break;
       case 'bebida':
         produtoSelecionado = this.bebidas[index];
-        quantidade = this.valueProductBebida[index];
+        quantidade = this.amountbebida[index];
         break;
       default:
         console.log('Tipo de produto nao encontrado');

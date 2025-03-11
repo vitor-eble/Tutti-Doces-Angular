@@ -5,6 +5,7 @@ import { Card } from '../card.modal';
   providedIn: 'root'
 })
 export class TrufaService {
+  amountTrufas: number[] = []
 
   private trufas: Card[] = [
     {
@@ -113,8 +114,22 @@ export class TrufaService {
     }
   ];
 
+  getAmountTrufas(){
+    return this.amountTrufas
+  }
+
   getTrufas(): Card[]{
     return this.trufas
+  };
+
+  decrementaTrufas(i: number){
+    if(this.amountTrufas[i] > 1){
+      this.amountTrufas[i]--
+    }
+  }
+
+  incrementaTrufas(i: number){
+    this.amountTrufas[i]++
   }
 
   constructor() { }

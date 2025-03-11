@@ -13,7 +13,7 @@ import { CarrinhoService } from '../../services/carrinho.service';
 export class TrufasComponent implements OnInit {
 
   trufas: Card[] = [];
-  valueProductTrufa: number[] = [];
+  amountTrufa: number[] = [];
 
   constructor(
     private TrufaService: TrufaService,
@@ -22,17 +22,16 @@ export class TrufasComponent implements OnInit {
 
   ngOnInit(){
     this.trufas = this.TrufaService.getTrufas();
-    this.valueProductTrufa = new Array(this.trufas.length).fill(1)
+    this.TrufaService.amountTrufas = new Array(this.trufas.length).fill(1);
+    this.amountTrufa = this.TrufaService.amountTrufas
   }
 
   decrementaTrufa(index: number) {
-    if(this.valueProductTrufa[index] > 1){
-      this.valueProductTrufa[index]--;
-    }
+    this.TrufaService.decrementaTrufas(index);
   }
 
   incrementaTrufa(index: number){
-    this.valueProductTrufa[index]++
+    this.TrufaService.incrementaTrufas(index);
   }
 
   addCart({ index, tipo }: { index:number, tipo: string }){
@@ -41,7 +40,7 @@ export class TrufasComponent implements OnInit {
 
     if(tipo === 'trufa'){
       produtoSelecionado = this.trufas[index];
-      quantidade = this.valueProductTrufa[index]
+      quantidade = this.amountTrufa[index]
     }
 
     if(produtoSelecionado && quantidade > 0) {

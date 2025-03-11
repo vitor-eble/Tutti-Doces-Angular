@@ -15,7 +15,7 @@
       <app-card
         *ngFor="let brigadeiro of brigadeiros; let i = index"
         [produto]="brigadeiro"
-        [quantidade]="valueProductBrigadeiro[i]"
+        [quantidade]="amountBrigadeiro[i]"
         [index]="i"
         [tipo]="'brigadeiro'"
         (add)="incrementaBrigadeiro($event)"
@@ -44,7 +44,7 @@
       <app-card
         *ngFor="let trufa of trufas; let i = index"
         [produto]="trufa"
-        [quantidade]="valueProductTrufa[i]"
+        [quantidade]="amounttrufa[i]"
         [index]="i"
         [tipo]="'trufa'"
         (add)="incrementaTrufa($event)"
@@ -73,7 +73,7 @@
       <app-card
       *ngFor="let bebida of bebidas; let i = index"
       [produto]="bebida"
-      [quantidade]="valueProductBebida[i]"
+      [quantidade]="amountbebida[i]"
       [index]="i"
       [tipo]="'bebida'"
       (add)="incrementaBebida($event)"

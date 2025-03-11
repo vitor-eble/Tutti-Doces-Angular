@@ -7,7 +7,7 @@
       <app-card
       *ngFor="let trufa of trufas; let i = index"
       [produto]="trufa"
-      [quantidade]="valueProductTrufa[i]"
+      [quantidade]="amountTrufa[i]"
       [index]="i"
       [tipo]="'trufa'"
       (add)="incrementaTrufa($event)"

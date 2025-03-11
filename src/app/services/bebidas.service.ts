@@ -6,6 +6,8 @@ import { Card } from '../card.modal';
 })
 export class BebidasService {
 
+  amountBebidas: number[] = []
+
   private bebidas: Card[] = [
     {
       id: 3001,
@@ -78,6 +80,20 @@ export class BebidasService {
       value: 6.00
     }
   ];
+
+  getAmountBebidas(){
+    return this.amountBebidas
+  }
+
+  incrementaBebidas(i: number){
+    this.amountBebidas[i]++
+  }
+
+  decrementabebida(i: number){
+    if(this.amountBebidas[i] > 1){
+      this.amountBebidas[i]--
+    }
+  }
 
   getBebidas(): Card[] {
     return this.bebidas
