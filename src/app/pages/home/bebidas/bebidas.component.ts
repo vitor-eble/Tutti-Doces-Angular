@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BebidasService } from '../../services/bebidas.service';
-import { Card } from '../../card.modal';
-import { CarrinhoService } from '../../services/carrinho.service';
+import { BebidasService } from '../../../services/bebidas.service';
+import { Card } from '../../../card.modal';
+import { CarrinhoService } from '../../../services/carrinho.service';
 
 @Component({
   selector: 'app-bebidas',

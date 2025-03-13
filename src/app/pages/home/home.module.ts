@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { BebidasModule } from './bebidas/bebidas.module';
+import { BebidasModule } from './home/bebidas/bebidas.module';
 import { BrigadeirosModule } from './brigadeiros/brigadeiros.module';
 import { CarrinhoModule } from './carrinho/carrinho.module';
 import { InicioModule } from './inicio/inicio.module';

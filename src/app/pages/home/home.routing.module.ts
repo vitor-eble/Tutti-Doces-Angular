@@ -4,7 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { BrigadeirosComponent } from './brigadeiros/brigadeiros.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { TrufasComponent } from './trufas/trufas.component';
-import { BebidasComponent } from './bebidas/bebidas.component';
+import { BebidasComponent } from './home/bebidas/bebidas.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { HomeComponent } from "./home.component";
 
