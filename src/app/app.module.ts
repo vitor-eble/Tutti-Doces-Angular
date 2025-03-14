@@ -16,6 +16,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { InicioProductsComponent } from './pages/home/inicio/inicio-products/inicio-products.component';
 import { CardComponent } from './components/card/card.component';
 import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { LoginComponent } from './pages/auth/login/login.component';
     CarrinhoResumoComponent,
     HomeComponent,
     CardComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

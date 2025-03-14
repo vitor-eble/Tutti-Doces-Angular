@@ -7,6 +7,7 @@ import { BrigadeirosComponent } from './pages/home/brigadeiros/brigadeiros.compo
 import { TrufasComponent } from './pages/home/trufas/trufas.component';
 import { BebidasComponent } from './pages/home/bebidas/bebidas.component';
 import { CarrinhoComponent } from './pages/home/carrinho/carrinho.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
     { path: 'bebidas', component: BebidasComponent },
     { path: 'carrinho', component: CarrinhoComponent }
   ]},
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent }
 ];
 
 @NgModule({
