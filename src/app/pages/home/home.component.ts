@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,29 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  menuAberto: boolean = false
+
+  menuAberto: boolean = false;
+  showLogOut: boolean = false
+
+  showLinks: boolean = false;
+
+  constructor(private authService: AuthService) { }
+
+  ngOnInit(){
+    this.authService.vefiricarAutenticacao()
+    this.authService.mostrarMenuEmitter.subscribe(
+      mostrar => this.showLinks = mostrar
+    )
+  }
+
+  openLogOut(){
+    this.showLogOut = !this.showLogOut
+  }
+
+  logOut(){
+    this.showLogOut = false
+    this.authService.logOut()
+  }
 
   menuOpen() {
     this.menuAberto = !this.menuAberto;

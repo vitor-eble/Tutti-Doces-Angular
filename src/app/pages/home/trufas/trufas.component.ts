@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TrufaService } from '../../services/trufa.service';
-import { Card } from '../../card.modal';
-import { CarrinhoService } from '../../services/carrinho.service';
+import { TrufaService } from '../../../services/trufa.service';
+import { Card } from '../../../card.modal';
+import { CarrinhoService } from '../../../services/carrinho.service';
 
 @Component({
   selector: 'app-trufas',

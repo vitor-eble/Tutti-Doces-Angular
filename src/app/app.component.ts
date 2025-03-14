@@ -9,17 +9,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'tutti-doces-angular';
 
-  menuAberto: boolean = false
+  recebiEvento(evento: string){
+    console.log(evento);
 
-  menuOpen() {
-    this.menuAberto = !this.menuAberto;
-    console.log("Menu aberto:", this.menuAberto);
   }
 
-  closeMenu() {
-    this.menuAberto = false;
-    console.log("Menu fechado:", this.menuAberto);
-  }
 
   // (click)="menuAberto = false"
 }
