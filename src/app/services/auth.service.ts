@@ -14,18 +14,40 @@ export class AuthService {
 
   constructor(private route: Router) { }
 
-  signIn(usuario: User){
-    if(usuario.nome === 'exemplo@email.com' && usuario.senha === '1234'){
-      this.usuarioAutenticado = true;
-      console.log(this.usuarioAutenticado);
-      localStorage.setItem('usuarioAutenticado', 'true')
-      this.mostrarMenuEmitter.next(true)
-      this.route.navigate(['/carrinho'])
+  register(usuario: User, confirmPassword: string){
+    if(!usuario.nome || !usuario.email || !usuario.senha || !confirmPassword){
+      alert('Preencha todos os campos!');
+      return false
+    }
 
+    if(usuario.senha !== confirmPassword){
+      alert('As senhas nao coincidem!')
+      return false
+    }
+    if(localStorage.getItem(usuario.email)){
+      alert('Este email ja esta cadastrado')
+      return false
+    }
+
+    localStorage.setItem(usuario.email, JSON.stringify(usuario));
+    alert('Cadastro realizado com sucesso!')
+    return true
+  }
+
+  signIn(usuario: User){
+    const userSave = localStorage.getItem(usuario.email)
+    if(userSave){
+      const dados: User = JSON.parse(userSave)
+      if(dados.senha === usuario.senha){
+        this.usuarioAutenticado = true;
+        localStorage.setItem('usuarioAutenticado', 'true')
+        this.mostrarMenuEmitter.next(true)
+        this.route.navigate(['/carrinho'])
+      } else {
+        alert('Senha incorreta!')
+      }
     } else {
-      this.usuarioAutenticado = false;
-      localStorage.removeItem('usuarioAutenticado')
-      this.mostrarMenuEmitter.next(false)
+      alert('Usuario nao encontrado! registre-se primeiro.')
     }
   }
 
