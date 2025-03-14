@@ -21,7 +21,7 @@ export class RegisterComponent {
   fazerRegistro(){
     const sucess = this.authService.register(this.usuario, this.confirmPassword)
     if(sucess){
-      this.router.navigate(['/inicio'])
+      this.router.navigate(['/login'])
     }
   }
 }
