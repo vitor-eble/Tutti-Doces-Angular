@@ -17,6 +17,7 @@ import { InicioProductsComponent } from './pages/home/inicio/inicio-products/ini
 import { CardComponent } from './components/card/card.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
+import { AuthGuard } from './guard/auth.guard';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import { RegisterComponent } from './pages/auth/register/register.component';
     AppRoutingModule,
 
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

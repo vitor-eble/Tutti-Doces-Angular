@@ -8,6 +8,7 @@ import { TrufasComponent } from './pages/home/trufas/trufas.component';
 import { BebidasComponent } from './pages/home/bebidas/bebidas.component';
 import { CarrinhoComponent } from './pages/home/carrinho/carrinho.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
+import { AuthGuard } from './guard/auth.guard';
 
 
 const routes: Routes = [
@@ -18,7 +19,7 @@ const routes: Routes = [
     { path: 'brigadeiros', component: BrigadeirosComponent },
     { path: 'trufas', component: TrufasComponent },
     { path: 'bebidas', component: BebidasComponent },
-    { path: 'carrinho', component: CarrinhoComponent }
+    { path: 'carrinho', component: CarrinhoComponent, canActivate: [AuthGuard] }
   ]},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent }

@@ -63,4 +63,8 @@ export class AuthService {
     this.usuarioAutenticado = autenticado
     this.mostrarMenuEmitter.next(autenticado)
   }
+
+  getUsuarioEstaAutenticado(): boolean{
+    return this.usuarioAutenticado
+  }
 }
