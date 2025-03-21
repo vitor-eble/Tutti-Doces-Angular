@@ -19,6 +19,8 @@ import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { AuthGuard } from './guard/auth.guard';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
@@ -34,14 +36,22 @@ import { AuthGuard } from './guard/auth.guard';
     HomeComponent,
     CardComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyBJKo14Pv1pL-eReWIPd1QCdp6pQGCu8iA",
+      authDomain: "tutti-doces-angular.firebaseapp.com",
+      projectId: "tutti-doces-angular",
+      storageBucket: "tutti-doces-angular.firebasestorage.app",
+      messagingSenderId: "941752678860",
+      appId: "1:941752678860:web:a83cc34e26815ca66b4569"
+    }),
+    AngularFireAuthModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

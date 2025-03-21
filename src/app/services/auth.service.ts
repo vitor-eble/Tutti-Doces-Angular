@@ -1,70 +1,51 @@
-import { EventEmitter, Injectable } from '@angular/core';
-import { User } from '../user.modal';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private usuarioAutenticado: boolean = false;
+  private usuarioAutenticado = new BehaviorSubject<boolean>(false);
+  mostrarMenuEmitter = this.usuarioAutenticado.asObservable();
 
-  mostrarMenuEmitter = new BehaviorSubject<boolean>(false)
+  constructor(private router: Router, private afAuth: AngularFireAuth) { }
 
-  constructor(private route: Router) { }
-
-  register(usuario: User, confirmPassword: string){
-    if(!usuario.nome || !usuario.email || !usuario.senha || !confirmPassword){
-      alert('Preencha todos os campos!');
-      return false
-    }
-
-    if(usuario.senha !== confirmPassword){
-      alert('As senhas nao coincidem!')
-      return false
-    }
-    if(localStorage.getItem(usuario.email)){
-      alert('Este email ja esta cadastrado')
-      return false
-    }
-
-    localStorage.setItem(usuario.email, JSON.stringify(usuario));
-    alert('Cadastro realizado com sucesso!')
-    return true
-  }
-
-  signIn(usuario: User){
-    const userSave = localStorage.getItem(usuario.email)
-    if(userSave){
-      const dados: User = JSON.parse(userSave)
-      if(dados.senha === usuario.senha){
-        this.usuarioAutenticado = true;
-        localStorage.setItem('usuarioAutenticado', 'true')
-        this.mostrarMenuEmitter.next(true)
-        this.route.navigate(['/carrinho'])
-      } else {
-        alert('Senha incorreta!')
-      }
-    } else {
-      alert('Usuario nao encontrado! registre-se primeiro.')
+  async register(email: string, password: string) {
+    try {
+      const userCredential = await this.afAuth.createUserWithEmailAndPassword(email, password);
+      console.log('Usuário registrado:', userCredential);
+      alert('Usuário cadastrado com sucesso!');
+      this.router.navigate(['/login']);
+    } catch (error: any) {
+      console.error('Erro no registro:', error);
+      alert('Erro ao cadastrar: ' + error.message);
     }
   }
 
-  logOut(){
-    this.usuarioAutenticado = false
-    localStorage.removeItem('usuarioAutenticado')
-    this.mostrarMenuEmitter.next(false)
-    this.route.navigate(['/inicio'])
+  async signIn(email: string, password: string) {
+    try {
+      const userCredential = await this.afAuth.signInWithEmailAndPassword(email, password);
+      this.usuarioAutenticado.next(true);
+      this.router.navigate(['/carrinho']);
+    } catch (error: any) {
+      alert('Erro ao logar: ' + error.message);
+    }
   }
 
-  vefiricarAutenticacao(){
-    const autenticado = localStorage.getItem('usuarioAutenticado') === 'true';
-    this.usuarioAutenticado = autenticado
-    this.mostrarMenuEmitter.next(autenticado)
+  async logOut() {
+    await this.afAuth.signOut();
+    this.usuarioAutenticado.next(false);
+    this.router.navigate(['/inicio']);
   }
 
-  getUsuarioEstaAutenticado(): boolean{
-    return this.usuarioAutenticado
+  /** Retorna um Observable<boolean> que indica se o usuário está autenticado */
+  getUsuarioEstaAutenticado(): Observable<boolean> {
+    return this.afAuth.authState.pipe(map(user => !!user)); // Se user for null, retorna false.
   }
+
+
 }

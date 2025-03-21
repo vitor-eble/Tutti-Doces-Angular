@@ -18,7 +18,7 @@ export class HomeComponent {
   constructor(private authService: AuthService) { }
 
   ngOnInit(){
-    this.authService.vefiricarAutenticacao()
+    this.authService.getUsuarioEstaAutenticado()
     this.authService.mostrarMenuEmitter.subscribe(
       mostrar => this.showLinks = mostrar
     )

@@ -11,17 +11,27 @@ import { Router } from '@angular/router';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  usuario: User = new User()
+
+  nome: string = ''
+  email: string = ''
+  password: string = ''
   confirmPassword: string = ''
 
   constructor(
     private authService: AuthService, private router: Router
   ) { }
 
-  fazerRegistro(){
-    const sucess = this.authService.register(this.usuario, this.confirmPassword)
-    if(sucess){
-      this.router.navigate(['/login'])
+  async register(){
+    if(!this.nome || !this.email || !this.password || !this.confirmPassword){
+      alert('Preencha todos os campos!');
+      return
     }
+
+    if(this.password !== this.confirmPassword){
+      alert('As senhas nao coincidem!')
+      return
+    }
+
+    await this.authService.register(this.email, this.password)
   }
 }

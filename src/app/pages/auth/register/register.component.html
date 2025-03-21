@@ -17,7 +17,7 @@
           <div class="absolute top-0 left-0 inline-flex items-center justify-center w-10 h-full text-gray-400 ">
             <i class="text-rosaCustom-500 fas fa-user"></i>
           </div>
-          <input id="email" type="email" name="email" placeholder="Enter your name" [(ngModel)]="usuario.nome"
+          <input id="email" type="email" name="email" placeholder="Enter your name" [(ngModel)]="nome"
           class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border border-gray-400 rounded-2xl focus:outline-none focus:border-rosaCustom-400"/>
         </div>
       </div>
@@ -29,7 +29,7 @@
           <div class="absolute top-0 left-0 inline-flex items-center justify-center w-10 h-full text-gray-400 ">
             <i class="text-rosaCustom-500 fas fa-at"></i>
           </div>
-          <input id="email" type="email" name="email" placeholder="Enter your email" [(ngModel)]="usuario.email"
+          <input id="email" type="email" name="email" placeholder="Enter your email" [(ngModel)]="email"
             class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border border-gray-400 rounded-2xl focus:outline-none focus:border-rosaCustom-400"/>
         </div>
       </div>
@@ -44,7 +44,7 @@
             </span>
           </div>
 
-          <input id="password" type="password" name="password" placeholder="Enter your password" [(ngModel)]="usuario.senha"
+          <input id="password" type="password" name="password" placeholder="Enter your password" [(ngModel)]="password"
             class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border border-gray-400 rounded-2xl focus:outline-none focus:border-rosaCustom-400"/>
         </div>
       </div>
@@ -65,7 +65,7 @@
       </div>
 
       <div class="flex w-full">
-        <button type="submit" (click)="fazerRegistro()"
+        <button type="submit" (click)="register()"
           class="flex items-center justify-center w-full py-2 mt-2 text-sm text-white transition duration-150 ease-in bg-rosaCustom-500 focus:outline-none sm:text-base hover:bg-rosaCustom-600 rounded-2xl">
           <span class="mr-2 uppercase">
             Sign Up

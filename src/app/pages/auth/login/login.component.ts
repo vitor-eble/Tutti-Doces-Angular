@@ -11,12 +11,13 @@ import { User } from '../../../user.modal';
 })
 export class LoginComponent {
 
-  usuario: User = new User()
+  email: string = ''
+  password: string = ''
 
   constructor(private authService: AuthService) { }
 
   fazerLogin(){
-    this.authService.signIn(this.usuario);
+    this.authService.signIn(this.email, this.password);
   }
 
 }
