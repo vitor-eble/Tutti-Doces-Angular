@@ -12,7 +12,11 @@ export class AuthService {
   private usuarioAutenticado = new BehaviorSubject<boolean>(false);
   mostrarMenuEmitter = this.usuarioAutenticado.asObservable();
 
-  constructor(private router: Router, private afAuth: AngularFireAuth) { }
+  constructor(private router: Router, private afAuth: AngularFireAuth) {
+    this.afAuth.authState.subscribe(user => {
+      this.usuarioAutenticado.next(!!user); // Atualiza a variável quando o estado do usuário muda
+    });
+  }
 
   async register(email: string, password: string) {
     try {
@@ -29,7 +33,6 @@ export class AuthService {
   async signIn(email: string, password: string) {
     try {
       const userCredential = await this.afAuth.signInWithEmailAndPassword(email, password);
-      this.usuarioAutenticado.next(true);
       this.router.navigate(['/carrinho']);
     } catch (error: any) {
       alert('Erro ao logar: ' + error.message);
@@ -38,14 +41,11 @@ export class AuthService {
 
   async logOut() {
     await this.afAuth.signOut();
-    this.usuarioAutenticado.next(false);
     this.router.navigate(['/inicio']);
   }
 
-  /** Retorna um Observable<boolean> que indica se o usuário está autenticado */
   getUsuarioEstaAutenticado(): Observable<boolean> {
-    return this.afAuth.authState.pipe(map(user => !!user)); // Se user for null, retorna false.
+    return this.usuarioAutenticado.asObservable(); // Agora você usa o BehaviorSubject diretamente
   }
-
 
 }
