@@ -3,7 +3,10 @@
 }
 
 .menu-cll {
-  @apply block w-full py-2 rounded bg-white font-medium  transition-all duration-200 active:scale-95
+  @apply block border-b-2 p-4 border-solid border-rosaCustom-500 tracking-wide active:border-2 active:rounded-lg transition-all  active:scale-95 active:shadow-lg
+}
+.menu-cll.active {
+  @apply block border-2 border-rosaCustom-500 rounded-lg shadow-lg
 }
 
 .menu-pc-middle {

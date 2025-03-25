@@ -11,7 +11,7 @@ import { AuthService } from '../../services/auth.service';
 export class HomeComponent {
 
   menuAberto: boolean = false;
-  showLogOut: boolean = false
+  showLogOut: boolean = false;
 
   showLinks: boolean = false;
 
