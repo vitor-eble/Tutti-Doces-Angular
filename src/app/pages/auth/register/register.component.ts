@@ -34,4 +34,8 @@ export class RegisterComponent {
 
     await this.authService.register(this.email, this.password)
   }
+
+  onSubmit(formulario: any) {
+
+  }
 }

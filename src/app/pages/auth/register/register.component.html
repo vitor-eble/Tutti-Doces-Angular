@@ -1,5 +1,5 @@
 <div class=" h-screen bg-[#dcdcdc]/60 flex justify-center items-center flex-col">
-  <div class="flex flex-col max-w-md px-4 py-8 bg-white border-2 border-solid shadow-md sm:px-6 md:px-8 lg:px-10 rounded-3xl w-50 border-rosaCustom-500">
+  <div class="flex flex-col max-w-md px-4 py-8 bg-white border-2 border-solid shadow-md sm:px-6 md:px-8 lg:px-10 rounded-3xl w-50 border-rosaCustom-300">
   <div class="self-center text-xl font-medium text-gray-800 sm:text-3xl">
     Join us Now
   </div>
@@ -8,65 +8,75 @@
   </div>
 
   <div class="mt-10">
-    <form action="#">
+    <form action="#" #formGroupRegister="ngForm" (submit)="onSubmit(formGroupRegister)">
       <div class="flex flex-col mb-5">
-        <label for="email" class="mb-1 text-xs tracking-wide text-gray-600">
-          Name:
-        </label>
-        <div class="relative">
-          <div class="absolute top-0 left-0 inline-flex items-center justify-center w-10 h-full text-gray-400 ">
-            <i class="text-rosaCustom-500 fas fa-user"></i>
-          </div>
-          <input id="email" type="email" name="email" placeholder="Enter your name" [(ngModel)]="nome"
-          class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border border-gray-400 rounded-2xl focus:outline-none focus:border-rosaCustom-400"/>
-        </div>
-      </div>
-      <div class="flex flex-col mb-5">
-        <label for="email"class="mb-1 text-xs tracking-wide text-gray-600">
+        <label for="email"class="mb-1 text-sm tracking-wide text-gray-600">
           E-Mail Address:
         </label>
         <div class="relative">
           <div class="absolute top-0 left-0 inline-flex items-center justify-center w-10 h-full text-gray-400 ">
-            <i class="text-rosaCustom-500 fas fa-at"></i>
+            <i class="text-rosaCustom-300 fas fa-at"></i>
           </div>
-          <input id="email" type="email" name="email" placeholder="Enter your email" [(ngModel)]="email"
-            class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border border-gray-400 rounded-2xl focus:outline-none focus:border-rosaCustom-400"/>
+          <input id="email" type="email" name="email" email placeholder="Enter your email" [(ngModel)]="email" required #inputEmail="ngModel" email
+            class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-rosaCustom-300"
+            [ngClass]="{
+              'border-red-500': inputEmail.invalid && inputEmail.touched
+            }"
+            />
+        </div>
+        <div class="pl-1 text-red-500" *ngIf="inputEmail.invalid && inputEmail.touched">
+          Email invalido
         </div>
       </div>
+
       <div class="flex flex-col mb-6">
-        <label for="password" class="mb-1 text-xs tracking-wide text-gray-600 sm:text-sm">
+        <label for="password" class="mb-1 text-sm tracking-wide text-gray-600 sm:text-sm">
           Password:
         </label>
         <div class="relative">
           <div class="absolute top-0 left-0 inline-flex items-center justify-center w-10 h-full text-gray-400 ">
             <span>
-              <i class="text-rosaCustom-500 fas fa-lock"></i>
+              <i class="text-rosaCustom-300 fas fa-lock"></i>
             </span>
           </div>
 
-          <input id="password" type="password" name="password" placeholder="Enter your password" [(ngModel)]="password"
-            class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border border-gray-400 rounded-2xl focus:outline-none focus:border-rosaCustom-400"/>
+          <input id="password" minlength="6" type="password" name="password" placeholder="Enter your password" [(ngModel)]="password" #inputPassword="ngModel" required
+            class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-rosaCustom-300"
+            [ngClass]="{
+              'border-red-500': inputPassword.invalid && inputPassword.touched
+            }"
+            />
+        </div>
+        <div class="pl-1 text-red-500" *ngIf="inputPassword.invalid && inputPassword.touched">
+          Senha Incorreta
         </div>
       </div>
       <div class="flex flex-col mb-6">
-        <label for="password" class="mb-1 text-xs tracking-wide text-gray-600 sm:text-sm">
+        <label for="confirmPassword" class="mb-1 text-sm tracking-wide text-gray-600 sm:text-sm">
           Confirm password:
         </label>
         <div class="relative">
           <div class="absolute top-0 left-0 inline-flex items-center justify-center w-10 h-full text-gray-400 ">
             <span>
-              <i class="text-rosaCustom-500 fas fa-lock"></i>
+              <i class="text-rosaCustom-300 fas fa-lock"></i>
             </span>
           </div>
 
-          <input id="password" type="password" name="password" placeholder="Enter your password" [(ngModel)]="confirmPassword"
-            class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border border-gray-400 rounded-2xl focus:outline-none focus:border-rosaCustom-400"/>
+          <input id="confirmPassword" minlength="6" type="password" name="confirmPassword" placeholder="Enter your password" [(ngModel)]="confirmPassword" #inputConfirmPassword="ngModel" required
+            class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-rosaCustom-300"
+            [ngClass]="{
+              'border-red-500': inputConfirmPassword.invalid && inputConfirmPassword.touched
+            }"
+            />
+        </div>
+        <div class="pl-1 text-red-500" *ngIf="inputConfirmPassword.invalid && inputConfirmPassword.touched">
+          as senhas nao se coincidem
         </div>
       </div>
 
       <div class="flex w-full">
-        <button type="submit" (click)="register()"
-          class="flex items-center justify-center w-full py-2 mt-2 text-sm text-white transition duration-150 ease-in bg-rosaCustom-500 focus:outline-none sm:text-base focus:bg-rosaCustom-600 rounded-2xl">
+        <button type="submit" (click)="register()" [disabled]="formGroupRegister.invalid"
+          class="flex items-center justify-center w-full py-2 mt-2 text-sm text-white transition duration-150 ease-in disabled:bg-rosaCustom-300 bg-rosaCustom-500 focus:outline-none sm:text-base hover:bg-rosaCustom-400 rounded-2xl">
           <span class="mr-2 uppercase">
             Sign Up
           </span>

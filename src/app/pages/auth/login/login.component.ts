@@ -20,4 +20,7 @@ export class LoginComponent {
     this.authService.signIn(this.email, this.password);
   }
 
+  onSubmit(formulario: any){
+  }
+
 }

@@ -1,5 +1,5 @@
 <div class=" h-screen bg-[#dcdcdc]/60 flex justify-center items-center flex-col">
-  <div class="flex flex-col max-w-md px-4 py-8 bg-white border-2 border-solid shadow-md sm:px-6 md:px-8 lg:px-10 rounded-3xl w-50 border-rosaCustom-500">
+  <div class="flex flex-col max-w-md px-4 py-8 bg-white border-2 border-solid shadow-md sm:px-6 md:px-8 lg:px-10 rounded-3xl border-rosaCustom-300">
     <div class="self-center text-xl font-medium text-gray-800 sm:text-3xl">
       Bem-vindo de volta
     </div>
@@ -7,41 +7,56 @@
       Insira suas credenciais para acessar sua conta
     </div>
     <div class="mt-10">
-      <form action="#">
+      <form action="#" #formGroupLogin="ngForm" (ngSubmit)="onSubmit(formGroupLogin)">
+
         <div class="flex flex-col mb-5">
-          <label for="email" class="mb-1 text-xs tracking-wide text-gray-600">
+          <label for="email" class="mb-1 text-sm tracking-wide text-gray-600">
             Endereço de e-mail:
           </label>
           <div class="relative">
             <div
               class="absolute top-0 left-0 inline-flex items-center justify-center w-10 h-full text-gray-400">
-              <i class="text-rosaCustom-500 fas fa-at"></i>
+              <i class="text-rosaCustom-300 fas fa-at"></i>
             </div>
 
-            <input id="email" type="email" name="email"placeholder="Digite seu e-mail" [(ngModel)]="email"
-            [ngModelOptions]="{standalone: true}" required
-              class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-rosaCustom-500"/>
+            <input id="email" type="email" name="email"placeholder="Digite seu e-mail" [(ngModel)]="email" #inputEmail="ngModel" required email
+              class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-rosaCustom-300"
+              [ngClass]="{
+                'border-red-500': inputEmail.invalid && inputEmail.touched
+              }"
+            />
           </div>
+          <p class="pl-1 text-sm text-red-500" *ngIf="inputEmail.invalid && inputEmail.touched">
+            Email invalido
+          </p>
         </div>
+
         <div class="flex flex-col mb-6">
-          <label for="password" class="mb-1 text-xs tracking-wide text-gray-600 sm:text-sm">
+          <label for="password" class="mb-1 text-sm tracking-wide text-gray-600 sm:text-sm">
             Senha:
           </label>
           <div class="relative">
             <div class="absolute top-0 left-0 inline-flex items-center justify-center w-10 h-full text-gray-400 ">
               <span>
-                <i class="text-rosaCustom-500 fas fa-lock"></i>
+                <i class="text-rosaCustom-300 fas fa-lock"></i>
               </span>
             </div>
 
-            <input id="password" type="password" name="password" placeholder="Digite sua senha" [(ngModel)]="password" required
-            [ngModelOptions]="{standalone: true}"
-              class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-rosaCustom-500"/>
+            <input id="password" minlength="6" type="password" name="password" placeholder="Digite sua senha" [(ngModel)]="password" required #inputPassword="ngModel"
+              class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-rosaCustom-300"
+              [ngClass]="{
+                'border-red-500': inputPassword.invalid && inputPassword.touched
+              }"
+              />
           </div>
+          <p class="pl-1 text-sm text-red-500" *ngIf="inputPassword.invalid && inputPassword.touched">
+            Senha incorreta
+          </p>
         </div>
 
         <div class="flex w-full">
-          <button type="submit" name="action" class="flex items-center justify-center w-full py-2 mt-2 text-sm text-white transition duration-150 ease-in bg-rosaCustom-500 focus:outline-none sm:text-base hover:bg-rosaCustom-600 rounded-2xl" (click)="fazerLogin()">
+          <button type="submit" [disabled]="formGroupLogin.invalid"
+           name="action" class="flex items-center justify-center w-full py-2 mt-2 text-sm text-white transition duration-150 ease-in disabled:bg-rosaCustom-300 bg-rosaCustom-500 focus:outline-none sm:text-base hover:bg-rosaCustom-400 rounded-2xl" (click)="fazerLogin()">
             <span class="mr-2 uppercase">Login</span>
             <span>
               <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
