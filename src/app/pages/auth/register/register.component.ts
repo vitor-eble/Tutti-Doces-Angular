@@ -1,6 +1,6 @@
 import { AuthService } from './../../../services/auth.service';
 import { Component } from '@angular/core';
-import { User } from '../../../user.modal';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
 
+  formulario!: FormGroup;
+
   email: string = ''
   password: string = ''
   confirmPassword: string = ''
@@ -20,8 +22,22 @@ export class RegisterComponent {
     private authService: AuthService, private router: Router
   ) { }
 
+  ngOnInit(){
+    this.formulario = new FormGroup({
+      inputEmail: new FormControl(null, [
+        Validators.required, Validators.email
+      ]),
+      passwordInput: new FormControl(null, [
+        Validators.required
+      ]),
+      confirmPasswordInput: new FormControl(null, [
+        Validators.required
+      ])
+    })
+  }
+
   async register(){
-    if(!this.email || !this.password || !this.confirmPassword){
+    if(!this.formulario.get('emailInput')?.value || !this.password || !this.confirmPassword){
       alert('Preencha todos os campos!');
       return
     }
@@ -35,6 +51,16 @@ export class RegisterComponent {
   }
 
   onSubmit(formulario: any) {
+  }
 
+  verificaInvalidTouched(campo: any): Boolean{
+    return this.formulario.get(campo)?.invalid && this.formulario.get(campo)?.touched || false
+  }
+
+  aplicaCssErro(campo: any){
+    return {
+      'border-red-500 focus:border-red-600 ': this.verificaInvalidTouched(campo),
+      'text-red-500': this.verificaInvalidTouched(campo)
+    }
   }
 }

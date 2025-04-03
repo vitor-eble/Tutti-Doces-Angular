@@ -25,9 +25,6 @@ export class LoginComponent {
     })
   }
 
-  email: string = ''
-  password: string = ''
-
   constructor(private authService: AuthService) { }
 
   fazerLogin(){
