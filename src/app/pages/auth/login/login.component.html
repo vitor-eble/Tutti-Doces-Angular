@@ -7,26 +7,24 @@
       Insira suas credenciais para acessar sua conta
     </div>
     <div class="mt-10">
-      <form action="#" #formGroupLogin="ngForm" (ngSubmit)="onSubmit(formGroupLogin)">
+      <form action="#" (ngSubmit)="onSubmit(formulario)" [formGroup]="formulario">
 
         <div class="flex flex-col mb-5">
           <label for="email" class="mb-1 text-sm tracking-wide text-gray-600">
             Endereço de e-mail:
           </label>
+
           <div class="relative">
             <div
               class="absolute top-0 left-0 inline-flex items-center justify-center w-10 h-full text-gray-400">
               <i class="text-rosaCustom-300 fas fa-at"></i>
             </div>
+            <input id="email" type="email" name="email" placeholder="seuemail@gmail.com" formControlName="inputEmail"
+              class="w-full py-2 pl-10 pr-4 text-base placeholder-gray-500 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-rosaCustom-300 placeholder:text-sm" [ngClass]="aplicaCssErro('inputEmail')"
 
-            <input id="email" type="email" name="email"placeholder="Digite seu e-mail" [(ngModel)]="email" #inputEmail="ngModel" required email
-              class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-rosaCustom-300"
-              [ngClass]="{
-                'border-red-500': inputEmail.invalid && inputEmail.touched
-              }"
             />
           </div>
-          <p class="pl-1 text-sm text-red-500" *ngIf="inputEmail.invalid && inputEmail.touched">
+          <p class="pl-1 text-sm text-red-500" *ngIf="verificaInvalidTouched('inputEmail')">
             Email invalido
           </p>
         </div>
@@ -41,21 +39,17 @@
                 <i class="text-rosaCustom-300 fas fa-lock"></i>
               </span>
             </div>
-
-            <input id="password" minlength="6" type="password" name="password" placeholder="Digite sua senha" [(ngModel)]="password" required #inputPassword="ngModel"
-              class="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-rosaCustom-300"
-              [ngClass]="{
-                'border-red-500': inputPassword.invalid && inputPassword.touched
-              }"
+            <input id="password" minlength="6" type="password" name="password" placeholder="Digite sua senha" formControlName="inputPassword"
+              class="w-full py-2 pl-10 pr-4 text-base placeholder-gray-500 border-2 border-gray-200 rounded-lg placeholder:text-sm focus:outline-none focus:border-rosaCustom-300" [ngClass]="aplicaCssErro('inputPassword')"
               />
           </div>
-          <p class="pl-1 text-sm text-red-500" *ngIf="inputPassword.invalid && inputPassword.touched">
+          <p class="pl-1 text-sm text-red-500" *ngIf="verificaInvalidTouched('inputPassword')">
             Senha incorreta
           </p>
         </div>
 
         <div class="flex w-full">
-          <button type="submit" [disabled]="formGroupLogin.invalid"
+          <button type="submit" [disabled]="formulario.invalid"
            name="action" class="flex items-center justify-center w-full py-2 mt-2 text-sm text-white transition duration-150 ease-in disabled:bg-rosaCustom-300 bg-rosaCustom-500 focus:outline-none sm:text-base hover:bg-rosaCustom-400 rounded-2xl" (click)="fazerLogin()">
             <span class="mr-2 uppercase">Login</span>
             <span>

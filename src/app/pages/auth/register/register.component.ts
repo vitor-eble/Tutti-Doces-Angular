@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
 
-  nome: string = ''
   email: string = ''
   password: string = ''
   confirmPassword: string = ''
@@ -22,7 +21,7 @@ export class RegisterComponent {
   ) { }
 
   async register(){
-    if(!this.nome || !this.email || !this.password || !this.confirmPassword){
+    if(!this.email || !this.password || !this.confirmPassword){
       alert('Preencha todos os campos!');
       return
     }
