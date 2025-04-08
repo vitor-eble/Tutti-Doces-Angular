@@ -1,38 +1,45 @@
-<div class="flex w-full p-2 bg-white rounded-lg shadow-lg">
-  <div class="flex w-full">
-    <img [src]="produto?.image" alt="" class="card-produto-image">
-    <div class="card-description">
-        <div class="flex flex-col">
-          <div class="flex items-start justify-between md:items-center">
-            <h5 class="card-produto-titulo">
-              {{ produto?.title }}
-            </h5>
-            <h4 class="card-produto-preco">
-             {{ produto?.value | currency:'BRL':'symbol':'1.2-2' }}
-            </h4>
-          </div>
-          <p class="card-produto-description">
-            {{ produto?.description }}
-          </p>
-        </div>
+<div class="flex w-full gap-4 p-4 transition duration-200 transform bg-white shadow-md rounded-2xl hover:shadow-lg hover:scale-105">
 
-        <div class="flex justify-end gap-2 xl:gap-3">
-          <div class="flex items-center ">
-            <button class="flex-grow button-decrementa" (click)="removeProduct()" [hidden]="quantidade <= 0">
-              -
-            </button>
-            <div class=" value-product">
-              {{ quantidade }}
-            </div>
-            <button class=" button-incrementa" (click)="addProduct()">
-              +
-            </button>
-          </div>
-        <button class=" button-cart" [disabled]="quantidade <= 0" (click)="addCart()">
-          <span class="button-cart-span material-symbols-outlined" >
-            shopping_cart
-          </span>
+  <img [src]="produto?.image" alt="" class="object-cover w-16 h-20 rounded-lg">
+
+  <div class="flex flex-col justify-between w-full">
+    <div class="flex items-center justify-between">
+      <h5 class="text-base font-semibold text-gray-800 truncate max-w-[80%]">
+        {{ produto?.title }}
+      </h5>
+      <h4 class="text-sm font-bold text-rosaCustom-400 sm:ml-1">
+        {{ produto?.value | currency:'BRL':'symbol':'1.2-2' }}
+      </h4>
+    </div>
+
+    <p class="mt-1 text-sm text-gray-500">
+      {{ produto?.description }}
+    </p>
+
+    <div class="flex items-center justify-between gap-4 mt-4 lg:justify-end">
+      <div class="flex items-center overflow-hidden border rounded-xl">
+        <button class="px-3 py-1 text-lg font-bold text-gray-600 transition hover:bg-gray-100" (click)="removeProduct()" [disabled]="quantidade <= 0">
+          -
         </button>
+        <div class="w-4 py-1 text-base font-medium text-center text-gray-700 bg-white lg:w-8" >
+          {{ quantidade }}
+        </div>
+        <button class="px-3 py-1 text-lg font-bold text-gray-600 transition hover:bg-gray-100" (click)="addProduct()">
+          +
+        </button>
+      </div>
+
+      <button
+        class="flex items-center gap-1 px-4 py-2 text-white transition bg-rosaCustom-400 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
+        [disabled]="quantidade <= 0"(click)="addCart()" aria-label="Adicionar produto ao carrinho">
+
+        <span class="material-symbols-outlined">
+          shopping_cart
+        </span>
+
+        <span class="text-sm font-medium">Adicionar</span>
+      </button>
     </div>
   </div>
 </div>
+
