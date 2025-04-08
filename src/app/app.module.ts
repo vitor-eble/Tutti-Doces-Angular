@@ -21,6 +21,8 @@ import { AuthGuard } from './guard/auth.guard';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { ToastComponent } from './components/toast/toast.component';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,6 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     CarrinhoComprasComponent,
     CarrinhoResumoComponent,
     HomeComponent,
-    CardComponent,
     LoginComponent,
     RegisterComponent,
   ],
@@ -42,6 +43,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    ComponentsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyBJKo14Pv1pL-eReWIPd1QCdp6pQGCu8iA",

@@ -5,6 +5,7 @@ import { CarrinhoService } from '../../../../services/carrinho.service';
 import { BrigadeirosService } from '../../../../services/brigadeiros.service';
 import { TrufaService } from '../../../../services/trufa.service';
 import { BebidasService  } from '../../../../services/bebidas.service';
+import { ToastService } from '../../../../services/toast.service';
 
 @Component({
   selector: 'app-inicio-products',
@@ -30,6 +31,7 @@ export class InicioProductsComponent {
     private brigadeirosService: BrigadeirosService,
     private trufasService: TrufaService,
     private bebidasService: BebidasService,
+    private toastService: ToastService
   ){  }
 
   ngOnInit() {
@@ -95,6 +97,10 @@ export class InicioProductsComponent {
     if(produtoSelecionado){
       this.carrinhoService.adicionarProduto(produtoSelecionado, quantidade);
     }
+  }
+
+  exibirToast(nomeProduto: string){
+    this.toastService.show(`Adicionado ${nomeProduto} ao carrinho`);
   }
 
 }

@@ -16,7 +16,8 @@ export class CardComponent {
 
   @Output() add = new EventEmitter()
   @Output() remove = new EventEmitter()
-  @Output() cart = new EventEmitter<{index: number, tipo: string}>()
+  @Output() cart = new EventEmitter<{index: number, tipo: string}>();
+  @Output() produtoAdicionado = new EventEmitter<string>()
 
   addProduct(){
     this.add.emit(this.index);
@@ -28,6 +29,7 @@ export class CardComponent {
 
   addCart(){
     this.cart.emit({ index: this.index, tipo: this.tipo })
+    this.produtoAdicionado.emit(this.produto.title)
   }
 
 }

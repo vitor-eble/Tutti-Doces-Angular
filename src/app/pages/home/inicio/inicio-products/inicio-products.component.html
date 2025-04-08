@@ -21,6 +21,7 @@
         (add)="incrementaBrigadeiro($event)"
         (remove)="decrementaBrigadeiro($event)"
         (cart)="addCart($event.index, $event.tipo)"
+        (produtoAdicionado)="exibirToast($event)"
       >
       </app-card>
     </div>
@@ -50,6 +51,7 @@
         (add)="incrementaTrufa($event)"
         (remove)="decrementaTrufa($event)"
         (cart)="addCart($event.index, $event.tipo)"
+        (produtoAdicionado)="exibirToast($event)"
       >
       </app-card>
 
@@ -79,6 +81,7 @@
       (add)="incrementaBebida($event)"
       (remove)="decrementaBebida($event)"
       (cart)="addCart($event.index, $event.tipo)"
+      (produtoAdicionado)="exibirToast($event)"
       >
     </app-card>
     </div>
