@@ -55,13 +55,26 @@
           Carrinho
         </a>
 
-        <div class="relative">
+        <div class="w-full h-full">
           <button class="flex items-center justify-center w-16 h-12 text-base font-bold text-black" routerLinkActive="active" *ngIf="showLinks" (click)="openLogOut()">
             Conta
           </button>
-          <button *ngIf="showLogOut" class="absolute left-0 w-16 h-12 bg-zinc-100 top-10 border-2 border-solid border-[#dcdcdc] rounded-lg font-semibold shadow-lg" title="btn-logout" (click)="logOut()">
+          <!-- <button *ngIf="showLogOut" class="absolute left-0 w-16 h-12 bg-zinc-100 top-10 border-2 border-solid border-[#dcdcdc] rounded-lg font-semibold shadow-lg" title="btn-logout" ">
             Sair
-          </button>
+          </button> -->
+          <div *ngIf="showLogOut" class="fixed right-0 bottom-0 top-0 w-64 bg-gray-100 z-50 rounded-l-lg shadow-[-8px_0_16px_rgba(0,0,0,0.2)] p-4">
+            <div class="flex flex-col justify-between items-center w-full h-full gap-4">
+              <div>
+
+              </div>
+              <div class="border-t-2 border-solid border-[#dcdcdc] w-full flex items-end ">
+                <button class="p-2 flex justify-start items-center hover:bg-gray-200 rounded-lg w-full mt-1 text-gray-800 gap-3" (click)="logOut()" title="btn-logout">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  <span>Sair</span>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <a routerLink="/login" class="flex items-center gap-1 text-base font-bold text-black" routerLinkActive="active" *ngIf="!showLinks">
