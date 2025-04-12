@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -10,9 +10,11 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HomeComponent {
 
-  menuAberto: boolean = false;
-  showLogOut: boolean = false
+  @ViewChild('sidebar') sidedar!: ElementRef
+  @ViewChild('toggleButton') toggleButton!: ElementRef;
 
+  menuAberto: boolean = false;
+  showSidebar: boolean = false
   showLinks: boolean = false;
 
   constructor(private authService: AuthService) { }
@@ -24,12 +26,17 @@ export class HomeComponent {
     )
   }
 
-  openLogOut(){
-    this.showLogOut = !this.showLogOut
+  openSidebar(){
+    event?.preventDefault()
+    this.showSidebar = !this.showSidebar
+  }
+
+  closeLogOut() {
+    this.showSidebar = false
   }
 
   logOut(){
-    this.showLogOut = false
+    this.showSidebar = false
     this.authService.logOut()
   }
 
@@ -41,5 +48,16 @@ export class HomeComponent {
   closeMenu() {
     this.menuAberto = false;
     console.log("Menu fechado:", this.menuAberto);
+  }
+
+  @HostListener('document: click', ['$event'])
+  onDocumentCLick(event: MouseEvent){
+    const clickTarged = event.target as HTMLElement;
+    const clickedInsideSidebar = this.sidedar?.nativeElement.contains(clickTarged)
+    const clickedToggleButton = this.toggleButton?.nativeElement.contains(clickTarged);
+
+    if(!clickedInsideSidebar && !clickedToggleButton){
+      this.showSidebar = false
+    }
   }
 }
