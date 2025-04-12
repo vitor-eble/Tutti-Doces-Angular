@@ -1,6 +1,6 @@
 import { AuthService } from './../../../services/auth.service';
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, input } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,35 +19,50 @@ export class RegisterComponent {
   confirmPassword: string = ''
 
   constructor(
-    private authService: AuthService, private router: Router
-  ) { }
+    private authService: AuthService, private router: Router, private fb: FormBuilder
+  ) {
+
+  }
 
   ngOnInit(){
-    this.formulario = new FormGroup({
-      inputEmail: new FormControl(null, [
-        Validators.required, Validators.email
-      ]),
-      passwordInput: new FormControl(null, [
-        Validators.required
-      ]),
-      confirmPasswordInput: new FormControl(null, [
-        Validators.required
-      ])
+    // this.formulario = new FormGroup({
+    //   inputEmail: new FormControl(null, [
+    //     Validators.required, Validators.email
+    //   ]),
+    //   passwordInput: new FormControl(null, [
+    //     Validators.required
+    //   ]),
+    //   confirmPasswordInput: new FormControl(null, [
+    //     Validators.required
+    //   ])
+    // });
+
+    this.formulario = this.fb.group({
+      inputEmail: [null, [Validators.required, Validators.email]],
+      passwordInput: [null, [Validators.required]],
+      confirmPasswordInput: [null, [Validators.required]]
     })
+
+
   }
 
   async register(){
-    if(!this.formulario.get('emailInput')?.value || !this.password || !this.confirmPassword){
+
+    const email = this.formulario.get('inputEmail')?.value?.trim();
+    const password = this.formulario.get('passwordInput')?.value?.trim();
+    const confirmPassword = this.formulario.get('confirmPasswordInput')?.value?.trim();
+
+    if(!email || !password || !confirm){
       alert('Preencha todos os campos!');
       return
     }
 
-    if(this.password !== this.confirmPassword){
+    if(password !== confirmPassword){
       alert('As senhas nao coincidem!')
       return
     }
 
-    await this.authService.register(this.email, this.password)
+    await this.authService.register(email, password )
   }
 
   onSubmit(formulario: any) {
