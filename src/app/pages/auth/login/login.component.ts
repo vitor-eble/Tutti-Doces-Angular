@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from './../../../services/auth.service';
 import { User } from '../../../user.modal';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -14,18 +14,24 @@ export class LoginComponent {
 
   formulario!: FormGroup;
 
+  constructor(private authService: AuthService, private fb: FormBuilder) { }
+
   ngOnInit(){
-    this.formulario = new FormGroup({
-      inputEmail: new FormControl(null, [
-        Validators.required
-      ]),
-      inputPassword: new FormControl(null,[
-        Validators.required
-      ])
+    // this.formulario = new FormGroup({
+    //   inputEmail: new FormControl(null, [
+    //     Validators.required
+    //   ]),
+    //   inputPassword: new FormControl(null,[
+    //     Validators.required
+    //   ])
+    // })
+
+    this.formulario = this.fb.group({
+      inputEmail: [null, [Validators.required]],
+      inputPassword: [null, [Validators.required]]
     })
   }
 
-  constructor(private authService: AuthService) { }
 
   fazerLogin(){
     const userEmail = this.formulario.get('inputEmail')?.value
