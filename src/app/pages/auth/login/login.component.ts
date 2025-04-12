@@ -17,15 +17,6 @@ export class LoginComponent {
   constructor(private authService: AuthService, private fb: FormBuilder) { }
 
   ngOnInit(){
-    // this.formulario = new FormGroup({
-    //   inputEmail: new FormControl(null, [
-    //     Validators.required
-    //   ]),
-    //   inputPassword: new FormControl(null,[
-    //     Validators.required
-    //   ])
-    // })
-
     this.formulario = this.fb.group({
       inputEmail: [null, [Validators.required]],
       inputPassword: [null, [Validators.required]]

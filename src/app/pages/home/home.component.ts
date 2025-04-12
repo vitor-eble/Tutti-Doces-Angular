@@ -14,7 +14,7 @@ export class HomeComponent {
   @ViewChild('toggleButton') toggleButton!: ElementRef;
 
   menuAberto: boolean = false;
-  showSidebar: boolean = false
+  showSidebar: boolean = true
   showLinks: boolean = false;
 
   constructor(private authService: AuthService) { }

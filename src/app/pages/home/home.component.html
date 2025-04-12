@@ -60,7 +60,10 @@
             Conta
           </button>
 
-          <div *ngIf="showSidebar" class="fixed right-0 bottom-0 top-0 w-96 bg-gray-100 z-50 rounded-l-lg shadow-[-8px_0_16px_rgba(0,0,0,0.2)] px-6 py-4" #sidebar>
+          <div *ngIf="showSidebar"
+          class="fixed right-0 bottom-0 top-0 w-96 bg-gray-100 z-50 rounded-l-lg shadow-[-8px_0_16px_rgba(0,0,0,0.2)] px-6 py-4 transition-all duration-500"
+          [ngClass]="{ 'translate-x-0': showSidebar, 'translate-x-full': !showSidebar }"
+          #sidebar>
             <div class="flex flex-col justify-between w-full h-full gap-4">
 
               <button class="absolute top-0 right-0 cursor-pointer w-12 h-12 z-20" (click)="closeLogOut()" title="btn-close">
@@ -77,6 +80,25 @@
                     <h3 class="text-sm text-gray-700">User Name</h3>
                     <h4 class="text-xs text-gray-600">exemple email</h4>
                   </div>
+                </div>
+                <div>
+
+                  <div class="flex flex-col mt-2">
+                    <h2 class="text-base text-gray-600 mt-4 font-semibold uppercase tracking-widest">
+                      Conta
+                    </h2>
+                    <div class="flex flex-col gap-1 ml-1 mt-1">
+                      <button class="p-2 flex items-center gap-3 hover:bg-gray-200 rounded-lg">
+                        <i class="fa-solid fa-pen text-gray-700"></i>
+                        <span class="text-gray-800 text-sm">Editar perfil</span>
+                      </button>
+                      <button class="p-2 flex items-center gap-3 hover:bg-gray-200 rounded-lg ">
+                        <i class="fa-solid fa-bell text-gray-700"></i>
+                        <span class="text-gray-800 text-sm">Notificações</span>
+                      </button>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
