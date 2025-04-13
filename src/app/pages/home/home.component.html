@@ -1,5 +1,5 @@
-<div class="w-full bg-[#dcdcdc]/60">
-  <header class="bg-custom-gradient fixed top-0 left-0 right-0 shadow-lg z-20 h-[83px] flex items-center">
+<div class="w-full bg-[#dcdcdc]/60 dark:bg-[#1f1f1f]/60">
+  <header class="bg-gradient-to-r from-rosaCustom-400 to-rosaCustom-300 dark:from-rosaCustomDark-400 dark:to-rosaCustomDark-300 fixed top-0 left-0 right-0 shadow-lg z-20 h-[83px] flex items-center">
     <div class="xl:container mx-auto py-[70px] w-full md:px-3 flex items-center justify-between px-3">
       <h1 class="title-nav">
         Tutti-Doces
@@ -56,76 +56,18 @@
         </a>
 
         <div class="w-full h-full">
-          <button class="flex items-center justify-center w-16 h-12 text-base font-bold text-black" routerLinkActive="active" *ngIf="showLinks" (click)="openSidebar()" #toggleButton>
+          <button class="flex items-center justify-center w-16 h-12 text-base font-bold text-black dark:text-rosaCustomDark-950" routerLinkActive="active" *ngIf="showLinks" (click)="openSidebar()" #toggleButton>
             Conta
           </button>
 
-          <div *ngIf="showSidebar"
-          class="fixed right-0 bottom-0 top-0 w-96 bg-gray-100 z-50 rounded-l-lg shadow-[-8px_0_16px_rgba(0,0,0,0.2)] px-6 py-4 transition-all duration-500"
-          [ngClass]="{ 'translate-x-0': showSidebar, 'translate-x-full': !showSidebar }"
-          #sidebar>
-            <div class="flex flex-col justify-between w-full h-full gap-4">
+          <app-sidebar
+            #sidebar
+            [showSidebar]="showSidebar"
+            (toggleThemeEvent)="toggleTheme()"
+            (closeSidebarEvent)="closeSidebar()"
+            >
+          </app-sidebar>
 
-              <button class="absolute top-0 right-0 cursor-pointer w-12 h-12 z-20" (click)="closeLogOut()" title="btn-close">
-                <i class="fa-solid fa-xmark text-gray-800 text-2xl"></i>
-              </button>
-
-              <div class="flex flex-col">
-                <div class="mt-4 flex justify-center">
-                  <h1 class="text-xl text-gray-800">Minha conta</h1>
-                </div>
-                <div class="mt-6 flex gap-3 items-center pb-2 border-b-2 border-solid border-[#dcdcdc]">
-                  <i class="fa-solid fa-circle-user text-4xl text-gray-700"></i>
-                  <div class="flex flex-col gap-[2px]">
-                    <h3 class="text-sm text-gray-700">User Name</h3>
-                    <h4 class="text-xs text-gray-600">exemple email</h4>
-                  </div>
-                </div>
-                <div>
-
-                  <div class="flex flex-col mt-2">
-                    <h2 class="text-base text-gray-600 mt-4 font-semibold uppercase tracking-widest">
-                      Conta
-                    </h2>
-                    <div class="flex flex-col gap-1 ml-1 mt-1">
-                      <button class="p-2 flex items-center gap-3 hover:bg-gray-200 rounded-lg">
-                        <i class="fa-solid fa-pen text-gray-700 text-sm"></i>
-                        <span class="text-gray-800 text-sm">Editar perfil</span>
-                      </button>
-                      <button class="p-2 flex items-center gap-3 hover:bg-gray-200 rounded-lg ">
-                        <i class="fa-solid fa-bell text-gray-700 text-sm"></i>
-                        <span class="text-gray-800 text-sm">Notificações</span>
-                      </button>
-                    </div>
-                  </div>
-
-                  <div class="flex flex-col mt-2">
-                    <h2 class="text-base text-gray-600 mt-4 font-semibold uppercase tracking-widest">
-                      Preferências
-                    </h2>
-                    <div class="flex flex-col gap-1 ml-1 mt-1">
-                      <button class="p-2 flex items-center gap-3 hover:bg-gray-200 rounded-lg">
-                        <i class="fa-solid fa-moon text-gray-700 text-sm"></i>
-                        <span class="text-gray-800 text-sm">Tema escuuro</span>
-                      </button>
-                      <button class="p-2 flex items-center gap-3 hover:bg-gray-200 rounded-lg ">
-                        <i class="fa-solid fa-language text-gray-700 text-sm"></i>
-                        <span class="text-gray-800 text-sm">Idioma</span>
-                      </button>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="border-t-2 border-solid border-[#dcdcdc] w-full flex items-end ">
-                <button class="p-2 flex justify-start items-center hover:bg-gray-200 rounded-lg w-full mt-1 text-gray-800 gap-3" (click)="logOut()" title="btn-logout">
-                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                  <span>Sair</span>
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
 
         <a routerLink="/login" class="flex items-center gap-1 text-base font-bold text-black" routerLinkActive="active" *ngIf="!showLinks">

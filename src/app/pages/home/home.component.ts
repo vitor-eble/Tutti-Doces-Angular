@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-home',
@@ -10,14 +11,14 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HomeComponent {
 
-  @ViewChild('sidebar') sidedar!: ElementRef
+  @ViewChild('sidebar', {read: ElementRef }) sidedar!: ElementRef
   @ViewChild('toggleButton') toggleButton!: ElementRef;
 
   menuAberto: boolean = false;
-  showSidebar: boolean = true
+  showSidebar: boolean = false;
   showLinks: boolean = false;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private themeService: ThemeService) { }
 
   ngOnInit(){
     this.authService.getUsuarioEstaAutenticado()
@@ -27,17 +28,21 @@ export class HomeComponent {
   }
 
   openSidebar(){
-    event?.preventDefault()
+    event?.preventDefault();
     this.showSidebar = !this.showSidebar
   }
 
-  closeLogOut() {
+  closeSidebar() {
     this.showSidebar = false
   }
 
   logOut(){
     this.showSidebar = false
     this.authService.logOut()
+  }
+
+  toggleTheme(){
+    this.themeService.toggleTheme();
   }
 
   menuOpen() {

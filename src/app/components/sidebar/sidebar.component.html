@@ -1,0 +1,97 @@
+<div [@sidebarAnimation]="showSidebar ? 'open' : 'closed'"
+class="fixed right-0 bottom-0 top-0 w-96 bg-gray-100 dark:bg-gray-900 z-50 rounded-l-lg shadow-[-8px_0_16px_rgba(0,0,0,0.2)] px-6 py-4 transition-all duration-500" #sidebar>
+  <div class="flex flex-col justify-between w-full h-full gap-4">
+
+    <button class="absolute top-0 right-0 cursor-pointer w-12 h-12 z-20" (click)="closeSidebar()" title="btn-close">
+      <i class="fa-solid fa-xmark text-gray-800 dark:text-gray-200 text-2xl"></i>
+    </button>
+
+    <div class="flex flex-col">
+      <div class="mt-4 flex justify-center">
+        <h1 class="text-xl text-gray-800 dark:text-gray-200">Minha conta</h1>
+      </div>
+      <div class="mt-6 flex gap-3 items-center pb-2 border-b-2 border-solid border-gray-300 dark:border-gray-700">
+        <i class="fa-solid fa-circle-user text-4xl text-gray-700 dark:text-gray-300"></i>
+        <div class="flex flex-col gap-[2px]">
+          <h3 class="text-sm text-gray-700 dark:text-gray-300">User Name</h3>
+          <h4 class="text-xs text-gray-600 dark:text-gray-400">exemple email</h4>
+        </div>
+      </div>
+      <div>
+
+        <div class="flex flex-col mt-2">
+          <h2 class="text-base text-gray-600 mt-4 font-semibold uppercase tracking-widest dark:text-gray-400">
+            Conta
+          </h2>
+          <div class="flex flex-col gap-1 ml-1 mt-1">
+            <button class="p-2 flex items-center gap-3 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg">
+              <i class="fa-solid fa-pen text-gray-700 text-sm dark:text-gray-300"></i>
+              <span class="text-gray-800 text-sm dark:text-gray-200">Editar perfil</span>
+            </button>
+            <button class="p-2 flex items-center gap-3 hover:bg-gray-200 rounded-lg dark:hover:bg-gray-800">
+              <i class="fa-solid fa-bell text-gray-700 text-sm dark:text-gray-300"></i>
+              <span class="text-gray-800 text-sm dark:text-gray-200">Notificações</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="flex flex-col mt-2">
+          <h2 class="text-base text-gray-600 mt-4 font-semibold uppercase tracking-widest dark:text-gray-400">
+            Preferências
+          </h2>
+          <div class="flex flex-col gap-1 ml-1 mt-1">
+            <button class="p-2 flex items-center gap-3 hover:bg-gray-200 rounded-lg dark:hover:bg-gray-800" (click)="toggleTheme()">
+              <i class="fa-solid fa-moon text-gray-700 text-sm dark:text-gray-300"></i>
+              <span class="text-gray-800 text-sm dark:text-gray-200">Alterar tema</span>
+            </button>
+            <button class="p-2 flex items-center gap-3 hover:bg-gray-200 rounded-lg dark:hover:bg-gray-800">
+              <i class="fa-solid fa-language text-gray-700 text-sm dark:text-gray-300"></i>
+              <span class="text-gray-800 text-sm dark:text-gray-200">Idioma</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="flex flex-col mt-2">
+          <h2 class="text-base text-gray-600 mt-4 font-semibold uppercase tracking-widest dark:text-gray-400">
+            Segurança
+          </h2>
+          <div class="flex flex-col gap-1 ml-1 mt-1">
+            <button class="p-2 flex items-center gap-3 hover:bg-gray-200 rounded-lg dark:hover:bg-gray-800">
+              <i class="fa-solid fa-lock text-gray-700 text-sm dark:text-gray-300"></i>
+              <span class="text-gray-800 text-sm dark:text-gray-200">Mudar senha</span>
+            </button>
+            <button class="p-2 flex items-center gap-3 hover:bg-gray-200 rounded-lg dark:hover:bg-gray-800">
+              <i class="fa-solid fa-shield-halved text-gray-700 text-sm dark:text-gray-300"></i>
+              <span class="text-gray-800 text-sm dark:text-gray-200">Autenticação 2FA</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="flex flex-col mt-2">
+          <h2 class="text-base text-gray-600 mt-4 font-semibold uppercase tracking-widest dark:text-gray-400">
+            Informações
+          </h2>
+          <div class="flex flex-col gap-1 ml-1 mt-1">
+            <button class="p-2 flex items-center gap-3 hover:bg-gray-200 rounded-lg dark:hover:bg-gray-800">
+              <i class="fa-solid fa-circle-info text-gray-700 text-sm dark:text-gray-300"></i>
+              <span class="text-gray-800 text-sm dark:text-gray-200">Sobre o app</span>
+            </button>
+            <button class="p-2 flex items-center gap-3 hover:bg-gray-200 rounded-lg dark:hover:bg-gray-800">
+              <i class="fa-solid fa-question-circle text-gray-700 text-sm dark:text-gray-300"></i>
+              <span class="text-gray-800 text-sm dark:text-gray-200">Suporte</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="border-t-2 border-solid border-gray-300 w-full flex items-end dark:border-gray-700">
+      <button class="p-2 flex justify-start items-center hover:bg-gray-200 rounded-lg w-full mt-1 text-gray-800 gap-3 dark:text-gray-200 dark:hover:bg-gray-800"
+       (click)="logOut()" title="btn-logout">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <span>Sair</span>
+      </button>
+    </div>
+  </div>
+</div>

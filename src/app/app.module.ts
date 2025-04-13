@@ -21,6 +21,9 @@ import { AuthGuard } from './guard/auth.guard';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ComponentsModule } from './components/components.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,12 +37,12 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     CarrinhoComprasComponent,
     CarrinhoResumoComponent,
     HomeComponent,
-    CardComponent,
     LoginComponent,
     RegisterComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
@@ -51,8 +54,9 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
       messagingSenderId: "941752678860",
       appId: "1:941752678860:web:a83cc34e26815ca66b4569"
     }),
-    AngularFireAuthModule
-  ],
+    AngularFireAuthModule,
+    ComponentsModule
+ ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
