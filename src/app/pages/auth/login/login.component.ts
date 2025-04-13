@@ -18,8 +18,8 @@ export class LoginComponent {
 
   ngOnInit(){
     this.formulario = this.fb.group({
-      inputEmail: [null, [Validators.required]],
-      inputPassword: [null, [Validators.required]]
+      inputEmail: [null, [Validators.required, Validators.email]],
+      inputPassword: [null, [Validators.required, Validators.minLength(6)]],
     })
   }
 

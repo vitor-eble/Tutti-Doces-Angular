@@ -1,45 +1,45 @@
-.cards {
+/* .cards {
   @apply grid grid-cols-1 gap-3 px-2 py-4 2xl:gap-10 lg:grid-cols-2
 }
 
 .card {
-  @apply flex w-full p-2 bg-white rounded-lg shadow-lg
-}
+  @apply flex w-full p-2 bg-gray-900 dark:bg-gray-900 rounded-lg shadow-lg
+} */
 
 .card-produto-image {
   @apply xl:w-[170px] xl:h-[170px] w-[140px] h-[140px] hover:scale-110 duration-200
 }
 
 .card-description {
-  @apply flex flex-col justify-between w-full pl-0 border-l-2 border-solid xl:pl-3 lg:pl-1 border-rosinha-escuro lg:gap-3
+  @apply flex flex-col justify-between w-full pl-0 border-l-2 border-solid xl:pl-3 lg:pl-1 border-rosaCustom-400 dark:border-rosaCustomDark-600 lg:gap-3
 }
 
 .card-produto-titulo {
-  @apply flex items-center h-full xl:p-2 xl:text-xl font-semibold lg:p-1 lg:text-lg pl-2 pt-1 text-base
+  @apply flex items-center h-full xl:p-2 xl:text-xl font-semibold lg:p-1 lg:text-lg pl-2 pt-1 text-base text-gray-950 dark:text-gray-50
 }
 
 .card-produto-preco {
-  @apply md:pr-2 xl:text-xl font-semibold lg:pr-1 lg:text-lg text-sm pt-1 md:w-20 w-16 flex items-start justify-end
+  @apply md:pr-2 xl:text-lg font-semibold lg:pr-1 lg:text-base text-sm pt-1 md:w-20 w-16 flex items-start justify-end text-rosaCustom-400 dark:text-rosaCustomDark-700
 }
 
 .card-produto-description {
-  @apply pl-2 text-neutral-500 xl:text-base  2xl:max-w-[410px] xl:max-w-[300px] lg:pl-1 lg:text-sm lg:max-w-[250px] text-sm
+  @apply pl-2 text-gray-600 dark:text-gray-400 xl:text-base tracking-wide 2xl:max-w-[410px] xl:max-w-[300px] lg:pl-1 lg:text-sm lg:max-w-[250px] text-sm
 }
 
 .button-decrementa {
-  @apply flex items-center justify-center h-12 transition-all duration-200 border-2 border-solid rounded-l w-7 md:w-10 xl:w-12 border-rosinha-escuro active:bg-custom-gradient active:text-white;
+  @apply flex items-center justify-center h-12 transition-all duration-200 border-2 border-solid rounded-l w-7 md:w-10 xl:w-12  text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700 hover:bg-gray-300 dark:hover:bg-gray-700 active:bg-gray-400 active:text-white dark:active:bg-gray-600;
 }
 
 .value-product {
-  @apply flex items-center justify-center h-12 text-center border-solid outline-none w-7 md:w-10 xl:w-12 border-y-2 border-rosinha-escuro;
+  @apply flex items-center justify-center h-12 text-center border-solid outline-none w-7 md:w-10 xl:w-12 border-y-2 border-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700 active:bg-gray-400 active:text-white dark:active:bg-gray-600 dark:border-gray-700 text-gray-900 dark:text-gray-100;
 }
 
 .button-incrementa {
-  @apply flex items-center justify-center h-12 transition-all duration-200 border-2 border-solid rounded-r w-7 md:w-10 xl:w-12 border-rosinha-escuro active:bg-custom-gradient active:text-white;
+  @apply flex items-center justify-center h-12 transition-all duration-200 border-2 border-solid rounded-r w-7 md:w-10 xl:w-12 border-gray-300 hover:bg-gray-300 active:bg-custom-gradient active:text-white dark:hover:bg-gray-700 dark:active:bg-gray-600 dark:border-gray-700 text-gray-900 dark:text-gray-100;
 }
 
 .button-cart {
-  @apply h-12 text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95 xl:w-52
+  @apply h-12 text-white transition-all duration-200 rounded shadow-md bg-rosaCustom-400 hover:bg-rosaCustom-500 active:scale-95 px-3 dark:bg-rosaCustomDark-600 dark:hover:bg-rosaCustom-500
 
 }
 

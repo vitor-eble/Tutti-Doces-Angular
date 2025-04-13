@@ -1,4 +1,4 @@
-<div class="flex w-full p-2 bg-white rounded-lg shadow-lg">
+<div class="flex w-full p-2 bg-gray-100 dark:bg-gray-900 rounded-lg shadow-lg">
   <div class="flex w-full">
     <img [src]="produto?.image" alt="" class="card-produto-image">
     <div class="card-description">
@@ -28,11 +28,11 @@
               +
             </button>
           </div>
-        <button class=" button-cart" [disabled]="quantidade <= 0" (click)="addCart()">
-          <span class="button-cart-span material-symbols-outlined" >
+        <button class=" button-cart flex items-center gap-2 justify-center" [disabled]="quantidade <= 0" (click)="addCart()">
+          <span class="button-cart-span material-symbols-outlined md:text-lg text-base" >
             shopping_cart
           </span>
-          <span>
+          <span class="md:text-sm font-medium text-xs">
             Adicionar ao carrinho
           </span>
         </button>
