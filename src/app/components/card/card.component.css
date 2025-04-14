@@ -7,7 +7,7 @@
 } */
 
 .card-produto-image {
-  @apply xl:w-[170px] xl:h-[170px] w-[140px] h-[140px] hover:scale-110 duration-200
+  @apply xl:w-[170px] xl:h-[170px] w-[140px] h-[140px]
 }
 
 .card-description {

@@ -1,3 +1,13 @@
 .cards {
   @apply grid grid-cols-1 gap-3 px-2 py-4 2xl:gap-10 lg:grid-cols-2
 }
+
+.card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.cards:hover .card:not(:hover) {
+  opacity: 0.5;
+  filter: blur(2px);
+}
