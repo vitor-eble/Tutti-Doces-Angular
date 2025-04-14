@@ -1,18 +1,18 @@
 <div class="w-full px-2">
-  <div class="flex flex-col justify-between w-full p-3 bg-white rounded-lg shadow-lg h-96">
+  <div class="flex flex-col justify-between w-full p-4 bg-zinc-100 dark:bg-zinc-900 rounded-lg shadow-lg h-96">
     <div>
-      <h1 class="pt-2 pb-1 pl-2 text-2xl border-b-2 border-solid md:text-3xl border-rosinha-escuro">
+      <h1 class="pt-2 pb-1 pl-2 text-2xl text-zinc-800 dark:text-zinc-200 border-b-2 border-solid md:text-3xl border-rosaCustom-400 dark:border-rosaCustomDark-600">
         Resumo
       </h1>
     </div>
     <div class="flex flex-col w-full gap-5">
       <div class="flex">
-        <p class="flex items-center justify-between w-full border-b-2 border-solid border-rosinha-escuro">
-          <span class="text-xl lg:text-3xl md:text-2xl">Total:</span>
-          <span class="text-xlg lg:text-2xl md:text-xl">R$ {{ total | number: '1.2-2' }}</span>
+        <p class="flex items-center justify-between w-full border-b-2 border-solid border-rosaCustom-400">
+          <span class="text-xl lg:text-3xl md:text-2xl text-zinc-800 dark:text-zinc-200">Total:</span>
+          <span class="text-xlg lg:text-2xl md:text-xl text-zinc-800 dark:text-zinc-200">R$ {{ total | number: '1.2-2' }}</span>
         </p>
       </div>
-      <button class="w-full text-white transition-all duration-200 rounded shadow-md 2xl:text-xl h-14 bg-custom-gradient hover:scale-105 active:scale-95">
+      <button class="w-full text-zinc-200 transition-all duration-200 rounded shadow-md 2xl:text-xl text-lg h-14 bg-rosaCustom-400 hover:bg-rosaCustom-500 active:scale-95 dark:bg-rosaCustomDark-600 dark:hover:bg-rosaCustomDark-500">
         Comprar
       </button>
     </div>

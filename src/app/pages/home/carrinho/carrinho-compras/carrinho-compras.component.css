@@ -1,42 +1,39 @@
 .card {
-  @apply flex w-full p-2 bg-white rounded-lg shadow-lg
+  @apply flex w-full p-4 bg-zinc-100 dark:bg-zinc-900 rounded-lg shadow-lg
 }
 
 .card-produto-image {
-  @apply w-[140px] xl:w-[150px] xl:h-[150px]  h-[140px] hover:scale-110 duration-200 flex justify-center
+  @apply w-[140px] xl:w-[150px] xl:h-[150px]  h-[140px] hover:scale-110 duration-200 flex justify-center xl:scale-125
 }
 
 .card-description {
-  @apply flex flex-col justify-between w-full border-t-2 border-solid  border-rosinha-escuro gap-3 pt-1
+  @apply flex flex-col justify-between w-full border-t-2 border-solid  border-rosaCustom-400 dark:border-rosaCustomDark-600 gap-3 pt-1
 }
 
 .card-produto-titulo {
-  @apply flex items-center h-full pl-1  font-semibold lg:text-lg text-base
+  @apply flex items-center h-full pl-1  font-semibold lg:text-lg text-base text-zinc-800 dark:text-zinc-200
 }
 
 .card-produto-preco {
-  @apply  xl:text-base font-semibold  lg:text-lg text-sm  md:w-20 w-16 2xl:w-20 flex items-start justify-end p-1
+  @apply  xl:text-base font-semibold  lg:text-lg text-sm  md:w-20 w-16 2xl:w-20 flex items-start justify-end p-1 text-zinc-800 dark:text-zinc-200
 }
 
-.card-produto-description {
-  @apply pl-1 text-neutral-500 2xl:max-w-[410px] xl:max-w-[300px]  lg:text-sm lg:max-w-[250px]  text-sm h-12
-}
 
 .button-decrementa {
-  @apply flex items-center justify-center h-12 transition-all duration-200 active:bg-custom-gradient active:text-white;
+  @apply flex items-center justify-center h-12 transition-all duration-200 hover:bg-zinc-300 active:bg-zinc-400 text-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700 dark:active:bg-zinc-600
 }
 
 .value-product {
-  @apply flex items-center justify-center h-12 text-center border-solid outline-none border-x-2 border-rosinha-escuro;
+  @apply flex items-center justify-center h-12 text-center border-solid outline-none border-x-2 border-zinc-300 hover:bg-zinc-300 dark:hover:bg-zinc-700 dark:text-zinc-200 text-zinc-800 dark:border-zinc-700
   /* md:w-10 xl:w-12 2xl:w-[50px] w-7 */
 }
 
 .button-incrementa {
-  @apply flex items-center justify-center h-12 transition-all duration-200 active:bg-custom-gradient active:text-white;
+  @apply flex items-center justify-center h-12 transition-all duration-200 hover:bg-zinc-300 active:bg-zinc-400 text-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700 dark:active:bg-zinc-600
 }
 
 .button-cart {
-  @apply h-[52px] text-white transition-all duration-200 rounded shadow-md bg-custom-gradient hover:scale-105 active:scale-95 w-1/2;
+  @apply h-[52px] text-zinc-200 dark:text-zinc-800 transition-all duration-200 rounded shadow-md bg-rosaCustom-400 hover:bg-rosaCustom-500 dark:bg-rosaCustomDark-600 dark:hover:bg-rosaCustomDark-500 active:scale-95 w-1/2;
   /* px-7 md:px-7 xl:px-10 */
 
   & .button-cart-span {
