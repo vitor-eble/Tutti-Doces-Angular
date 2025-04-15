@@ -5,6 +5,7 @@
     </h1>
     <div class="cards">
       <app-card
+      class="card transition duration-150"
       *ngFor="let trufa of trufas; let i = index"
       [produto]="trufa"
       [quantidade]="amountTrufa[i]"

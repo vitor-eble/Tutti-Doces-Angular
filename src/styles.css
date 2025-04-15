@@ -15,4 +15,14 @@ body::-webkit-scrollbar{
   display: none;
 }
 
+.card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.cards:hover .card:not(:hover) {
+  opacity: 0.5;
+  filter: blur(2px);
+}
+
 
