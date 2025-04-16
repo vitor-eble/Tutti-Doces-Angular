@@ -3,7 +3,7 @@
 }
 
 .card-produto-image {
-  @apply w-[140px] xl:w-[150px] xl:h-[150px]  h-[140px] hover:scale-110 duration-200 flex justify-center xl:scale-125
+  @apply w-[140px] xl:w-[150px] xl:h-[150px]  h-[140px] duration-200 flex justify-center
 }
 
 .card-description {

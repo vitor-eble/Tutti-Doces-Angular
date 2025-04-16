@@ -10,11 +10,10 @@ export class TrufaService {
   private trufas: Card[] = [
     {
       id: 2001,
-      image: 'https://acdn.mitiendanube.com/stores/001/071/840/products/truffa_06-f56c7232acd3da347217271804971475-480-0.webp',
+      image: '/trufa2001-Photoroom.png',
       title: 'Trufa brigadeiro 30g',
       description: 'Trufa de chocolate ao leite recheada com creme de brigadeiro',
       value: 4.50,
-
     },
     {
       id: 2002,
