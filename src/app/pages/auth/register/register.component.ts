@@ -14,10 +14,6 @@ export class RegisterComponent {
 
   formulario!: FormGroup;
 
-  email: string = ''
-  password: string = ''
-  confirmPassword: string = ''
-
   constructor(
     private authService: AuthService, private router: Router, private fb: FormBuilder
   ) {
@@ -25,18 +21,6 @@ export class RegisterComponent {
   }
 
   ngOnInit(){
-    // this.formulario = new FormGroup({
-    //   inputEmail: new FormControl(null, [
-    //     Validators.required, Validators.email
-    //   ]),
-    //   passwordInput: new FormControl(null, [
-    //     Validators.required
-    //   ]),
-    //   confirmPasswordInput: new FormControl(null, [
-    //     Validators.required
-    //   ])
-    // });
-
     this.formulario = this.fb.group({
       inputEmail: [null, [Validators.required, Validators.email]],
       passwordInput: [null, [Validators.required]],
