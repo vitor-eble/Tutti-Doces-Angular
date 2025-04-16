@@ -3,7 +3,11 @@
 }
 
 .card-produto-image {
+<<<<<<< HEAD
   @apply w-[140px] xl:w-[150px] xl:h-[150px]  h-[140px] duration-200 flex justify-center
+=======
+  @apply  duration-200 flex justify-center
+>>>>>>> adced34a04986fe3272bc7e0b16c3694d72e865d
 }
 
 .card-description {
