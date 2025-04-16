@@ -18,14 +18,17 @@ export class AuthService {
     });
   }
 
-  async register(email: string, password: string) {
+  async register(email: string, password: string, nome: string) {
     try {
       const userCredential = await this.afAuth.createUserWithEmailAndPassword(email, password);
-      console.log('Usuário registrado:', userCredential);
+      if(userCredential.user){
+        await userCredential.user.updateProfile({
+          displayName: nome
+        })
+      }
       alert('Usuário cadastrado com sucesso!');
       this.router.navigate(['/login']);
     } catch (error: any) {
-      console.error('Erro no registro:', error);
       alert('Erro ao cadastrar: ' + error.message);
     }
   }
@@ -46,6 +49,20 @@ export class AuthService {
 
   getUsuarioEstaAutenticado(): Observable<boolean> {
     return this.usuarioAutenticado.asObservable(); // Agora você usa o BehaviorSubject diretamente
+  }
+
+  getUserData(){
+    return this.afAuth.authState.pipe(
+      map(user => {
+        if (user) {
+          return {
+            name: user.displayName,
+            email: user.email
+          };
+        }
+        return null;
+      })
+    )
   }
 
 }

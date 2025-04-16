@@ -38,6 +38,7 @@ export class RegisterComponent {
     // });
 
     this.formulario = this.fb.group({
+      inputName: [null, [Validators.required]],
       inputEmail: [null, [Validators.required, Validators.email]],
       passwordInput: [null, [Validators.required]],
       confirmPasswordInput: [null, [Validators.required]]
@@ -48,11 +49,12 @@ export class RegisterComponent {
 
   async register(){
 
+    const nome = this.formulario.get('inputName')?.value?.trim()
     const email = this.formulario.get('inputEmail')?.value?.trim();
     const password = this.formulario.get('passwordInput')?.value?.trim();
     const confirmPassword = this.formulario.get('confirmPasswordInput')?.value?.trim();
 
-    if(!email || !password || !confirm){
+    if(!nome || !email || !password || !confirm){
       alert('Preencha todos os campos!');
       return
     }
@@ -62,7 +64,7 @@ export class RegisterComponent {
       return
     }
 
-    await this.authService.register(email, password )
+    await this.authService.register(email, password, nome )
   }
 
   onSubmit(formulario: any) {

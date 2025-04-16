@@ -14,8 +14,8 @@ class="fixed right-0 bottom-0 top-0 w-96 bg-zinc-100 dark:bg-zinc-900 z-50 round
       <div class="mt-6 flex gap-3 items-center pb-2 border-b-2 border-solid border-zinc-300 dark:border-zinc-700">
         <i class="fa-solid fa-circle-user text-4xl text-zinc-700 dark:text-zinc-300"></i>
         <div class="flex flex-col gap-[2px]">
-          <h3 class="text-sm text-zinc-700 dark:text-zinc-300">User Name</h3>
-          <h4 class="text-xs text-zinc-600 dark:text-zinc-400">exemple email</h4>
+          <h3 class="text-sm text-zinc-700 dark:text-zinc-300">{{ userName || 'user name' }}</h3>
+          <h4 class="text-xs text-zinc-600 dark:text-zinc-400">{{ userEmail || 'user email' }}</h4>
         </div>
       </div>
       <div>
