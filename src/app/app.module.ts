@@ -21,7 +21,7 @@ import { AuthGuard } from './guard/auth.guard';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { SidebarComponent } from './pages/home/sidebar/sidebar.component';
 import { ComponentsModule } from './components/components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -39,6 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
