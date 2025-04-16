@@ -3,13 +3,8 @@
 }
 
 .card-produto-image {
-<<<<<<< HEAD
-  @apply w-[140px] xl:w-[150px] xl:h-[150px]  h-[140px] duration-200 flex justify-center
-=======
-  @apply  duration-200 flex justify-center
->>>>>>> adced34a04986fe3272bc7e0b16c3694d72e865d
+  @apply w-[140px] xl:w-[150px] xl:h-[150px]  h-[140px]
 }
-
 .card-description {
   @apply flex flex-col justify-between w-full border-t-2 border-solid  border-rosaCustom-400 dark:border-rosaCustomDark-600 gap-3 pt-1
 }
