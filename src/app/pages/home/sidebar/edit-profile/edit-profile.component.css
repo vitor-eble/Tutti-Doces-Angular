@@ -1,0 +1,3 @@
+.inputs {
+ @apply w-full px-4 py-3 border-2 border-solid dark:border-zinc-700 outline-none dark:bg-zinc-800 rounded-lg focus:ring-2 dark:focus:ring-rosaCustomDark-600 text-base text-zinc-300
+}

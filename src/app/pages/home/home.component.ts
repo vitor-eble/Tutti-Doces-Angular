@@ -17,6 +17,7 @@ export class HomeComponent {
   menuAberto: boolean = false;
   showSidebar: boolean = false;
   showLinks: boolean = false;
+  modalEditProfileOpen: boolean = false;
 
   constructor(private authService: AuthService, private themeService: ThemeService) { }
 
@@ -61,4 +62,15 @@ export class HomeComponent {
       this.showSidebar = false
     }
   }
+
+  openEditProfile(){
+    this.modalEditProfileOpen = true;
+    console.log("Modal aberto:", this.modalEditProfileOpen);
+
+  }
+
+  closeEditProfile(){
+    this.modalEditProfileOpen = false
+  }
+
 }

@@ -24,6 +24,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { SidebarComponent } from './pages/home/sidebar/sidebar.component';
 import { ComponentsModule } from './components/components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditProfileComponent } from './pages/home/sidebar/edit-profile/edit-profile.component';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    SidebarComponent
+    SidebarComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       appId: "1:941752678860:web:a83cc34e26815ca66b4569"
     }),
     AngularFireAuthModule,
-    ComponentsModule
+    ComponentsModule,
+    AngularFireStorageModule
  ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

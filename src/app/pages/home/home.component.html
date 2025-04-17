@@ -71,6 +71,8 @@
             [showSidebar]="showSidebar"
             (closeSidebarEvent)="closeSidebar()"
             (logOutEvent)="logOut()"
+            (openEditProfileEvent)="openEditProfile()"
+
             >
           </app-sidebar>
 
@@ -100,3 +102,9 @@
   <router-outlet></router-outlet>
  </div>
 </div>
+
+<app-edit-profile
+  *ngIf="modalEditProfileOpen"
+  (closeEditProfileEvent)="closeEditProfile()"
+>
+</app-edit-profile>

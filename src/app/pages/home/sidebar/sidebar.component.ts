@@ -35,6 +35,7 @@ export class SidebarComponent {
   @Input() showSidebar!: boolean;
   @Output() logOutEvent = new EventEmitter<void>();
   @Output() closeSidebarEvent = new EventEmitter<void>();
+  @Output() openEditProfileEvent = new EventEmitter<void>();
 
   constructor(private authService: AuthService, private themeService: ThemeService){ }
 
@@ -45,6 +46,10 @@ export class SidebarComponent {
         this.userEmail = user.email
       }
     })
+  }
+
+  openEditProfile(){
+    this.openEditProfileEvent.emit()
   }
 
   toggleTheme() {
