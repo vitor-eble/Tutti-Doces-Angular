@@ -41,10 +41,6 @@ export class HomeComponent {
     this.authService.logOut()
   }
 
-  toggleTheme(){
-    this.themeService.toggleTheme();
-  }
-
   menuOpen() {
     this.menuAberto = !this.menuAberto;
     console.log("Menu aberto:", this.menuAberto);

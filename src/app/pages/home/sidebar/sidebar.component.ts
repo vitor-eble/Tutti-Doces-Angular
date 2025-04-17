@@ -2,6 +2,7 @@ import { AuthService } from './../../../services/auth.service';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { ThemeService } from '../../../services/theme.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -33,10 +34,9 @@ export class SidebarComponent {
 
   @Input() showSidebar!: boolean;
   @Output() logOutEvent = new EventEmitter<void>();
-  @Output() toggleThemeEvent = new EventEmitter<void>();
   @Output() closeSidebarEvent = new EventEmitter<void>();
 
-  constructor(private authService: AuthService){ }
+  constructor(private authService: AuthService, private themeService: ThemeService){ }
 
   ngOnInit(){
     this.authService.getUserData().subscribe((user: any) =>{
@@ -48,7 +48,7 @@ export class SidebarComponent {
   }
 
   toggleTheme() {
-    this.toggleThemeEvent.emit()
+    this.themeService.toggleTheme()
   }
 
   closeSidebar(){
