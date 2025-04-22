@@ -20,8 +20,8 @@ export class InicioProductsComponent {
   bebidas: Card[] = [];
 
   amountBrigadeiro: number[] = []
-  amounttrufa: number[] = []
-  amountbebida: number[] = [];
+  amountTrufa: number[] = []
+  amountBebida: number[] = [];
 
   verMais: string = 'https://cdn-icons-png.flaticon.com/128/11431/11431124.png'
 
@@ -40,12 +40,15 @@ export class InicioProductsComponent {
     this.trufasService.getTrufasList().subscribe((trufas: Card[]) => {
       this.trufas = trufas.slice(0,4);
       this.trufasService.amountTrufas = new Array(this.trufas.length).fill(1);
-      this.amounttrufa = this.trufasService.amountTrufas
+      this.amountTrufa = this.trufasService.amountTrufas
     })
 
-    this.bebidas = this.bebidasService.getBebidas().slice(0,4);
-    this.bebidasService.amountBebidas = new Array(this.bebidas.length).fill(1)
-    this.amountbebida = this.bebidasService.amountBebidas
+    this.bebidasService.getBebidasList().subscribe((bebidas: Card[]) => {
+      this.bebidas = bebidas.slice(0,4);
+      this.bebidasService.amountBebidas = new Array(this.bebidas.length).fill(1)
+      this.amountBebida = this.bebidasService.amountBebidas
+    })
+
   }
 
   decrementaBrigadeiro(index: number){
@@ -83,11 +86,11 @@ export class InicioProductsComponent {
         break
       case 'trufa':
         produtoSelecionado = this.trufas[index];
-        quantidade = this.amounttrufa[index];
+        quantidade = this.amountTrufa[index];
         break;
       case 'bebida':
         produtoSelecionado = this.bebidas[index];
-        quantidade = this.amountbebida[index];
+        quantidade = this.amountBebida[index];
         break;
       default:
         console.log('Tipo de produto nao encontrado');

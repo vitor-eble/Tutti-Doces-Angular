@@ -1,0 +1,72 @@
+[
+  {
+    "id": 3001,
+    "image": "/bebibas-images/bebida_3001-Photoroom.png",
+    "title": "Refrigerante Coca-Cola",
+    "description": "350ml",
+    "value": 6.00
+  },
+  {
+    "id": 3002,
+    "image": "/bebibas-images/bebida_3002-Photoroom.png",
+    "title": "Refrigerante Guaraná",
+    "description": "350ml",
+    "value": 6.00
+  },
+  {
+    "id": 3003,
+    "image": "/bebibas-images/bebida_3003-Photoroom.png",
+    "title": "Refrigerante Sprite",
+    "description": "350ml",
+    "value": 6.00
+  },
+  {
+    "id": 3004,
+    "image": "/bebibas-images/bebida_3004-Photoroom.png",
+    "title": "Refrigerante Schweppes",
+    "description": "350ml",
+    "value": 6.00
+  },
+  {
+    "id": 3005,
+    "image": "/bebibas-images/bebida_3005-Photoroom.png",
+    "title": "Refrigerante Fanta laranja",
+    "description": "350ml",
+    "value": 6.00
+  },
+  {
+    "id": 3006,
+    "image": "/bebibas-images/bebida_3006-Photoroom.png",
+    "title": "Refrigerante Pepsi",
+    "description": "350ml",
+    "value": 6.00
+  },
+  {
+    "id": 3007,
+    "image": "/bebibas-images/bebida_3007-Photoroom.png",
+    "title": "Água Tônica",
+    "description": "350ml",
+    "value": 6.00
+  },
+  {
+    "id": 3008,
+    "image": "/bebibas-images/bebida_3008-Photoroom.png",
+    "title": "Energético Red Bull",
+    "description": "250ml",
+    "value": 6.00
+  },
+  {
+    "id": 3009,
+    "image": "/bebibas-images/bebida_3009-Photoroom.png",
+    "title": "Suco natural de laranja",
+    "description": "400ml",
+    "value": 6.00
+  },
+  {
+    "id": 3010,
+    "image": "/bebibas-images/bebida_3010-Photoroom.png",
+    "title": "Suco natural de morango",
+    "description": "400ml",
+    "value": 6.00
+  }
+]

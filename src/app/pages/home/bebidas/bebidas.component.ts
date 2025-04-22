@@ -22,9 +22,11 @@ export class BebidasComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    this.bebidas = this.bebidasService.getBebidas();
-    this.bebidasService.amountBebidas = new Array(this.bebidas.length).fill(1)
-    this.amountBebida = this.bebidasService.amountBebidas
+    this.bebidasService.getBebidasList().subscribe((bebidas: Card[]) => {
+      this.bebidas = bebidas
+      this.bebidasService.amountBebidas = new Array(this.bebidas.length).fill(1)
+      this.amountBebida = this.bebidasService.amountBebidas
+    })
   }
 
   decrementaBebida(index: number){
