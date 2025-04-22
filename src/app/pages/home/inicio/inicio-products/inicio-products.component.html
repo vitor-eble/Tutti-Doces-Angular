@@ -13,7 +13,7 @@
     </div>
     <div class="cards">
       <app-card
-        class="card transition duration-150"
+        class="transition duration-150 card"
         *ngFor="let brigadeiro of brigadeiros; let i = index"
         [produto]="brigadeiro"
         [quantidade]="amountBrigadeiro[i]"
@@ -43,8 +43,8 @@
     </div>
     <div class="cards">
       <app-card
-        class="card transition duration-150"
-        *ngFor="let trufa of (trufasService.getTrufasList() | async); let i = index"
+        class="transition duration-150 card"
+        *ngFor="let trufa of trufas; let i = index"
         [produto]="trufa"
         [quantidade]="amounttrufa[i]"
         [index]="i"
@@ -73,7 +73,7 @@
     </div>
     <div class="cards">
       <app-card
-      class="card transition duration-150"
+      class="transition duration-150 card"
       *ngFor="let bebida of bebidas; let i = index"
       [produto]="bebida"
       [quantidade]="amountbebida[i]"
