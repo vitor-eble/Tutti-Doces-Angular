@@ -28,7 +28,7 @@ export class InicioProductsComponent {
   constructor(
     private carrinhoService: CarrinhoService,
     private brigadeirosService: BrigadeirosService,
-    private trufasService: TrufaService,
+    public trufasService: TrufaService,
     private bebidasService: BebidasService,
   ){  }
 
@@ -37,9 +37,11 @@ export class InicioProductsComponent {
     this.brigadeirosService.amountBrigadeiros = new Array(this.brigadeiros.length).fill(1);
     this.amountBrigadeiro = this.brigadeirosService.amountBrigadeiros
 
-    this.trufas = this.trufasService.getTrufas().slice(0,4);
-    this.trufasService.amountTrufas = new Array(this.trufas.length).fill(1);
-    this.amounttrufa = this.trufasService.amountTrufas
+    this.trufasService.getTrufasList().subscribe((trufas: Card[]) => {
+      this.trufas = trufas.slice(0,4);
+      this.trufasService.amountTrufas = new Array(this.trufas.length).fill(1);
+      this.amounttrufa = this.trufasService.amountTrufas
+    })
 
     this.bebidas = this.bebidasService.getBebidas().slice(0,4);
     this.bebidasService.amountBebidas = new Array(this.bebidas.length).fill(1)

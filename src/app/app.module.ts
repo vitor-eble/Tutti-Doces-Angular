@@ -26,6 +26,7 @@ import { ComponentsModule } from './components/components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditProfileComponent } from './pages/home/sidebar/edit-profile/edit-profile.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     ComponentsModule,
     AngularFireStorageModule
  ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

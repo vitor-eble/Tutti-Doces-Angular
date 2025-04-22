@@ -1,0 +1,93 @@
+[
+  {
+    "id": 2001,
+    "image": "/trufas-images/trufa_2001-Photoroom.png",
+    "title": "Trufa brigadeiro 30g",
+    "description": "Trufa de chocolate ao leite recheada com creme de brigadeiro",
+    "value": 4.5
+  },
+  {
+    "id": 2002,
+    "image": "/trufas-images/trufa_2002-Photoroom.png",
+    "title": "Trufa suiça 30g",
+    "description": "Trufa de chocolate ao leite com recheio cremoso sabor trufas",
+    "value": 4.5
+  },
+  {
+    "id": 2003,
+    "image": "/trufas-images/trufa_2003-Photoroom.png",
+    "title": "Trufa tradicional 30g",
+    "description": "Trufa de chocolate ao leite com recheio cremoso de chocolate",
+    "value": 4.5
+  },
+  {
+    "id": 2004,
+    "image": "/trufas-images/trufa_2004-Photoroom.png",
+    "title": "Trufa de cereja 30g",
+    "description": "Trufa de chocolate ao leite com recheio sabor cereja",
+    "value": 4.5
+  },
+  {
+    "id": 2005,
+    "image": "/trufas-images/trufa_2005-Photoroom.png",
+    "title": "Trufa de paçoca 30g",
+    "description": "Trufa de chocolate ao leite com recheio de pedaços de paçoca",
+    "value": 4.5
+  },
+  {
+    "id": 2006,
+    "image": "/trufas-images/trufa_2006-Photoroom.png",
+    "title": "Trufa de cacau 70% 30g",
+    "description": "Trufa de chocolate ao leite com recheio de cacau 70%",
+    "value": 4.5
+  },
+  {
+    "id": 2007,
+    "image": "/trufas-images/trufa_2007-Photoroom.png",
+    "title": "Trufa de nozes 30g",
+    "description": "Trufa de chocolate ao leite com recheio de nozes",
+    "value": 4.5
+  },
+  {
+    "id": 2008,
+    "image": "/trufas-images/trufa_2008-Photoroom.png",
+    "title": "Trufa de morango 30g",
+    "description": "Trufa de chocolate ao leite com recheio sabor morango",
+    "value": 4.5
+  },
+  {
+    "id": 2009,
+    "image": "/trufas-images/trufa_2009-Photoroom.png",
+    "title": "Trufa de avelã 30g",
+    "description": "Trufa de chocolate ao leite com recheio sabor avelã",
+    "value": 4.5
+  },
+  {
+    "id": 2010,
+    "image": "/trufas-images/trufa_2010-Photoroom.png",
+    "title": "Trufa de coco 30g",
+    "description": "Trufa de chocolate ao leite com recheio sabor coco",
+    "value": 4.5
+  },
+  {
+    "id": 2011,
+    "image": "/trufas-images/trufa_2011-Photoroom.png",
+    "title": "Trufa de marula 30g",
+    "description": "Trufa de chocolate ao leite com recheio sabor marula",
+    "value": 4.5
+  },
+  {
+    "id": 2012,
+    "image": "/trufas-images/trufa_2012-Photoroom.png",
+    "title": "Trufa de maracujá 30g",
+    "description": "Trufa de chocolate ao leite com recheio sabor maracujá",
+    "value": 4.5
+  },
+  {
+    "id": 2013,
+    "image": "/trufas-images/trufa_2013-Photoroom.png",
+    "title": "Trufa de limão 30g",
+    "description": "Trufa de chocolate ao leite com recheio sabor limão",
+    "value": 4.5
+  }
+]

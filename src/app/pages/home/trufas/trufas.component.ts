@@ -21,9 +21,15 @@ export class TrufasComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    this.trufas = this.TrufaService.getTrufas();
-    this.TrufaService.amountTrufas = new Array(this.trufas.length).fill(1);
-    this.amountTrufa = this.TrufaService.amountTrufas
+    this.TrufaService.getTrufasList().subscribe((trufas: Card[]) => {
+      this.TrufaService.amountTrufas = new Array(this.trufas.length).fill(1);
+      this.amountTrufa = this.TrufaService.amountTrufas
+    })
+
+
+    // this.trufas = this.TrufaService.getTrufas();
+    // this.TrufaService.amountTrufas = new Array(this.trufas.length).fill(1);
+    // this.amountTrufa = this.TrufaService.amountTrufas
   }
 
   decrementaTrufa(index: number) {
