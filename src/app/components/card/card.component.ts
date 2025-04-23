@@ -26,8 +26,10 @@ export class CardComponent {
     this.remove.emit(this.index);
   }
 
-  addCart(){
-    this.cart.emit({ index: this.index, tipo: this.tipo })
+  addCart(tipo: any){
+    this.cart.emit({ index: this.index, tipo: this.tipo });
+    console.log(tipo);
+
   }
 
 }

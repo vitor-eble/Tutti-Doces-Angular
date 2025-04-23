@@ -23,8 +23,6 @@ export class InicioProductsComponent {
   amountTrufa: number[] = []
   amountBebida: number[] = [];
 
-  verMais: string = 'https://cdn-icons-png.flaticon.com/128/11431/11431124.png'
-
   constructor(
     private carrinhoService: CarrinhoService,
     private brigadeirosService: BrigadeirosService,
